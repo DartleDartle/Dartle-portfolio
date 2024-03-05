@@ -14,9 +14,9 @@ import {fadeIn} from '../variants'
 
 const Home = () => {
   return (
-  <div className="bg-primary/60 h-full )">
+  <div className="bg-primary/100 h-full )">
   {/* text */}
-    <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
+    <div className="w-full h-full bg-gradient-to-r from-primary/100 to-primary/80">
       <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
         {/*title*/}
         <motion.h1 
@@ -24,9 +24,10 @@ const Home = () => {
           initial="hidden" 
           animate="show" 
           exit="hidden"
-          className="h1"
+          className="h1 text-grey"
         >
-          Transforming Ideas <br /> Into <span className="text-accent">Digital Reality</span> 
+          
+        My journey in to <br />the <span className="text-accent">Front-End</span> field. 
         </motion.h1>
         {/* subtitle */}
         <motion.p 
@@ -34,7 +35,7 @@ const Home = () => {
           initial="hidden" 
           animate="show" 
           exit="hidden"
-          className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
+          className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-grey "
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
           nostrum quam reprehenderit vero, tenetur voluptatem nulla aut
@@ -58,9 +59,9 @@ const Home = () => {
       {/* image */}
       <div className="w-[1200px] h-full absolute right-0 bottom-0">
         {/* bg image */}
-        <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
+        <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute  translate-z-0"></div>
         {/* particles */}
-        <div>Particles</div>
+        <ParticlesContainer />
         {/* avatar img */}
         <motion.div 
           variants={fadeIn('up', 0.5)}
