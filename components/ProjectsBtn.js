@@ -15,7 +15,7 @@ const ProjectsBtn = () => {
       bg-circleStar bg-cover bg-center bg-no-repeat group"
     > 
       <Image 
-        src={'/rounded-text.png'} 
+        src={'/text-rounded.png'} 
         width={141} 
         height={148} 
         alt="" 

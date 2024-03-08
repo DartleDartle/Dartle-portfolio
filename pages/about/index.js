@@ -104,7 +104,7 @@ const About = () => {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
+    <div className='h-full bg-grey/30 py-32 text-center xl:text-left'>
       <Circles />
       {/* avatar img */}
       <motion.div
@@ -124,7 +124,7 @@ const About = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h2'
+            className='h2 z-20'
           >
             Captivating <span className='text-accent'>stories</span> birth
             magnificent designs.

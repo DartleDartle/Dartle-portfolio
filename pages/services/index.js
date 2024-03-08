@@ -20,7 +20,7 @@ const Services = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='h2 xl:mt-8'
+              className='h2 xl:mt-8 z-20'
             >
               My services <span className='text-accent'>.</span>
             </motion.h2>
@@ -29,7 +29,7 @@ const Services = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='mb-4 max-w-[400px] mx-auto lg:mx-0'
+              className='mb-4 max-w-[400px] mx-auto lg:mx-0 z-20'
             >
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
               eveniet dignissimos distinctio tempore harum laudantium.
