@@ -15,6 +15,9 @@ import {
   SiFramer,
   SiAdobexd,
   SiAdobephotoshop,
+  SiAdobelightroom,
+  SiAdobeillustrator,
+  SiAdobeindesign,
 } from 'react-icons/si';
 
 //  about data
@@ -36,37 +39,15 @@ export const aboutData = [
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
-      },
-    ],
-  },
-  {
-    title: 'awards',
-    info: [
-      {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
+        icons: [<FaFigma />, <SiAdobexd />],
       },
       {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'experience',
-    info: [
-      {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+        title: 'Photography',
+        icons: [ <SiAdobelightroom />],
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
-      },
-      {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
+        title: 'Graphic Design',
+        icons: [<SiAdobephotoshop />, <SiAdobelightroom />, <SiAdobeindesign />, <SiAdobeillustrator />],
       },
     ],
   },
@@ -74,16 +55,20 @@ export const aboutData = [
     title: 'credentials',
     info: [
       {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        title: 'Graduated in Information Technology from Technical Institute - ITIS Leonardo Da Vinci Pisa.',
+        stage: '2019',
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+        title: 'Graduated in Graphic Design - Accademia Di Belle Arti Di Brescia Santa Giulia',
+        stage: '2022',
       },
       {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+        title: 'Certificated portrait photographer - Istituto Marangoni di Firenze',
+        stage: '2023',
+      },
+      {
+        title: 'Certificated as Meta Front-End Developer - from Coursera platform',
+        stage: '2024',
       },
     ],
   },
@@ -104,7 +89,7 @@ const About = () => {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className='h-full bg-grey/30 py-32 text-center xl:text-left'>
+    <div className='h-full bg-grey/60 py-32 text-center xl:text-left'>
       <Circles />
       {/* avatar img */}
       <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
@@ -117,8 +102,7 @@ const About = () => {
             exit='hidden'
             className='h2 z-20'
           >
-            Captivating <span className='text-accent'>stories</span> birth
-            magnificent designs.
+            How the<span className='text-accent'> front-end</span> take my experiences together.
           </motion.h2>
           <motion.p
             variants={fadeIn('right', 0.4)}
@@ -127,9 +111,7 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'
           >
-            10 years ago, I began freelancing as a developer. Since then, I've
-            done remote work for agencies, counsulted for startups, and
-            collaborated on digital products for business and consumer use.
+          Since childhood, I've blended art and technology, earning a diploma in computer science and a degree in graphic design. My passion for design and web development led me to become a front-end developer.            
           </motion.p>
           {/* counters */}
           <motion.div
@@ -143,39 +125,23 @@ const About = () => {
               {/* experience */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={10} duration={5} /> +
+                  <CountUp start={0} end={4} duration={5} />
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Years of experience
-                </div>
-              </div>
-              {/* clients */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
-                <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={250} duration={5} /> +
-                </div>
-                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Satisfied clients
+                Months learning front-end.
                 </div>
               </div>
               {/* projects */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={650} duration={5} /> +
+                  <CountUp start={0} end={3} duration={5} /> 
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
                   Finished projects
                 </div>
               </div>
-              {/* awards */}
-              <div className='relative flex-1'>
-                <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={8} duration={5} /> +
-                </div>
-                <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Winning awards
-                </div>
-              </div>
+    
+              
             </div>
           </motion.div>
         </div>
@@ -212,7 +178,7 @@ const About = () => {
                 >
                   {/* title */}
                   <div className='font-light mb-2 md:mb-0'>{item.title}</div>
-                  <div className='hidden md:flex'>-</div>
+                  <div className='hidden md:flex'>  ◦</div>
                   <div>{item.stage}</div>
                   <div className='flex gap-x-4'>
                     {/* icons */}

@@ -27,7 +27,7 @@ const Home = () => {
           className="h1 z-20"
         >
           
-        My journey in to <br />the <span className="text-accent">Front-End</span> field. 
+        My journey into <br />the <span className="text-accent">Front-End</span> field. 
         </motion.h1>
         {/* subtitle */}
         <motion.p 
