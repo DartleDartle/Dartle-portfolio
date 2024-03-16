@@ -74,10 +74,6 @@ export const aboutData = [
   },
 ];
 
-// components
-
-import Circles from '../../components/Circles';
-
 // framer motion
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
@@ -90,7 +86,6 @@ const About = () => {
   console.log(index);
   return (
     <div className='h-full bg-grey/60 py-32 text-center xl:text-left'>
-      <Circles />
       {/* avatar img */}
       <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}

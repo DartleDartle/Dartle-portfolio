@@ -22,7 +22,7 @@ const Services = () => {
               exit='hidden'
               className='h2 xl:mt-8 z-20'
             >
-              My services <span className='text-accent'>.</span>
+              All my skills <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn('up', 0.4)}
@@ -31,8 +31,7 @@ const Services = () => {
               exit='hidden'
               className='mb-4 max-w-[400px] mx-auto lg:mx-0 z-20'
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
-              eveniet dignissimos distinctio tempore harum laudantium.
+              In all these years I have developed several skills that can be useful in the front-end field, and in many other work situations.
             </motion.p>
           </div>
 

@@ -8,12 +8,13 @@ import 'swiper/css/pagination';
 
 // icons
 import {
-  RxCrop,
-  RxDesktop,
+  RxLightningBolt,
+  RxFace,
   RxPencil2,
-  RxReader,
+  RxStarFilled,
   RxRocket,
-  RxArrowTopRight,
+  RxGear,
+  RxBorderSolid,
 } from 'react-icons/rx';
 
 // import required modules
@@ -22,35 +23,41 @@ import { FreeMode, Pagination } from 'swiper';
 // service data
 export const serviceData = [
   {
-    icon: <RxCrop />,
-    title: 'Fast Learning',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <RxRocket />,
+    title: 'Web Designer',
+    description: 'I did a 3-year course in webdesign, while I graduated for Graphic Design.',
+  },
+  {
+    icon: <RxGear />,
+    title: 'Scentific mind',
+    description: 'Computer science diploma and my passion for computers, made me a scientific mind.',
   },
   {
     icon: <RxPencil2 />,
-    title: 'Scentific mind',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Artist',
+    description: 'Graduated in graphic design, photographer in freetime, and i love music and art.',
   },
   {
-    icon: <RxDesktop />,
+    icon: <RxLightningBolt />,
+    title: 'Fast Learning',
+    description: 'I learned to use the latest website development tools in just a few months.',
+  },
+  {
+    icon: <RxFace />,
     title: 'Sociable',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Im a sociable person, but most important Im diplomatic and understanding.',
   },
   {
-    icon: <RxReader />,
+    icon: <RxStarFilled />,
     title: 'Motivated',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Im very good at managing myself, I dont let myself get down, and i stay motivated.',
   },
   {
-    icon: <RxRocket />,
+    icon: <RxBorderSolid />,
     title: 'Constant',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Consistency is one of the secrets to improving and my discipline helps me.',
   },
-  {
-    icon: <RxRocket />,
-    title: 'Web Designer',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
+  
 ];
 
 const ServiceSlider = () => {
@@ -87,10 +94,7 @@ const ServiceSlider = () => {
                   {item.description}
                 </p>
               </div>
-              {/* arrow */}
-              <div className='text-3xl'>
-                <RxArrowTopRight className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300' />
-              </div>
+              
             </div>
           </SwiperSlide>
         );

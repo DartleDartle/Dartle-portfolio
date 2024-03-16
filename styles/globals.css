@@ -18,6 +18,8 @@
   color: #f13024;
 }
 
+
+
 @layer base {
   body {
     @apply bg-primary overflow-hidden leading-relaxed;
