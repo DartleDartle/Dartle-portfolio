@@ -91,9 +91,9 @@ const About = () => {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className='h-full bg-grey/60 py-32 text-center xl:text-left mb-64 '>
+    <div className='h-full mb-64 bg-grey/60 py-32 text-center xl:text-left  '>
       {/* avatar img */}
-      <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
+      <div className='container mb-64 mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}
         <div className='flex-1 flex flex-col justify-center'>
           <motion.h2
