@@ -18,6 +18,27 @@
   color: #f13024;
 }
 
+.my-custom-swiper .swiper-button-next,
+.my-custom-swiper .swiper-button-prev {
+  top: auto;
+  bottom: -1px; /* Adjust this value so the buttons are just below the pagination dots */
+  z-index: 20;
+  width: 50px; /* or the size you prefer */
+  height: 50px; /* or the size you prefer */
+}
+
+.my-custom-swiper .swiper-button-next {
+  right: 10px; /* or adjust as needed */
+}
+
+.my-custom-swiper .swiper-button-prev {
+  left: 10px; /* or adjust as needed */
+}
+
+.my-custom-swiper .swiper-pagination {
+  bottom: 30px; /* Adjust this value as needed to give space for the arrows */
+}
+
 
 
 @layer base {
@@ -45,7 +66,7 @@
   }
   .input,
   .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-accent/50 placeholder:text-accent/30 placeholder:font-light;
   }
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;

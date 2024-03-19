@@ -1,23 +1,37 @@
 // testimonial slider data
 export const testimonialSlider = [
   {
-    image: '/t-avt-1.png',
-    name: 'Anne Smith',
-    position: 'Customer',
+    image: '/mirko.png',
+    name: 'Mirko',
+    position: 'Friend',
     message:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
   },
   {
-    image: '/t-avt-2.png',
-    name: 'Jane Doe',
-    position: 'Customer',
+    image: '/bianca.png',
+    name: 'Bianca',
+    position: 'Girlfriend',
     message:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
   },
   {
-    image: '/t-avt-3.png',
-    name: 'Jhon Doe',
-    position: 'Customer',
+    image: '/claudia.png',
+    name: 'Claudia',
+    position: 'Sister',
+    message:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+  },
+  {
+    image: '/daniele.png',
+    name: 'Daniele',
+    position: 'Twin Brother',
+    message:
+      'Energy and reliability. The perfect combination for harmonious collaboration. Davide listens, understands, and always strives to give his utmost for his goals.',
+  },
+  {
+    image: '/shab.png',
+    name: 'Shab',
+    position: 'Friend',
     message:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
   },
@@ -69,10 +83,10 @@ const TestimonialSlider = () => {
                 </div>
               </div>
               {/* quote & message */}
-              <div className='flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20'>
+              <div className='flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-accent/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20'>
                 {/* quote icon */}
                 <div className='mb-4'>
-                  <FaQuoteLeft className='text-4xl xl:text-6xl text-white/20 mx-auto md:mx-0' />
+                  <FaQuoteLeft className='text-4xl xl:text-6xl text-accent/20 mx-auto md:mx-0' />
                 </div>
                 {/* message */}
                 <div className='xl:text-lg text-center md:text-left'>

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 // icons
 import {
@@ -18,7 +19,7 @@ import {
 } from 'react-icons/rx';
 
 // import required modules
-import { FreeMode, Pagination } from 'swiper';
+import { Navigation, FreeMode, Pagination } from 'swiper';
 
 // service data
 export const serviceData = [
@@ -63,6 +64,7 @@ export const serviceData = [
 const ServiceSlider = () => {
   return (
     <Swiper
+      navigation={true}
       breakpoints={{
         320: {
           slidesPerView: 1,
@@ -78,8 +80,8 @@ const ServiceSlider = () => {
       pagination={{
         clickable: true,
       }}
-      modules={[FreeMode, Pagination]}
-      className='h-[240px] sm:h-[340px]'
+      modules={[Navigation, FreeMode, Pagination]}
+      className='h-[240px] sm:h-[340px] my-custom-swiper'
     >
       {serviceData.map((item, index) => {
         return (

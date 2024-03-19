@@ -7,7 +7,7 @@ import { fadeIn } from '../../variants';
 
 const Work = () => {
   return (
-    <div className='h-full bg-primary/30 py-36 flex items-center'>
+    <div className='h-full bg-grey/30 py-36 flex items-center'>
       
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row gap-x-8'>
@@ -29,8 +29,8 @@ const Work = () => {
               exit='hidden'
               className='mb-4 max-w-[400px] mx-auto lg:mx-0 z-20'
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
-              eveniet dignissimos distinctio tempore harum laudantium.
+              
+            These are my works during the process of learning front-end development, for now <mark className='bg-accent'>the most important project is this Portfolio.</mark>
             </motion.p>
           </div>
 

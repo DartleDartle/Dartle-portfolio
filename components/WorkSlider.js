@@ -4,40 +4,19 @@ export const workSlider = {
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb1.jpg',
+          title: 'Little Lemon',
+          path: '/thumb1-1.jpg',
+          url: 'https://fe-capstone-coursera.vercel.app/',
         },
         {
-          title: 'title',
-          path: '/thumb2.jpg',
+          title: 'Acme - NextJs',
+          path: '/thumb1-2.jpg',
+          url: 'https://learning-next-js-omega-topaz.vercel.app/dashboard',
         },
         {
-          title: 'title',
-          path: '/thumb3.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb4.jpg',
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: 'title',
-          path: '/thumb4.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb1.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb2.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'Portfolio - Davide Pintore',
+          path: '/thumb1-3.jpg',
+          url: 'https://fe-capstone-coursera.vercel.app/',
         },
       ],
     },
@@ -79,12 +58,13 @@ const WorkSlider = () => {
                   <div
                     className='relative rounded-lg overflow-hidden flex items-center justify-center group'
                     key={index}
+                    onClick={() => window.location.href = image.url}
                   >
                     <div className='flex items-center justify-center relative overflow-hidden group'>
                       {/* image */}
                       <Image src={image.path} width={500} height={300} alt='' />
                       {/* overlay gradient */}
-                      <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700'></div>
+                      <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#efe7dc] to-[#f17e41] opacity-0 group-hover:opacity-80 transition-all duration-700'></div>
                       {/* title */}
                       <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300'>
                         <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em]'>
