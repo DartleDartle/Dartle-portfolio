@@ -112,7 +112,7 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'
           >
-          Since childhood, I've blended art and technology, earning a diploma in computer science and a degree in graphic design. My passion for design and web development led me to become a front-end developer.            
+          Since childhood, I&apos;ve blended art and technology, earning a diploma in computer science and a degree in graphic design. My passion for design and web development led me to become a front-end developer.            
           </motion.p>
           {/* counters */}
           <motion.div
