@@ -43,8 +43,15 @@ module.exports = {
     },
   },
   container: {
+    
     padding: {
       DEFAULT: '15px',
+      
+      sm: '2rem',   
+      md: '3rem',   
+      lg: '4rem',   
+      xl: '5rem',   
+   
     },
   },
   plugins: [require('tailwind-scrollbar')],
