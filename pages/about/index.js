@@ -28,26 +28,32 @@ export const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key="html5ico" />,
+          <FaCss3 key="css3ico" />,
+          <FaJs key="javascriptico" />,
+          <FaReact key="reactico" />,
+          <SiNextdotjs key="nextico" />,
+          <SiFramer key="framerico" />,
+          <FaWordpress key="wordpressico" />,
+          
+          
+          
+          
+          
+          
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />],
+        icons: [<FaFigma key="figmaico" />, <SiAdobexd key="adobexdico" />,],
       },
       {
         title: 'Photography',
-        icons: [ <SiAdobelightroom />],
+        icons: [ <SiAdobelightroom key="lightroomico" />,],
       },
       {
         title: 'Graphic Design',
-        icons: [<SiAdobephotoshop />, <SiAdobelightroom />, <SiAdobeindesign />, <SiAdobeillustrator />],
+        icons: [<SiAdobephotoshop key="photoshopico" />, <SiAdobeindesign key="indesignico" />, <SiAdobeillustrator key="illustratorico" />],
       },
     ],
   },
