@@ -5,21 +5,21 @@ export const testimonialSlider = [
     name: 'Mirko',
     position: 'Friend',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Davide a Simply genuine and super creative person, I worked with him several times and in every project we made he was capable to go outside the box with his incredible lateral thought',
   },
   {
     image: '/bianca.png',
     name: 'Bianca',
     position: 'Girlfriend',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Davide is a wonderful and attentive guy and a reliable and responsible partner. He wants his projects to always be impeccable and puts a lot of effort into everything he cares about!',
   },
   {
     image: '/claudia.png',
     name: 'Claudia',
     position: 'Sister',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Davide is such a passionate, bright guy! From what I’ve seen, I can confidently say that he embodies the definition of a hardworking person: he is always brimming with creativity and determination!',
   },
   {
     image: '/daniele.png',
