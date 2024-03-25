@@ -91,7 +91,7 @@ const About = () => {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className='bg-grey/60 h-fit py-32 text-center xl:text-left xl:h-full'>
+    <div className='bg-grey/60 min-h-screen py-32 text-center xl:text-left xl:h-full'>
       {/* avatar img */}
       <div className='container  mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}
@@ -168,7 +168,7 @@ const About = () => {
               </div>
             ))}
           </div>
-          <div className='py-2 mb-96 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start'>
+          <div className='py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start'>
             {aboutData[index].info.map((item, itemIndex) => {
               return (
                 <div
