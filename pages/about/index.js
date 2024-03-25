@@ -93,7 +93,7 @@ const About = () => {
   return (
     <div className='min-h-48  bg-grey/60 py-32 text-center xl:text-left h-full'>
       {/* avatar img */}
-      <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
+      <div className='container mb-80 mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}
         <div className='flex-1 flex flex-col justify-center'>
           <motion.h2
@@ -124,7 +124,7 @@ const About = () => {
           >
             <div className='flex flex-1 xl:gap-x-6'>
               {/* experience */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
+              <div className='relative flex-1 after:wcd-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
                   <CountUp start={0} end={4} duration={5} />
                 </div>
