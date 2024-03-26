@@ -7,7 +7,7 @@ import { fadeIn } from '../../variants';
 
 const Testimonials = () => {
   return (
-    <div className='h-screen bg-grey py-36 mb-48 text-center'>
+    <div className='min-h-screen bg-grey py-36 mb-12 text-center'>
       <div className='container mx-auto h-full flex flex-col justify-center'>
         {/* title */}
         <motion.h2
@@ -15,7 +15,7 @@ const Testimonials = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='h2 mb-8 mt-64 xl:mb-0'
+          className='h2 mb-8 mt-12 xl:mb-0'
         >
           What my connections <span className='text-accent'>say.</span>
         </motion.h2>
