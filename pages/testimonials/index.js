@@ -15,7 +15,7 @@ const Testimonials = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='h2 mb-8 mt-28 xl:mb-0'
+          className='h2 mb-8 mt-64 xl:mb-0'
         >
           What my connections <span className='text-accent'>say.</span>
         </motion.h2>
@@ -24,7 +24,7 @@ const Testimonials = () => {
           variants={fadeIn('up', 0.4)}
           initial='hidden'
           animate='show'
-          exit='hidden mb-48'
+          exit='hidden'
         >
           <TestimonialSlider />
           

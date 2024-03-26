@@ -14,7 +14,7 @@ import {fadeIn} from '../variants'
 
 const Home = () => {
   return (
-  <div className="bg-grey h-screen">
+  <div className="bg-grey h-screen xl:h-screen">
   {/* text */}
     <div className="w-full h-full bg-gradient-to-r from-grey/10 via-white/30 to-white/10">
       <div className="text-center flex flex-col items-center justify-center xl:pt-40 xl:items-start xl:text-left h-full container mx-auto">
@@ -24,7 +24,7 @@ const Home = () => {
           initial="hidden" 
           animate="show" 
           exit="hidden"
-          className="h1 z-20"
+          className="h1 z-20 mt-24"
         >
           
         My journey into <br />the <span className="text-accent">Front-End</span> field. 

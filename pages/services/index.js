@@ -19,7 +19,7 @@ const Services = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='h2 xl:mt-8 z-20'
+              className='h2 xl:mt-8 z-20 mt-24'
             >
               All my skills <span className='text-accent'>.</span>
             </motion.h2>
