@@ -93,7 +93,7 @@ const About = () => {
   return (
     <div className='bg-grey/60 min-h-screen py-32 text-center xl:text-left xl:h-full'>
       {/* avatar img */}
-      <div className='container  mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
+      <div className='container  mx-auto h-dvh flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}
         <div className='flex-1 flex flex-col justify-center'>
           <motion.h2
