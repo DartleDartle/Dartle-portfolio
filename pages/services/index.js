@@ -9,8 +9,8 @@ import { fadeIn } from '../../variants';
 
 const Services = () => {
   return (
-    <div className='h-full bg-grey/30 py-36 flex items-center'>
-      <div className='container mx-auto'>
+    <div className='h-screen bg-grey py-36 xl:pt-0 xl:mt-0 flex items-center'>
+      <div className='container mx-auto '>
         <div className='flex flex-col xl:flex-row gap-x-8'>
           {/* text */}
           <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0'>

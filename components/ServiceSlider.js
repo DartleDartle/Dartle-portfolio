@@ -81,7 +81,7 @@ const ServiceSlider = () => {
         clickable: true,
       }}
       modules={[Navigation, FreeMode, Pagination]}
-      className='h-[240px] sm:h-[340px] my-custom-swiper'
+      className='h-[240px] sm:h-[440px] my-custom-swiper'
     >
       {serviceData.map((item, index) => {
         return (

@@ -14,10 +14,10 @@ import {fadeIn} from '../variants'
 
 const Home = () => {
   return (
-  <div className="bg-grey/60 h-screen )">
+  <div className="bg-grey h-screen">
   {/* text */}
     <div className="w-full h-full bg-gradient-to-r from-grey/10 via-white/30 to-white/10">
-      <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+      <div className="text-center flex flex-col items-center justify-center xl:pt-40 xl:items-start xl:text-left h-full container mx-auto">
         {/*title*/}
         <motion.h1 
           variants={fadeIn('down', 0.2)} 
@@ -42,7 +42,7 @@ const Home = () => {
           aspernatur dolores ut.
         </motion.p>
         {/* btn */}
-        <div className="flex justify-center xl:hidden relative">
+        <div className="flex justify-center xl:hidden relative z-20">
         <ProjectsBtn />
         </div>
         <motion.div 
@@ -50,7 +50,7 @@ const Home = () => {
           initial="hidden" 
           animate="show" 
           exit="hidden"
-          className="hidden xl:flex"
+          className="hidden xl:flex z-20"
         >
           <ProjectsBtn />
         </motion.div>

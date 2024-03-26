@@ -91,9 +91,9 @@ const About = () => {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className='bg-grey/60 min-h-screen py-32 text-center xl:text-left xl:h-full'>
+    <div className='bg-grey h-full py-32 text-center xl:pt-96 xl:text-left xl:h-screen'>
       {/* avatar img */}
-      <div className='container  mx-auto h-dvh flex flex-col items-center xl:flex-row gap-x-6'>
+      <div className='container mx-auto flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}
         <div className='flex-1 flex flex-col justify-center'>
           <motion.h2
@@ -152,7 +152,7 @@ const About = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='flex flex-col w-full xl:max-w-[48%] h-[480px]'
+          className='flex flex-col w-full xl:px-28 xl:max-w-[48%] h-[480px]'
         >
           <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4'>
           {aboutData.map((item, itemIndex) => (
