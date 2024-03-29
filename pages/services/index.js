@@ -9,7 +9,7 @@ import { fadeIn } from '../../variants';
 
 const Services = () => {
   return (
-    <div className='h-screen bg-grey py-36 xl:pt-0 xl:mt-0 flex items-center'>
+    <div className='min-h-screen bg-grey py-36 xl:pt-0 xl:mt-0 flex items-center'>
       <div className='container mx-auto '>
         <div className='flex flex-col xl:flex-row gap-x-8'>
           {/* text */}
@@ -40,7 +40,7 @@ const Services = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='w-full xl:max-w-[65%]'
+            className='w-full xl:ml-5 xl:max-w-[65%]'
           >
             <ServiceSlider />
           </motion.div>
