@@ -91,11 +91,11 @@ const About = () => {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className='bg-grey min-h-screen py-32 text-center xl:pt-28 xl:text-left xl:h-screen'>
+    <div className='bg-grey min-h-screen text-center  xl:text-left xl:h-screen'>
       {/* avatar img */}
-      <div className='container mx-auto flex flex-col items-center xl:flex-row gap-x-6'>
+      <div className='container mx-auto flex flex-col items-center py-32 pt-44 xl:flex-row gap-x-6 '>
         {/* text */}
-        <div className='flex-1 flex flex-col justify-center'>
+        <div className='flex-1 flex flex-col  justify-center'>
           <motion.h2
             variants={fadeIn('right', 0.2)}
             initial='hidden'
