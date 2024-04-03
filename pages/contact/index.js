@@ -60,7 +60,7 @@ const Contact = () => {
             {/* input group */}
             <div className='flex gap-x-6 w-full'>
               <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='name' className='input' required/>
-              <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='email' className='input' required/>
+              <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='email' className='input' style={{ textTransform: 'none' }} required/>
             </div>
             <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder='message' className='textarea' required></textarea>
             <button type="submit" className='btn rounded-full border border-accent/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
