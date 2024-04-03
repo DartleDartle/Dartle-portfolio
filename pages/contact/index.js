@@ -7,7 +7,32 @@ import { motion } from 'framer-motion';
 // variants
 import { fadeIn } from '../../variants';
 
+import { useState } from 'react';
+
+
 const Contact = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+  
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+  
+      if (response.ok) {
+        console.log('Message sent');
+      } else {
+        console.error('Error sending message');
+      }
+    };
+  
   return (
     <div className='min-h-screen bg-grey'>
       <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full'>
@@ -30,15 +55,15 @@ const Contact = () => {
             animate='show'
             exit='hidden'
             className='flex-1 flex flex-col gap-6 w-full mx-auto'
+            onSubmit={handleSubmit}
           >
             {/* input group */}
             <div className='flex gap-x-6 w-full'>
-              <input type='text' placeholder='name' className='input' />
-              <input type='text' placeholder='email' className='input' />
+              <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='name' className='input' required/>
+              <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='email' className='input' required/>
             </div>
-            <input type='text' placeholder='subject' className='input' />
-            <textarea placeholder='message' className='textarea'></textarea>
-            <button className='btn rounded-full border border-accent/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
+            <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder='message' className='textarea' required></textarea>
+            <button type="submit" className='btn rounded-full border border-accent/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
               <span className='group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500'>
                 Let&apos;s talk
               </span>
