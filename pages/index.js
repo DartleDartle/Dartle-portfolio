@@ -1,6 +1,3 @@
-// next image
-import Image from "next/image"
-
 // components
 import ParticlesContainer from '../components/ParticlesContainer';
 import ProjectsBtn from '../components/ProjectsBtn';
@@ -12,7 +9,15 @@ import {motion} from 'framer-motion'
 // variants
 import {fadeIn} from '../variants'
 
+//translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+
+
 const Home = () => {
+
+  const { t } = useTranslation('common');
+  
   return (
   <div className="bg-grey h-screen xl:h-screen">
   {/* text */}
@@ -24,10 +29,9 @@ const Home = () => {
           initial="hidden" 
           animate="show" 
           exit="hidden"
-          className="h1 z-20 mt-24"
+          className="h1 z-20 mt-52"
         >
-          
-        My journey into <br />the <span className="text-accent">Front-End</span> field. 
+          {t('home.title1')} <span className='text-accent'>Front-End</span> {t('home.title2')}
         </motion.h1>
         {/* subtitle */}
         <motion.p 
@@ -77,3 +81,11 @@ const Home = () => {
   )};
 
 export default Home;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

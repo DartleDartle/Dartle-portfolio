@@ -101,7 +101,7 @@ const About = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h2 z-20'
+            className='h2 z-20 mt-20 xl:mt-0'
           >
             How the<span className='text-accent'> front-end</span> take my experiences together.
           </motion.h2>
