@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 // icons
 import {
   FaHtml5,
@@ -21,12 +22,12 @@ import {
 } from 'react-icons/si';
 
 //  about data
-export const aboutData = [
+export const getAboutData = (t) => [
   {
-    title: 'skills',
+    title: t('s'),
     info: [
       {
-        title: 'Web Development',
+        title: t('web'),
         icons: [
           <FaHtml5 key="html5ico" />,
           <FaCss3 key="css3ico" />,
@@ -48,32 +49,32 @@ export const aboutData = [
         icons: [<FaFigma key="figmaico" />, <SiAdobexd key="adobexdico" />,],
       },
       {
-        title: 'Photography',
+        title: t('ph'),
         icons: [ <SiAdobelightroom key="lightroomico" />,],
       },
       {
-        title: 'Graphic Design',
+        title: t('gd'),
         icons: [<SiAdobephotoshop key="photoshopico" />, <SiAdobeindesign key="indesignico" />, <SiAdobeillustrator key="illustratorico" />],
       },
     ],
   },
   {
-    title: 'credentials',
+    title: t('c'),
     info: [
       {
-        title: 'Graduated in Information Technology from Technical Institute - ITIS Leonardo Da Vinci Pisa.',
+        title: t('c1'),
         stage: '2019',
       },
       {
-        title: 'Graduated in Graphic Design - Accademia Di Belle Arti Di Brescia Santa Giulia',
+        title: t('c2'),
         stage: '2022',
       },
       {
-        title: 'Certificated portrait photographer - Istituto Marangoni di Firenze',
+        title: t('c3'),
         stage: '2023',
       },
       {
-        title: 'Certificated as Meta Front-End Developer - from Coursera platform',
+        title: t('c4'),
         stage: '2024',
       },
     ],
@@ -87,7 +88,13 @@ import { fadeIn } from '../../variants';
 // counter
 import CountUp from 'react-countup';
 
+//translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+
 const About = () => {
+  const { t } = useTranslation('common');
+  const aboutData = getAboutData(t);
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
@@ -103,7 +110,7 @@ const About = () => {
             exit='hidden'
             className='h2 z-20 mt-20 xl:mt-0'
           >
-            How the<span className='text-accent'> front-end</span> take my experiences together.
+            {t('about.title1')} <span className='text-accent'>Front-End</span> <br /> {t('about.title2')} <br /> {t('about.title3')}
           </motion.h2>
           <motion.p
             variants={fadeIn('right', 0.4)}
@@ -112,7 +119,7 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'
           >
-          Since childhood, I&apos;ve blended art and technology, earning a diploma in computer science and a degree in graphic design. My passion for design and web development led me to become a front-end developer.            
+          {t('about.text')}            
           </motion.p>
           {/* counters */}
           <motion.div
@@ -129,7 +136,7 @@ const About = () => {
                   <CountUp start={0} end={4} duration={5} />
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                Months learning front-end.
+                {t('counter1')}
                 </div>
               </div>
               {/* projects */}
@@ -138,7 +145,7 @@ const About = () => {
                   <CountUp start={0} end={3} duration={5} /> 
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Finished projects
+                {t('counter2')}
                 </div>
               </div>
     
@@ -198,3 +205,11 @@ const About = () => {
 };
 
 export default About;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

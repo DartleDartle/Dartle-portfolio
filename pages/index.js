@@ -31,7 +31,7 @@ const Home = () => {
           exit="hidden"
           className="h1 z-20 mt-52"
         >
-          {t('home.title1')} <span className='text-accent'>Front-End</span> {t('home.title2')}
+          {t('home.title1')} <br /> {t('home.title2')} <span className='text-accent'>Front-End</span> {t('home.title3')} 
         </motion.h1>
         {/* subtitle */}
         <motion.p 
@@ -41,9 +41,7 @@ const Home = () => {
           exit="hidden"
           className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          nostrum quam reprehenderit vero, tenetur voluptatem nulla aut
-          aspernatur dolores ut.
+         {t('home.text')}
         </motion.p>
         {/* btn */}
         <div className="flex justify-center xl:hidden relative z-20">

@@ -1,4 +1,23 @@
 {
-  "home.title1": "Il mio viaggio nel campo del",
-  "home.title2": "."
+  "home.title1": "Il mio viaggio nel",
+  "home.title2": "campo del",
+  "home.title3": ".",
+  "home.text": "Benvenuto nel mio portfolio, il mio nome é Davide e ho 25 anni. Sono nato e cresciuto per 4 anni a Vicenza, 12 anni in Sardegna, 7 a Lucca e 2 anni a Brescia. Diplomato in Informatica e laureato in grafica, ho deciso di unire entrambe le cose per specializzarmi nel Front-End!",
+  "button": "I miei progetti",
+  "about.title1": "Come il",
+  "about.title2": "unisce e integra le",
+  "about.title3": "mie esperienze.",
+  "about.text": "Da bambino, ho fuso arte e tecnologia, ottenendo un diploma in informatica e una laurea in grafica. La mia passione per il design e lo sviluppo web mi ha portato a diventare uno sviluppatore front-end.",
+  "counter1": "Mesi di apprendimento",
+  "counter2": "Progetti finiti",
+  "s": "Abilitá",
+  "c": "Studi",
+  "web": "Sviluppo Web",
+  "ph" : "Fotografia",
+  "gd": "Grafica",
+  "c1": "Diplomato in Informatica presso l'Istituto Tecnico - ITIS Leonardo Da Vinci di Pisa.",
+  "c2": "Diplomato in Graphic Design presso l'Accademia di Belle Arti di Brescia Santa Giulia.",
+  "c3": "Fotografo ritrattista certificato presso l'Istituto Marangoni di Firenze.",
+  "c4": "Certificato come Sviluppatore Front-End di Meta - dalla piattaforma Coursera."
+
   }
