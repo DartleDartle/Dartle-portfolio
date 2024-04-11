@@ -5,7 +5,13 @@ import WorkSlider from '../../components/WorkSlider';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
+//translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+
 const Work = () => {
+  const { t } = useTranslation('common');
+
   return (
     <div className='min-h-screen bg-grey py-9 flex items-center'>
       
@@ -20,7 +26,7 @@ const Work = () => {
               exit='hidden'
               className='h2 mt-48 xl:mt-12 z-20'
             >
-              My work <span className='text-accent'>.</span>
+              {t('work-title')} <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn('up', 0.4)}
@@ -30,7 +36,7 @@ const Work = () => {
               className='mb-4 max-w-[400px] mx-auto lg:mx-0 z-20'
             >
               
-            These are my works during the process of learning front-end development, for now <mark className='bg-accent'>the most important project is this Portfolio.</mark>
+              {t('work-desc1')} <mark className='bg-accent'> {t('work-desc2')}</mark>
             </motion.p>
           </div>
 
@@ -52,3 +58,11 @@ const Work = () => {
 };
 
 export default Work;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

@@ -7,7 +7,12 @@ import Bulb from '../../components/Bulb';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
+//translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+
 const Services = () => {
+  const { t } = useTranslation('common');
   return (
     <div className='min-h-screen bg-grey py-36 xl:pt-0 xl:mt-0 flex items-center'>
       <div className='container xl:mt-64 mx-auto '>
@@ -21,7 +26,7 @@ const Services = () => {
               exit='hidden'
               className='h2 xl:mt-8 z-20 mt-24'
             >
-              All my skills <span className='text-accent'>.</span>
+              {t('skills-title')} <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn('up', 0.4)}
@@ -30,7 +35,7 @@ const Services = () => {
               exit='hidden'
               className='mb-4 max-w-[400px] mx-auto lg:mx-0 z-20'
             >
-              In all these years I have developed several skills that can be useful in the front-end field, and in many other work situations.
+              {t('skills-desc')}
             </motion.p>
           </div>
 
@@ -52,3 +57,11 @@ const Services = () => {
 };
 
 export default Services;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

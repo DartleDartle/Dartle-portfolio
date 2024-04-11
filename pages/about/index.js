@@ -36,12 +36,7 @@ export const getAboutData = (t) => [
           <SiNextdotjs key="nextico" />,
           <SiFramer key="framerico" />,
           <FaWordpress key="wordpressico" />,
-          
-          
-          
-          
-          
-          
+ 
         ],
       },
       {

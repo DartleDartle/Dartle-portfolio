@@ -9,11 +9,15 @@ import { fadeIn } from '../../variants';
 
 import { useState } from 'react';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
 
 const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+
+    const { t } = useTranslation('common');
   
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -46,7 +50,7 @@ const Contact = () => {
             exit='hidden'
             className='h2 mt-24 xl:mt-0 text-center mb-12'
           >
-            Let&apos;s <span className='text-accent'>connect.</span>
+            {t('Connect1')} <span className='text-accent'>{t('Connect2')}</span>
           </motion.h2>
           {/* form */}
           <motion.form
@@ -59,13 +63,13 @@ const Contact = () => {
           >
             {/* input group */}
             <div className='flex gap-x-6 w-full'>
-              <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='name' className='input' required/>
+              <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder={t('name')} className='input' required/>
               <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='email' className='input' style={{ textTransform: 'none' }} required/>
             </div>
-            <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder='message' className='textarea' required></textarea>
+            <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder={t('message')} className='textarea' required></textarea>
             <button type="submit" className='btn rounded-full border border-accent/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
               <span className='group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500'>
-                Let&apos;s talk
+              {t('Talk')}
               </span>
               <BsArrowRight className='-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]' />
             </button>
@@ -77,3 +81,11 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

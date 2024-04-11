@@ -1,39 +1,34 @@
 // testimonial slider data
-export const testimonialSlider = [
+export const getTestimonialSlider = (t) => [
   {
     image: '/mirko.png',
     name: 'Mirko',
-    position: 'Friend',
-    message:
-      'Davide a Simply genuine and super creative person, I worked with him several times and in every project we made he was capable to go outside the box with his incredible lateral thought',
+    position: t('Mirko-role'),
+    message: t('Mirko'),
   },
   {
     image: '/bianca.png',
     name: 'Bianca',
-    position: 'Girlfriend',
-    message:
-      'Davide is a wonderful and attentive guy and a reliable and responsible partner. He wants his projects to always be impeccable and puts a lot of effort into everything he cares about!',
+    position: t('Bianca-role'),
+    message:  t('Bianca'),
   },
   {
     image: '/claudia.png',
     name: 'Claudia',
-    position: 'Sister',
-    message:
-      'Davide is such a passionate, bright guy! From what I’ve seen, I can confidently say that he embodies the definition of a hardworking person: he is always brimming with creativity and determination!',
+    position: t('Claudia-role'),
+    message: t('Claudia'),
   },
   {
     image: '/daniele.png',
     name: 'Daniele',
-    position: 'Twin Brother',
-    message:
-      'Energy and reliability. The perfect combination for harmonious collaboration. Davide listens, understands, and always strives to give his utmost for his goals.',
+    position: t('Daniele-role'),
+    message: t('Daniele'),
   },
   {
     image: '/shab.png',
     name: 'Shab',
-    position: 'Friend',
-    message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+    position: t('Shab-role'),
+    message: t('Shab'),
   },
 ];
 
@@ -53,7 +48,12 @@ import { FaQuoteLeft } from 'react-icons/fa';
 // next image
 import Image from 'next/image';
 
+//translation
+import { useTranslation } from 'next-i18next';
+
 const TestimonialSlider = () => {
+  const { t } = useTranslation('common');
+  const testimonialSlider = getTestimonialSlider(t);
   return (
     <Swiper
       navigation={true}
@@ -102,3 +102,4 @@ const TestimonialSlider = () => {
 };
 
 export default TestimonialSlider;
+
