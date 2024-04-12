@@ -16,7 +16,7 @@ export const workSlider = {
         {
           title: 'Portfolio - Davide Pintore',
           path: '/thumb1-3.jpg',
-          url: 'https://fe-capstone-coursera.vercel.app/',
+          url: 'https://dartle-portfolio.vercel.app/',
         },
       ],
     },
