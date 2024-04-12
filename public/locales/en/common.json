@@ -54,5 +54,7 @@
     "Connect2": "connect!",
     "Talk": "Let's talk",
     "name": "Name",
-    "message": "Message"
+    "message": "Message",
+    "success": "Message sent!, I'll answer as soon as possible.",
+    "fail": "There was an error sending the message. Please try again later."
   }
