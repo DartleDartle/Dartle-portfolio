@@ -21,15 +21,15 @@ const Home = () => {
   return (
   <div className="bg-grey h-screen xl:h-screen">
   {/* text */}
-    <div className="w-full h-full bg-gradient-to-r from-grey/10 via-white/30 to-white/10">
-      <div className="text-center flex flex-col items-center justify-center xl:pt-40 xl:items-start xl:text-left h-full container mx-auto">
+    <div className="min-h-full bg-gradient-to-r from-grey/10 via-white/30 to-white/10 py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56">
+      <div className="text-center flex flex-col items-center justify-center  xl:items-start xl:text-left h-full container mx-auto">
         {/*title*/}
         <motion.h1 
           variants={fadeIn('down', 0.2)} 
           initial="hidden" 
           animate="show" 
           exit="hidden"
-          className="h1 z-20 mt-52"
+          className="h1 z-20"
         >
           {t('home.title1')} <br /> {t('home.title2')} <span className='text-accent'>Front-End</span> {t('home.title3')} 
         </motion.h1>

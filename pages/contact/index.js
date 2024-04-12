@@ -39,7 +39,7 @@ const Contact = () => {
   
   return (
     <div className='min-h-screen bg-grey'>
-      <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full'>
+      <div className='container mx-auto py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56 text-center xl:text-left flex items-center justify-center h-full'>
         {/* text & form */}
         <div className='flex flex-col w-full max-w-[700px]'>
           {/* text */}
@@ -48,7 +48,7 @@ const Contact = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h2 mt-24 xl:mt-0 text-center mb-12'
+            className='h2 text-center'
           >
             {t('Connect1')} <span className='text-accent'>{t('Connect2')}</span>
           </motion.h2>
@@ -64,7 +64,7 @@ const Contact = () => {
             {/* input group */}
             <div className='flex gap-x-6 w-full'>
               <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder={t('name')} className='input' required/>
-              <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='email' className='input' style={{ textTransform: 'none' }} required/>
+              <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' className='input' style={{ textTransform: 'none' }} required/>
             </div>
             <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder={t('message')} className='textarea' required></textarea>
             <button type="submit" className='btn rounded-full border border-accent/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>

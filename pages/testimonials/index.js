@@ -20,7 +20,7 @@ const Testimonials = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='h2 mb-8 mt-12 xl:mb-0'
+          className='h2 mb-8 mt-20 xl:mb-0'
         >
           {t('testimonial-title1')} <span className='text-accent'>{t('testimonial-title2')}.</span>
         </motion.h2>

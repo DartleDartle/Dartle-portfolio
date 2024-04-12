@@ -95,7 +95,7 @@ const About = () => {
   return (
     <div className='bg-grey min-h-screen text-center  xl:text-left xl:h-screen'>
       {/* avatar img */}
-      <div className='container mx-auto flex flex-col items-center py-32 pt-44 xl:flex-row gap-x-6 '>
+      <div className='container mx-auto flex flex-col items-center py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56 xl:flex-row gap-x-6 '>
         {/* text */}
         <div className='flex-1 flex flex-col  justify-center'>
           <motion.h2
@@ -103,7 +103,7 @@ const About = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h2 z-20 mt-20 xl:mt-0'
+            className='h2 z-20'
           >
             {t('about.title1')} <span className='text-accent'>Front-End</span> <br /> {t('about.title2')} <br /> {t('about.title3')}
           </motion.h2>
