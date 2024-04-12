@@ -1,6 +1,9 @@
 // icons
 import { BsArrowRight } from 'react-icons/bs';
 
+// alert
+import Swal from 'sweetalert2';
+
 // framer
 import { motion } from 'framer-motion';
 
@@ -9,6 +12,7 @@ import { fadeIn } from '../../variants';
 
 import { useState } from 'react';
 
+// traduction
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next';
 
@@ -31,9 +35,18 @@ const Contact = () => {
       });
   
       if (response.ok) {
-        console.log('Message sent');
+        Swal.fire({
+          icon: 'success',
+          title: t('success'),
+          showConfirmButton: false,
+          timer: 1500
+        });
       } else {
-        console.error('Error sending message');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: t('fail'),
+        });
       }
     };
   

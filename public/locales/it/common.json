@@ -53,5 +53,7 @@
   "Connect2": "!",
   "Talk": "Parliamo",
   "name": "Nome",
-  "message": "Messaggio"
+  "message": "Messaggio",
+  "success": "Messaggio inviato!, Risponderó il prima possibile.",
+  "fail": "C'é stato un errore nell'invio del messaggio."
   }
