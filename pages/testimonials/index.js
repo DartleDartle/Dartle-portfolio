@@ -5,9 +5,14 @@ import TestimonialSlider from '../../components/TestimonialSlider';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
+//translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+
 const Testimonials = () => {
+  const { t } = useTranslation('common');
   return (
-    <div className='h-full bg-grey/30 py-32 text-center'>
+    <div className='min-h-screen bg-grey py-36 mb-12 text-center'>
       <div className='container mx-auto h-full flex flex-col justify-center'>
         {/* title */}
         <motion.h2
@@ -15,9 +20,9 @@ const Testimonials = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='h2 mb-8 xl:mb-0'
+          className='h2 mb-8 mt-20 xl:mb-0'
         >
-          What my connections <span className='text-accent'>say.</span>
+          {t('testimonial-title1')} <span className='text-accent'>{t('testimonial-title2')}.</span>
         </motion.h2>
         {/* slider */}
         <motion.div
@@ -36,3 +41,11 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

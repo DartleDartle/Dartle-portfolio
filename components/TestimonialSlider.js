@@ -1,39 +1,34 @@
 // testimonial slider data
-export const testimonialSlider = [
+export const getTestimonialSlider = (t) => [
   {
     image: '/mirko.png',
     name: 'Mirko',
-    position: 'Friend',
-    message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+    position: t('Mirko-role'),
+    message: t('Mirko'),
   },
   {
     image: '/bianca.png',
     name: 'Bianca',
-    position: 'Girlfriend',
-    message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+    position: t('Bianca-role'),
+    message:  t('Bianca'),
   },
   {
     image: '/claudia.png',
     name: 'Claudia',
-    position: 'Sister',
-    message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+    position: t('Claudia-role'),
+    message: t('Claudia'),
   },
   {
     image: '/daniele.png',
     name: 'Daniele',
-    position: 'Twin Brother',
-    message:
-      'Energy and reliability. The perfect combination for harmonious collaboration. Davide listens, understands, and always strives to give his utmost for his goals.',
+    position: t('Daniele-role'),
+    message: t('Daniele'),
   },
   {
     image: '/shab.png',
     name: 'Shab',
-    position: 'Friend',
-    message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+    position: t('Shab-role'),
+    message: t('Shab'),
   },
 ];
 
@@ -53,7 +48,12 @@ import { FaQuoteLeft } from 'react-icons/fa';
 // next image
 import Image from 'next/image';
 
+//translation
+import { useTranslation } from 'next-i18next';
+
 const TestimonialSlider = () => {
+  const { t } = useTranslation('common');
+  const testimonialSlider = getTestimonialSlider(t);
   return (
     <Swiper
       navigation={true}
@@ -61,7 +61,7 @@ const TestimonialSlider = () => {
         clickable: true,
       }}
       modules={[Navigation, Pagination]}
-      className='h-[400px]'
+      className='h-[500px]'
     >
       {testimonialSlider.map((person, index) => {
         return (
@@ -102,3 +102,4 @@ const TestimonialSlider = () => {
 };
 
 export default TestimonialSlider;
+

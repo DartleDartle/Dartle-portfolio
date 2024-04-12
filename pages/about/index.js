@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 // icons
 import {
   FaHtml5,
@@ -21,12 +22,12 @@ import {
 } from 'react-icons/si';
 
 //  about data
-export const aboutData = [
+export const getAboutData = (t) => [
   {
-    title: 'skills',
+    title: t('s'),
     info: [
       {
-        title: 'Web Development',
+        title: t('web'),
         icons: [
           <FaHtml5 key="html5ico" />,
           <FaCss3 key="css3ico" />,
@@ -35,12 +36,7 @@ export const aboutData = [
           <SiNextdotjs key="nextico" />,
           <SiFramer key="framerico" />,
           <FaWordpress key="wordpressico" />,
-          
-          
-          
-          
-          
-          
+ 
         ],
       },
       {
@@ -48,32 +44,32 @@ export const aboutData = [
         icons: [<FaFigma key="figmaico" />, <SiAdobexd key="adobexdico" />,],
       },
       {
-        title: 'Photography',
+        title: t('ph'),
         icons: [ <SiAdobelightroom key="lightroomico" />,],
       },
       {
-        title: 'Graphic Design',
+        title: t('gd'),
         icons: [<SiAdobephotoshop key="photoshopico" />, <SiAdobeindesign key="indesignico" />, <SiAdobeillustrator key="illustratorico" />],
       },
     ],
   },
   {
-    title: 'credentials',
+    title: t('c'),
     info: [
       {
-        title: 'Graduated in Information Technology from Technical Institute - ITIS Leonardo Da Vinci Pisa.',
+        title: t('c1'),
         stage: '2019',
       },
       {
-        title: 'Graduated in Graphic Design - Accademia Di Belle Arti Di Brescia Santa Giulia',
+        title: t('c2'),
         stage: '2022',
       },
       {
-        title: 'Certificated portrait photographer - Istituto Marangoni di Firenze',
+        title: t('c3'),
         stage: '2023',
       },
       {
-        title: 'Certificated as Meta Front-End Developer - from Coursera platform',
+        title: t('c4'),
         stage: '2024',
       },
     ],
@@ -87,15 +83,21 @@ import { fadeIn } from '../../variants';
 // counter
 import CountUp from 'react-countup';
 
+//translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+
 const About = () => {
+  const { t } = useTranslation('common');
+  const aboutData = getAboutData(t);
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className='h-full bg-grey/60 py-32 text-center xl:text-left'>
+    <div className='bg-grey min-h-screen text-center  xl:text-left xl:h-screen'>
       {/* avatar img */}
-      <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
+      <div className='container mx-auto flex flex-col items-center py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56 xl:flex-row gap-x-6 '>
         {/* text */}
-        <div className='flex-1 flex flex-col justify-center'>
+        <div className='flex-1 flex flex-col  justify-center'>
           <motion.h2
             variants={fadeIn('right', 0.2)}
             initial='hidden'
@@ -103,7 +105,7 @@ const About = () => {
             exit='hidden'
             className='h2 z-20'
           >
-            How the<span className='text-accent'> front-end</span> take my experiences together.
+            {t('about.title1')} <span className='text-accent'>Front-End</span> <br /> {t('about.title2')} <br /> {t('about.title3')}
           </motion.h2>
           <motion.p
             variants={fadeIn('right', 0.4)}
@@ -112,7 +114,7 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'
           >
-          Since childhood, I&apos;ve blended art and technology, earning a diploma in computer science and a degree in graphic design. My passion for design and web development led me to become a front-end developer.            
+          {t('about.text')}            
           </motion.p>
           {/* counters */}
           <motion.div
@@ -124,12 +126,12 @@ const About = () => {
           >
             <div className='flex flex-1 xl:gap-x-6'>
               {/* experience */}
-              <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
+              <div className='relative flex-1 after:wcd-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
                   <CountUp start={0} end={4} duration={5} />
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                Months learning front-end.
+                {t('counter1')}
                 </div>
               </div>
               {/* projects */}
@@ -138,7 +140,7 @@ const About = () => {
                   <CountUp start={0} end={3} duration={5} /> 
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Finished projects
+                {t('counter2')}
                 </div>
               </div>
     
@@ -152,7 +154,7 @@ const About = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='flex flex-col w-full xl:max-w-[48%] h-[480px]'
+          className='flex flex-col w-full xl:px-28 xl:max-w-[48%] h-[480px]'
         >
           <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4'>
           {aboutData.map((item, itemIndex) => (
@@ -198,3 +200,11 @@ const About = () => {
 };
 
 export default About;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

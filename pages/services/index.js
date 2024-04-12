@@ -7,21 +7,26 @@ import Bulb from '../../components/Bulb';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
+//translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+
 const Services = () => {
+  const { t } = useTranslation('common');
   return (
-    <div className='h-full bg-grey/30 py-36 flex items-center'>
-      <div className='container mx-auto'>
-        <div className='flex flex-col xl:flex-row gap-x-8'>
+    <div className='min-h-screen bg-grey py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56 xl:pt-0 xl:mt-0 flex items-center'>
+      <div className='container xl:mt-0 mx-auto '>
+        <div className='flex flex-col xl:flex-row gap-x-24'>
           {/* text */}
-          <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0'>
+          <div className='text-center flex xl:w-[35vw] flex-col lg:text-left mb-4  xl:mb-0'>
             <motion.h2
               variants={fadeIn('up', 0.2)}
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='h2 xl:mt-8 z-20'
+              className='h2 z-20'
             >
-              All my skills <span className='text-accent'>.</span>
+              {t('skills-title')} <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn('up', 0.4)}
@@ -30,7 +35,7 @@ const Services = () => {
               exit='hidden'
               className='mb-4 max-w-[400px] mx-auto lg:mx-0 z-20'
             >
-              In all these years I have developed several skills that can be useful in the front-end field, and in many other work situations.
+              {t('skills-desc')}
             </motion.p>
           </div>
 
@@ -40,7 +45,7 @@ const Services = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='w-full xl:max-w-[65%]'
+            className='w-full xl:ml-5 xl:max-w-[65%]'
           >
             <ServiceSlider />
           </motion.div>
@@ -52,3 +57,11 @@ const Services = () => {
 };
 
 export default Services;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

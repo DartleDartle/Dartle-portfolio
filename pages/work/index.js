@@ -5,22 +5,28 @@ import WorkSlider from '../../components/WorkSlider';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
+//translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+
 const Work = () => {
+  const { t } = useTranslation('common');
+
   return (
-    <div className='h-full bg-grey/30 py-36 flex items-center'>
+    <div className='min-h-screen bg-grey py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56 flex '>
       
       <div className='container mx-auto'>
-        <div className='flex flex-col xl:flex-row gap-x-8'>
+        <div className='flex flex-col xl:flex-row gap-x-24  '>
           {/* text */}
-          <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0'>
+          <div className='text-center flex xl:w-[30vw] flex-col lg:text-left  mb-4 xl:mb-0 '>
             <motion.h2
               variants={fadeIn('up', 0.2)}
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='h2 xl:mt-12 z-20'
+              className='h2 z-20'
             >
-              My work <span className='text-accent'>.</span>
+              {t('work-title')} <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn('up', 0.4)}
@@ -30,7 +36,7 @@ const Work = () => {
               className='mb-4 max-w-[400px] mx-auto lg:mx-0 z-20'
             >
               
-            These are my works during the process of learning front-end development, for now <mark className='bg-accent'>the most important project is this Portfolio.</mark>
+              {t('work-desc1')} <mark className='bg-accent'> {t('work-desc2')}</mark>
             </motion.p>
           </div>
 
@@ -40,9 +46,9 @@ const Work = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='w-full xl:max-w-[65%]'
+            className='w-full  xl:max-w-[65%] md:max-w-[75%]'
           >
-            <WorkSlider />
+            <WorkSlider  />
           </motion.div>
         </div>
       </div>
@@ -52,3 +58,11 @@ const Work = () => {
 };
 
 export default Work;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

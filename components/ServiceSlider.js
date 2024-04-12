@@ -22,47 +22,52 @@ import {
 import { Navigation, FreeMode, Pagination } from 'swiper';
 
 // service data
-export const serviceData = [
+export const getServiceData = (t) => [
   {
     icon: <RxRocket />,
-    title: 'Web Designer',
-    description: 'I did a 3-year course in webdesign, while I graduated for Graphic Design.',
+    title: t('web'),
+    description: t('web-desc'),
   },
   {
     icon: <RxGear />,
-    title: 'Scentific mind',
-    description: 'Computer science diploma and my passion for computers, made me a scientific mind.',
+    title: t('sm-title'),
+    description: t('sm-desc'),
   },
   {
     icon: <RxPencil2 />,
-    title: 'Artist',
-    description: 'Graduated in graphic design, photographer in freetime, and i love music and art.',
+    title: t('artist-title'),
+    description: t('artist-desc'),
   },
   {
     icon: <RxLightningBolt />,
-    title: 'Fast Learning',
-    description: 'I learned to use the latest website development tools in just a few months.',
+    title: t('fast-title'),
+    description: t('fast-desc'),
   },
   {
     icon: <RxFace />,
-    title: 'Sociable',
-    description: 'Im a sociable person, but most important Im diplomatic and understanding.',
+    title: t('sociable-title'),
+    description: t('sociable-desc'),
   },
   {
     icon: <RxStarFilled />,
-    title: 'Motivated',
-    description: 'Im very good at managing myself, I dont let myself get down, and i stay motivated.',
+    title: t('motivated-title'),
+    description: t('motivated-desc'),
   },
   {
     icon: <RxBorderSolid />,
-    title: 'Constant',
-    description: 'Consistency is one of the secrets to improving and my discipline helps me.',
+    title: t('constant-title'),
+    description: t('constant-desc'),
   },
-  
 ];
 
+import { useTranslation } from 'next-i18next';
+
 const ServiceSlider = () => {
-  return (
+
+  const { t } = useTranslation('common');
+  const serviceData = getServiceData(t);
+
+    return (
     <Swiper
       navigation={true}
       breakpoints={{
@@ -81,7 +86,7 @@ const ServiceSlider = () => {
         clickable: true,
       }}
       modules={[Navigation, FreeMode, Pagination]}
-      className='h-[240px] sm:h-[340px] my-custom-swiper'
+      className='h-[240px] sm:h-[440px] my-custom-swiper'
     >
       {serviceData.map((item, index) => {
         return (
