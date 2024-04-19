@@ -21,7 +21,7 @@ const Home = () => {
   return (
   <div className="bg-grey h-screen xl:h-screen">
   {/* text */}
-    <div className="min-h-full bg-gradient-to-r from-grey/10 via-white/30 to-white/10 py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56">
+    <div className="min-h-full bg-gradient-to-r from-grey/10 via-white/30 to-white/10 py-56 xl:py-62 md:py-56 lg:py-48 sm:py-56">
       <div className="text-center flex flex-col items-center justify-center  xl:items-start xl:text-left h-full container mx-auto">
         {/*title*/}
         <motion.h1 

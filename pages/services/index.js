@@ -14,7 +14,7 @@ import { useTranslation } from 'next-i18next';
 const Services = () => {
   const { t } = useTranslation('common');
   return (
-    <div className='min-h-screen bg-grey py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56 xl:pt-0 xl:mt-0 flex items-center'>
+    <div className='min-h-screen bg-grey py-56 xl:py-72 md:py-56 lg:py-48 sm:py-56 xl:mt-0 flex items-center'>
       <div className='container xl:mt-0 mx-auto '>
         <div className='flex flex-col xl:flex-row gap-x-24'>
           {/* text */}
