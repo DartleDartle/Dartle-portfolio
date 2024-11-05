@@ -1,6 +1,6 @@
 {
   "home.title1": "Il mio viaggio nel",
-  "home.title2": "campo dell'informatica",
+  "home.title2": "campo dell'",
   "home.title3": ".",
   "home.text": "Benvenuto nel mio portfolio! Mi chiamo Davide e ho 25 anni. Ho sempre amato l'arte e la tecnologia; Ho studiato informatica alle superiori e grafica in universitá. Dopo alcuni tentativi di lavoro come fotografo e grafico freelancer, ho deciso di unire le mie passioni e sfruttarle nel campo dell'informatica!",
   "button": "I miei progetti",
@@ -12,6 +12,7 @@
   "counter1": "Mesi di apprendimento",
   "counter2": "Progetti finiti",
   "s": "Abilitá",
+  "m": "Sviluppo Mobile",
   "c": "Studi",
   "web": "Sviluppo Web",
   "ph" : "Fotografia",

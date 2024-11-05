@@ -47,7 +47,7 @@ export const getAboutData = (t) => [
         ],
       },
       {
-        title: 'Mobile Development',
+        title: t('m'),
         icons: [
           <FaFigma key="figmaico" />, 
           <SiDart key="dartico"/>,

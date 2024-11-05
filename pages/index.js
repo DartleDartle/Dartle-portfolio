@@ -31,7 +31,7 @@ const Home = () => {
           exit="hidden"
           className="h1 z-20"
         >
-          {t('home.title1')} <br /> {t('home.title2')} <span className='text-accent'>Front-End</span> {t('home.title3')} 
+          {t('home.title1')} <br /> {t('home.title2')} <span className='text-accent'>{t('home.title4')}</span> {t('home.title3')} 
         </motion.h1>
         {/* subtitle */}
         <motion.p 
