@@ -19,6 +19,12 @@ import {
   SiAdobelightroom,
   SiAdobeillustrator,
   SiAdobeindesign,
+  SiTypescript,
+  SiDart,
+  SiFlutter,
+  SiAndroidstudio,
+  SiXcode,
+  SiKotlin,
 } from 'react-icons/si';
 
 //  about data
