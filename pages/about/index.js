@@ -36,7 +36,19 @@ export const getAboutData = (t) => [
           <SiNextdotjs key="nextico" />,
           <SiFramer key="framerico" />,
           <FaWordpress key="wordpressico" />,
+          <SiTypescript key="typescriptico"/>,
  
+        ],
+      },
+      {
+        title: 'Mobile Development',
+        icons: [
+          <FaFigma key="figmaico" />, 
+          <SiDart key="dartico"/>,
+          <SiFlutter key="flutterico"/>,
+          <SiAndroidstudio key="androidstudioico"/>,
+          <SiXcode key="xcodeico"/>,
+          <SiKotlin key="kotlinico"/>,
         ],
       },
       {
@@ -105,7 +117,7 @@ const About = () => {
             exit='hidden'
             className='h2 z-20'
           >
-            {t('about.title1')} <span className='text-accent'>Front-End</span> <br /> {t('about.title2')} <br /> {t('about.title3')}
+            {t('about.title1')} <span className='text-accent'>{t('about.title4')}</span> <br /> {t('about.title2')} <br /> {t('about.title3')}
           </motion.h2>
           <motion.p
             variants={fadeIn('right', 0.4)}

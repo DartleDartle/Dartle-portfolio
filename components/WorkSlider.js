@@ -18,6 +18,11 @@ export const workSlider = {
           path: '/thumb1-3.jpg',
           url: 'https://dartle-portfolio.vercel.app/',
         },
+        {
+          title: 'My Notes - Flutter/Dart',
+          path: '/thumb1-4.jpg',
+          url: 'https://github.com/DartleDartle/first-flutter-app',
+        },
       ],
     },
   ],
