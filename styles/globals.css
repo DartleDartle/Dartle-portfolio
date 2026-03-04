@@ -18,30 +18,23 @@
   color: #f13024;
 }
 
+/* spazio per i pallini */
+.my-custom-swiper {
+  padding-bottom: 48px;
+}
+
+/* mobile: nascondo frecce */
 .my-custom-swiper .swiper-button-next,
 .my-custom-swiper .swiper-button-prev {
-  top: auto;
-  bottom: 0px; /* Adjust this value so the buttons are just below the pagination dots */
-  z-index: 20;
-  width: 50px; /* or the size you prefer */
-  height: 50px; /* or the size you prefer */
+  display: none;
 }
 
-.my-custom-swiper .swiper-button-next {
-  right: 10px; /* or adjust as needed */
-}
-
-.my-custom-swiper .swiper-button-prev {
-  left: 10px; /* or adjust as needed */
-}
-
-.my-custom-swiper .swiper-pagination {
-  bottom: 30px; /* Adjust this value as needed to give space for the arrows */
-}
-.my-custom-swiper {
-  width: 100%; /* Imposta la larghezza al 100% del contenitore padre */
-  height: 300px; /* Imposta l'altezza a 500px */
-  /* Resto del tuo codice */
+/* da md in su: mostro frecce */
+@media (min-width: 768px) {
+  .my-custom-swiper .swiper-button-next,
+  .my-custom-swiper .swiper-button-prev {
+    display: flex;
+  }
 }
 
 

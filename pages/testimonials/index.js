@@ -5,36 +5,43 @@ import TestimonialSlider from '../../components/TestimonialSlider';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
-//translation
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+// translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 const Testimonials = () => {
   const { t } = useTranslation('common');
+
   return (
-    <div className='min-h-screen bg-grey py-36 mb-12 text-center'>
-      <div className='container mx-auto h-full flex flex-col justify-center'>
-        {/* title */}
-        <motion.h2
-          variants={fadeIn('up', 0.2)}
-          initial='hidden'
-          animate='show'
-          exit='hidden'
-          className='h2 mb-8 mt-20 xl:mb-0'
-        >
-          {t('testimonial-title1')} <span className='text-accent'>{t('testimonial-title2')}.</span>
-        </motion.h2>
-        {/* slider */}
-        <motion.div
-          variants={fadeIn('up', 0.4)}
-          initial='hidden'
-          animate='show'
-          exit='hidden'
-        >
-          <TestimonialSlider />
-          
-        </motion.div>
-        
+    <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
+      {/* optional: same gradient vibe */}
+      <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
+
+      <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-52 xl:pt-24 pb-28 xl:pb-0">
+        <div className="w-full flex flex-col items-center xl:items-start">
+          {/* title */}
+          <motion.h2
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="font-bold leading-[1.05] text-[clamp(34px,4vw,56px)] text-center xl:text-left xl:pb-12 pb-0"
+          >
+            {t('testimonial-title1')}{' '}
+            <span className="text-accent">{t('testimonial-title2')}.</span>
+          </motion.h2>
+
+          {/* slider */}
+          <motion.div
+            variants={fadeIn('up', 0.4)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="mt-10 w-full "
+          >
+            <TestimonialSlider />
+          </motion.div>
+        </div>
       </div>
     </div>
   );

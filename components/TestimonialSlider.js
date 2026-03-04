@@ -61,12 +61,12 @@ const TestimonialSlider = () => {
         clickable: true,
       }}
       modules={[Navigation, Pagination]}
-      className='h-[500px]'
+      className='my-custom-swiper h-[400px]'
     >
       {testimonialSlider.map((person, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className='flex flex-col items-center md:flex-row gap-x-8 h-full px-16'>
+            <div className='flex flex-col items-center gap-x-8 px-2 md:px-16 pb-16'>
               {/* avatar, name, position */}
               <div className='w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0'>
                 <div className='flex flex-col justify-center text-center'>

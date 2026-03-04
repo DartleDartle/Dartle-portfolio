@@ -4,24 +4,14 @@ export const workSlider = {
     {
       images: [
         {
-          title: 'Little Lemon',
-          path: '/thumb1-1.jpg',
-          url: 'https://fe-capstone-coursera.vercel.app/',
+          title: 'Lume - Case Study',
+          path: '/thumb1-1.jpg?v=2',
+          url: 'https://www.behance.net/gallery/245063895/Lume-energy-partner-Case-study',
         },
         {
-          title: 'Acme - NextJs',
-          path: '/thumb1-2.jpg',
-          url: 'https://learning-next-js-omega-topaz.vercel.app/dashboard',
-        },
-        {
-          title: 'Portfolio - Davide Pintore',
-          path: '/thumb1-3.jpg',
-          url: 'https://dartle-portfolio.vercel.app/',
-        },
-        {
-          title: 'My Notes - Flutter/Dart',
-          path: '/thumb1-4.jpg',
-          url: 'https://github.com/DartleDartle/first-flutter-app',
+          title: 'Profilo github',
+          path: '/thumb1-2.jpg?v=2',
+          url: 'https://github.com/DartleDartle',
         },
       ],
     },
@@ -61,7 +51,7 @@ const WorkSlider = () => {
               {slide.images.map((image, index) => {
                 return (
                   <div
-                    className='relative rounded-lg overflow-hidden flex items-center justify-center group'
+                    className='relative overflow-hidden flex items-center justify-center group'
                     key={index}
                     onClick={() => window.location.href = image.url}
                   >

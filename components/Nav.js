@@ -12,7 +12,6 @@ import {
 export const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
   { name: 'about', path: '/about', icon: <HiUser /> },
-  { name: 'skills', path: '/services', icon: <HiRectangleGroup /> },
   { name: 'work', path: '/work', icon: <HiViewColumns /> },
   {
     name: 'testimonials',
@@ -37,10 +36,10 @@ import { useRouter } from 'next/router';
 const Nav = () => {
   const router = useRouter();
   const pathname = router.pathname;
-  return <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-20 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
+  return <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-6 mt-auto xl:right-[2%] z-20 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
     {/* inner */}
     <div 
-      className='flex w-11/12 xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-primary/10 rounded-full xl:bg-primary/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full'
+      className='flex w-11/12 xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-8 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-primary/10 rounded-full xl:bg-primary/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full'
     >
       {navData.map((link, index)=> {
         return (
