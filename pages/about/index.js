@@ -11,20 +11,35 @@ import {
 } from 'react-icons/fa';
 
 import {
+  TbBrandAdobeIndesign,
+  TbBrandAdobePhotoshop,
+  TbBrandAdobeIllustrator,
+  TbBrandAdobePremier,
+} from 'react-icons/tb';
+
+import {
   SiNextdotjs,
   SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
-  SiAdobelightroom,
-  SiAdobeillustrator,
-  SiAdobeindesign,
   SiTypescript,
   SiDart,
   SiFlutter,
   SiAndroidstudio,
   SiXcode,
   SiKotlin,
+  SiMiro,
+  SiMaze,
 } from 'react-icons/si';
+
+// framer motion
+import { motion } from 'framer-motion';
+import { fadeIn } from '../../variants';
+
+// counter
+import CountUp from 'react-countup';
+
+// translation
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 // about data
 export const getAboutData = (t) => [
@@ -32,43 +47,99 @@ export const getAboutData = (t) => [
     title: t('s'),
     info: [
       {
+        title: 'UI/UX Design',
+        icons: [
+          { icon: <FaFigma />, label: 'Figma' },
+          { icon: <SiMiro />, label: 'Miro' },
+          { icon: <SiMaze />, label: 'Maze' },
+        ],
+      },
+      {
+        title: t('gd'),
+        icons: [
+          { icon: <TbBrandAdobeIllustrator />, label: 'Adobe Illustrator' },
+          { icon: <TbBrandAdobePhotoshop />, label: 'Adobe Photoshop' },
+          { icon: <TbBrandAdobeIndesign />, label: 'Adobe InDesign' },
+          { icon: <TbBrandAdobePremier />, label: 'Adobe Premiere Pro' },
+        ],
+      },
+      {
+        title: t('Ai'),
+        icons: [
+    {
+      icon: (
+        <img
+          src="/icons/claude.png"
+          alt="Claude"
+          className="w-6 h-6 pointer-events-none select-none"
+          draggable={false}
+        />
+      ),
+      label: 'Claude',
+    },
+    {
+      icon: (
+        <img
+          src="/icons/notion.png"
+          alt="Notion"
+          className="w-6 h-6 pointer-events-none select-none"
+          draggable={false}
+        />
+      ),
+      label: 'Notion',
+    },
+    {
+      icon: (
+        <img
+          src="/icons/gpt.png"
+          alt="ChatGPT"
+          className="w-6 h-6 pointer-events-none select-none"
+          draggable={false}
+        />
+      ),
+      label: 'ChatGPT',
+    },
+    {
+      icon: (
+        <img
+          src="/icons/gemini.png"
+          alt="Gemini"
+          className="w-6 h-6 pointer-events-none select-none"
+          draggable={false}
+        />
+      ),
+      label: 'Gemini',
+    },
+  ],
+      },
+      {
         title: t('web'),
         icons: [
-          <FaHtml5 key="html5ico" />,
-          <FaCss3 key="css3ico" />,
-          <FaJs key="javascriptico" />,
-          <FaReact key="reactico" />,
-          <SiNextdotjs key="nextico" />,
-          <SiFramer key="framerico" />,
-          <FaWordpress key="wordpressico" />,
-          <SiTypescript key="typescriptico" />,
+          { icon: <FaHtml5 />, label: 'HTML5' },
+          { icon: <FaCss3 />, label: 'CSS3' },
+          { icon: <FaJs />, label: 'JavaScript' },
+          { icon: <FaReact />, label: 'React' },
+          { icon: <SiNextdotjs />, label: 'Next.js' },
+          { icon: <SiFramer />, label: 'Framer' },
+          { icon: <FaWordpress />, label: 'WordPress' },
+          { icon: <SiTypescript className='w-5 h-5' />, label: 'TypeScript' },
         ],
       },
       {
         title: t('m'),
         icons: [
-          <FaFigma key="figmaico" />,
-          <SiDart key="dartico" />,
-          <SiFlutter key="flutterico" />,
-          <SiAndroidstudio key="androidstudioico" />,
-          <SiXcode key="xcodeico" />,
-          <SiKotlin key="kotlinico" />,
+          { icon: <FaFigma />, label: 'Figma' },
+          { icon: <SiDart />, label: 'Dart' },
+          { icon: <SiFlutter />, label: 'Flutter' },
+          { icon: <SiAndroidstudio />, label: 'Android Studio' },
+          { icon: <SiXcode />, label: 'Xcode' },
+          { icon: <SiKotlin />, label: 'Kotlin' },
         ],
       },
       {
-        title: 'UI/UX Design',
-        icons: [<FaFigma key="figmaico2" />, <SiAdobexd key="adobexdico" />],
-      },
-      {
         title: t('ph'),
-        icons: [<SiAdobelightroom key="lightroomico" />],
-      },
-      {
-        title: t('gd'),
         icons: [
-          <SiAdobephotoshop key="photoshopico" />,
-          <SiAdobeindesign key="indesignico" />,
-          <SiAdobeillustrator key="illustratorico" />,
+          { icon: <TbBrandAdobePhotoshop />, label: 'Adobe Photoshop' },
         ],
       },
     ],
@@ -84,17 +155,6 @@ export const getAboutData = (t) => [
   },
 ];
 
-// framer motion
-import { motion } from 'framer-motion';
-import { fadeIn } from '../../variants';
-
-// counter
-import CountUp from 'react-countup';
-
-// translation
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-
 const About = () => {
   const { t } = useTranslation('common');
   const aboutData = getAboutData(t);
@@ -102,13 +162,10 @@ const About = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey xl:overflow-hidden">
-      {/* optional: same gradient vibe as home */}
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
-      {/* content */}
       <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-56 xl:pt-16 pb-32 xl:pb-0">
         <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
-          {/* LEFT */}
           <div className="text-center xl:text-left">
             <motion.h2
               variants={fadeIn('right', 0.2)}
@@ -120,7 +177,7 @@ const About = () => {
               {t('about.title1')}{' '}
               <span className="text-accent">{t('about.title5')}</span>
               <br /> {t('about.title2')}
-               {t('about.title3')}
+              {t('about.title3')}
             </motion.h2>
 
             <motion.p
@@ -133,7 +190,6 @@ const About = () => {
               {t('about.text')}
             </motion.p>
 
-            {/* counters */}
             <motion.div
               variants={fadeIn('right', 0.6)}
               initial="hidden"
@@ -142,17 +198,15 @@ const About = () => {
               className="hidden md:flex mt-8 mx-auto xl:mx-0"
             >
               <div className="flex gap-x-8">
-                {/* experience */}
                 <div className="relative pr-8 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={18} duration={2.5} />
+                    <CountUp start={0} end={19} duration={2.5} />
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[110px]">
                     {t('counter1')}
                   </div>
                 </div>
 
-                {/* projects */}
                 <div className="pl-8">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                     <CountUp start={0} end={3} duration={2.5} />
@@ -165,7 +219,6 @@ const About = () => {
             </motion.div>
           </div>
 
-          {/* RIGHT */}
           <motion.div
             variants={fadeIn('left', 0.4)}
             initial="hidden"
@@ -173,7 +226,6 @@ const About = () => {
             exit="hidden"
             className="w-full xl:max-w-[560px] xl:pl-16"
           >
-            {/* tabs */}
             <div className="flex gap-x-6 xl:gap-x-10 justify-center xl:justify-start">
               {aboutData.map((item, itemIndex) => (
                 <div
@@ -190,7 +242,6 @@ const About = () => {
               ))}
             </div>
 
-            {/* content list */}
             <div className="mt-6 max-h-[58vh] overflow-auto pr-2">
               <div className="flex flex-col gap-y-4 items-center xl:items-start">
                 {aboutData[index].info.map((item, itemIndex) => (
@@ -198,29 +249,33 @@ const About = () => {
                     key={`${item.title}-${itemIndex}`}
                     className="w-full flex flex-col md:flex-row md:items-center gap-x-3 text-primary/60"
                   >
-                    {/* title */}
                     <div className="font-light mb-2 md:mb-0 min-w-[140px] text-center xl:text-left">
                       {item.title}
                     </div>
 
                     <div className="hidden md:flex opacity-40">◦</div>
 
-                    {/* stage (only for studies) */}
                     {item.stage && (
                       <div className="min-w-[70px] text-center md:text-left">
                         {item.stage}
                       </div>
                     )}
 
-                    {/* icons */}
-                    {item.icons && (
+                    {item.icons && item.icons.length > 0 && (
                       <div className="flex flex-wrap justify-center xl:justify-start gap-x-4 gap-y-3">
-                        {item.icons.map((icon, iconIndex) => (
+                        {item.icons.map((iconItem, iconIndex) => (
                           <div
                             key={`${item.title}-icon-${iconIndex}`}
-                            className="text-2xl text-primary"
+                            className="relative group flex items-center justify-center text-2xl text-primary cursor-pointer"
                           >
-                            {icon}
+                            <div>{iconItem.icon}</div>
+
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 hidden group-hover:flex whitespace-nowrap z-10 pointer-events-none">
+  <div className="bg-primary relative flex text-grey items-center px-2 py-1 rounded-[4px] text-[12px] leading-none font-semibold">
+    {iconItem.label}
+    <div className="border-solid border-b-primary border-b-8 border-x-transparent border-x-[6px] border-t-0 absolute bottom-full left-1/2 -translate-x-1/2"></div>
+  </div>
+</div>
                           </div>
                         ))}
                       </div>

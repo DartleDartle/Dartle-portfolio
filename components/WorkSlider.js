@@ -1,3 +1,5 @@
+import { useTranslation } from 'next-i18next';
+
 // work slider data
 export const workSlider = {
   slides: [
@@ -35,6 +37,7 @@ import { BsArrowRight } from 'react-icons/bs';
 import Image from 'next/image';
 
 const WorkSlider = () => {
+  const { t } = useTranslation('common');
   return (
     <Swiper
       spaceBetween={10}
@@ -51,11 +54,17 @@ const WorkSlider = () => {
               {slide.images.map((image, index) => {
                 return (
                   <div
-                    className='relative overflow-hidden flex items-center justify-center group'
-                    key={index}
-                    onClick={() => window.location.href = image.url}
-                  >
-                    <div className='flex items-center justify-center relative overflow-hidden group'>
+  className='relative overflow-hidden flex flex-col items-center justify-center group'
+  key={index}
+  onClick={() => window.location.href = image.url}
+>
+
+  {/* titolo progetto */}
+  <div className="mb-2 text-sm font-semibold text-primary text-center">
+    {image.title}
+  </div>
+
+  <div className='flex items-center justify-center relative overflow-hidden group'>
                       {/* image */}
                       <Image src={image.path} width={500} height={300} alt='' />
                       {/* overlay gradient */}
@@ -64,10 +73,10 @@ const WorkSlider = () => {
                       <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300'>
                         <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em]'>
                           {/* title part 1 */}
-                          <div className='delay-100'>LIVE</div>
+                          <div className='delay-100'>{t('prtmi1')}</div>
                           {/* title part 2 */}
                           <div className='translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>
-                            PROJECT
+                            {t('prtmi2')}
                           </div>
                           {/* icon */}
                           <div className='text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200'>

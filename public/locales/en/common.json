@@ -4,7 +4,8 @@
   "home.title3": ".",
   "home.text": "I design intuitive interfaces and understand the technical side that makes them possible. This portfolio was designed and developed by me to demonstrate how design and development can work together effectively.",
   "button": "My projects",
-
+  "prtmi1": "Take me",
+  "prtmi2": "here",
   "about.title1": "How I manage to communicate with",
   "about.title2": "through my",
   "about.title3": " experiences.",
@@ -14,7 +15,7 @@
 
   "counter1": "Technologies used",
   "counter2": "Projects completed",
-
+  "Ai": "AI Tools",
   "s": "Skills",
   "m": "Mobile Development",
   "c": "Education",
