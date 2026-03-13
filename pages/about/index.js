@@ -136,12 +136,6 @@ export const getAboutData = (t) => [
           { icon: <SiKotlin />, label: 'Kotlin' },
         ],
       },
-      {
-        title: t('ph'),
-        icons: [
-          { icon: <TbBrandAdobePhotoshop />, label: 'Adobe Photoshop' },
-        ],
-      },
     ],
   },
   {
