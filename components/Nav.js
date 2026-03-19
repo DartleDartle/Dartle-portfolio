@@ -39,7 +39,7 @@ const Nav = () => {
   return <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-6 mt-auto xl:right-[2%] z-20 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
     {/* inner */}
     <div 
-      className='flex w-11/12 xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-8 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-primary/10 rounded-full xl:bg-primary/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full'
+      className='flex w-11/12 xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-8 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-primary/10 rounded-full xl:bg-primary/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-[15px]'
     >
       {navData.map((link, index)=> {
         return (
