@@ -8,7 +8,7 @@ export const workSlider = {
         {
           title: 'Lume - Case Study',
           path: '/thumb1-1.jpg?v=2',
-          url: 'https://www.behance.net/gallery/245063895/Lume-energy-partner-Case-study',
+          url: 'https://www.behance.net/gallery/246162803/Lume-Energy-Partner-Case-Study-ENG',
         },
         {
           title: 'Profilo github',
