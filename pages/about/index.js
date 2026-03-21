@@ -47,7 +47,7 @@ export const getAboutData = (t) => [
     title: t('s'),
     info: [
       {
-        title: 'UI/UX Design',
+        title: 'UX/UI Design',
         icons: [
           { icon: <FaFigma />, label: 'Figma' },
           { icon: <SiMiro />, label: 'Miro' },
