@@ -27,7 +27,7 @@ export default function LumeCaseStudy() {
       </Head>
       <div className="hidden md:block fixed inset-0 z-0 w-full h-full">
         <video
-          src="/lume-bg.mp4" 
+          src="/lume-project/lume-bg.mp4" 
           autoPlay
           loop
           muted
@@ -53,7 +53,7 @@ export default function LumeCaseStudy() {
               >
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
-            <span className="hidden md:block font-medium text-sm tracking-wide ml-2">Torna al Portfolio</span>
+            <span className="hidden md:block font-medium text-sm tracking-wide ml-2">Portfolio</span>
           </Link>
         </div>
 
