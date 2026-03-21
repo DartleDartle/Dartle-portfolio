@@ -12,30 +12,24 @@ const Home = () => {
   const { t } = useTranslation('common');
 
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-grey">
-      {/* background */}
+    <section className="relative min-h-[100svh] overflow-y-auto xl:overflow-hidden bg-grey">
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
-      {/* particles */}
       <div className="absolute inset-0 pointer-events-none">
         <ParticlesContainer />
       </div>
 
-      {/* content */}
-      <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-center">
-        <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-end">
-          
-          {/* LEFT */}
-          <div className="text-center xl:text-left">
+      <div className="relative z-10 container mx-auto px-4 pt-[200px] pb-[140px] xl:pt-28 xl:pb-0 xl:min-h-[100svh] xl:flex xl:items-center xl:justify-center">
+        
+        <div className="w-full max-w-7xl mx-auto flex flex-col gap-y-10 xl:grid xl:grid-cols-2 xl:gap-y-8 xl:gap-x-16 items-center">
+
+          <div className="order-1 xl:col-start-1 xl:row-start-1 text-center xl:text-left flex flex-col items-center xl:items-start w-full">
             <motion.h1
               variants={fadeIn("down", 0.2)}
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mt-56 xl:mt-24
-                font-bold leading-[1.05]
-                text-[clamp(36px,5vw,42px)]
-              "
+              className="font-bold leading-[1.05] text-[clamp(34px,6vw,42px)]"
             >
               {t("home.title1")} <br />
               {t("home.title2")}{" "}
@@ -48,42 +42,32 @@ const Home = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="
-                mt-6
-                max-w-[52ch]
-                mx-auto xl:mx-0
-                text-base xl:text-lg
-                opacity-80
-              "
+              className="mt-6 max-w-[52ch] mx-auto xl:mx-0 text-base xl:text-lg opacity-80"
             >
               {t("home.text")}
             </motion.p>
-
-            <motion.div
-              variants={fadeIn("down", 0.4)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-              className=" mt-40 xl:mt-0 xl:pt-0 flex justify-end xl:justify-start"
-            >
-              <ProjectsBtn />
-            </motion.div>
           </div>
 
-          {/* RIGHT */}
-          <div className="relative flex justify-center xl:justify-end">
+          <div className="order-2 xl:col-start-2 xl:row-span-2 relative flex justify-center w-full">
             <motion.div
               variants={fadeIn("up", 0.5)}
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="
-                w-[clamp(240px,32vw,520px)]
-                aspect-[4/3]
-                relative
-              "
+              className="w-[260px] sm:w-[320px] xl:w-[clamp(300px,32vw,520px)] aspect-[4/3] relative shrink-0"
             >
               <Avatar className="w-full h-full object-contain" />
+            </motion.div>
+          </div>
+
+          <div className="order-3 xl:col-start-1 xl:row-start-2 flex justify-center xl:justify-start w-full">
+            <motion.div
+              variants={fadeIn("down", 0.4)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+            >
+              <ProjectsBtn />
             </motion.div>
           </div>
 

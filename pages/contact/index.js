@@ -1,18 +1,13 @@
-// icons
 import { BsArrowRight } from 'react-icons/bs';
 
-// alert
 import Swal from 'sweetalert2';
 
-// framer
 import { motion } from 'framer-motion';
 
-// variants
 import { fadeIn } from '../../variants';
 
 import { useState } from 'react';
 
-// translation
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -40,7 +35,6 @@ const Contact = () => {
         timer: 1500,
       });
 
-      // reset (facoltativo ma comodo)
       setName('');
       setEmail('');
       setMessage('');
@@ -55,12 +49,10 @@ const Contact = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
-      {/* optional: same gradient vibe */}
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
       <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-56 xl:pt-16 pb-28 xl:pb-0">
         <div className="w-full max-w-[720px] mx-auto">
-          {/* title */}
           <motion.h2
             variants={fadeIn('up', 0.2)}
             initial="hidden"
@@ -71,7 +63,6 @@ const Contact = () => {
             {t('Connect1')} <span className="text-accent">{t('Connect2')}</span>
           </motion.h2>
 
-          {/* form */}
           <motion.form
             variants={fadeIn('up', 0.4)}
             initial="hidden"
@@ -80,7 +71,6 @@ const Contact = () => {
             className="mt-10 flex flex-col gap-6 w-full"
             onSubmit={handleSubmit}
           >
-            {/* inputs */}
             <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
               <input
                 type="text"

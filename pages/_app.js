@@ -1,17 +1,12 @@
 import '../styles/globals.css';
 
-//translation
 import { appWithTranslation } from 'next-i18next'
-
-// components
 
 import Layout from '../components/Layout';
 import Transition from '../components/Transition';
 
-// router
 import {useRouter} from 'next/router';
 
-// framer motion
 import {AnimatePresence, motion} from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {

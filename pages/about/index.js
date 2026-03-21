@@ -136,12 +136,6 @@ export const getAboutData = (t) => [
           { icon: <SiKotlin />, label: 'Kotlin' },
         ],
       },
-      {
-        title: t('ph'),
-        icons: [
-          { icon: <TbBrandAdobePhotoshop />, label: 'Adobe Photoshop' },
-        ],
-      },
     ],
   },
   {
@@ -161,18 +155,19 @@ const About = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="relative min-h-[100svh] bg-grey xl:overflow-hidden">
+    <div className="relative min-h-[100svh] bg-grey overflow-hidden xl:overflow-y-auto">
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
-      <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-56 xl:pt-16 pb-32 xl:pb-0">
+      <div className="relative z-10 container mx-auto px-4 flex flex-col items-center xl:items-start xl:flex-row pt-56 xl:pt-[20vh] pb-32 xl:pb-0 h-full">
         <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
-          <div className="text-center xl:text-left">
+          
+          <div className="text-center xl:text-left flex flex-col justify-center">
             <motion.h2
               variants={fadeIn('right', 0.2)}
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="font-bold leading-[1.05] text-[clamp(34px,4vw,34px)]"
+              className="font-bold leading-[1.05] text-3xl md:text-4xl"
             >
               {t('about.title1')}{' '}
               <span className="text-accent">{t('about.title5')}</span>
@@ -224,9 +219,9 @@ const About = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="w-full xl:max-w-[560px] xl:pl-16"
+            className="w-full xl:max-w-[560px] xl:pl-16 flex flex-col"
           >
-            <div className="flex gap-x-6 xl:gap-x-10 justify-center xl:justify-start">
+            <div className="flex gap-x-6 xl:gap-x-10 justify-center xl:justify-start mb-6">
               {aboutData.map((item, itemIndex) => (
                 <div
                   key={`${item.title}-${itemIndex}`}
@@ -242,12 +237,12 @@ const About = () => {
               ))}
             </div>
 
-            <div className="mt-6 max-h-[58vh] overflow-auto pr-2">
+            <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
               <div className="flex flex-col gap-y-4 items-center xl:items-start">
                 {aboutData[index].info.map((item, itemIndex) => (
                   <div
                     key={`${item.title}-${itemIndex}`}
-                    className="w-full flex flex-col md:flex-row md:items-center gap-x-3 text-primary/60"
+                    className="w-full flex flex-col md:flex-row md:items-center justify-start gap-x-3 text-primary/60"
                   >
                     <div className="font-light mb-2 md:mb-0 min-w-[140px] text-center xl:text-left">
                       {item.title}
@@ -271,11 +266,11 @@ const About = () => {
                             <div>{iconItem.icon}</div>
 
                             <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 hidden group-hover:flex whitespace-nowrap z-10 pointer-events-none">
-  <div className="bg-primary relative flex text-grey items-center px-2 py-1 rounded-[4px] text-[12px] leading-none font-semibold">
-    {iconItem.label}
-    <div className="border-solid border-b-primary border-b-8 border-x-transparent border-x-[6px] border-t-0 absolute bottom-full left-1/2 -translate-x-1/2"></div>
-  </div>
-</div>
+                              <div className="bg-primary relative flex text-grey items-center px-2 py-1 rounded-[4px] text-[12px] leading-none font-semibold">
+                                {iconItem.label}
+                                <div className="border-solid border-b-primary border-b-8 border-x-transparent border-x-[6px] border-t-0 absolute bottom-full left-1/2 -translate-x-1/2"></div>
+                              </div>
+                            </div>
                           </div>
                         ))}
                       </div>

@@ -1,11 +1,8 @@
-// components
 import WorkSlider from '../../components/WorkSlider';
 
-// framer motion
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
-// translation
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -14,13 +11,12 @@ const Work = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
-      {/* optional: same gradient vibe */}
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
-      {/* content */}
       <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-64 xl:pt-64 xl:pb-0">
-        <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
-          {/* LEFT: text */}
+        
+        <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-8 items-start">
+          
           <div className="text-center xl:text-left">
             <motion.h2
               variants={fadeIn('up', 0.2)}
@@ -46,16 +42,17 @@ const Work = () => {
             </motion.p>
           </div>
 
-          {/* RIGHT: slider */}
           <motion.div
             variants={fadeIn('down', 0.6)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="w-full xl:max-w-[720px] xl:justify-self-end"
+        
+            className="w-full xl:max-w-[720px] xl:justify-self-start"
           >
             <WorkSlider />
           </motion.div>
+          
         </div>
       </div>
     </div>

@@ -1,16 +1,14 @@
-// links
 import Link from "next/link";
 
 // icons
-import {RiInstagramLine, 
-        RiBehanceLine, 
-        RiGithubLine, 
-        RiLinkedinLine
-      } from 'react-icons/ri'
+import {
+  RiInstagramLine, 
+  RiBehanceLine, 
+  RiGithubLine, 
+  RiLinkedinLine
+} from 'react-icons/ri'
 
 import { FlagIcon } from "react-flag-kit";
-  
-
 import { useRouter } from 'next/router';
 
 const Socials = () => {
@@ -23,29 +21,39 @@ const Socials = () => {
   };
 
   return (
-  <div className=" lg:flex xl:flex content-center justify-center gap-x-5 text-lg">
-    <div className="flex gap-x-5 text-lg">
-    <Link href={'https://www.behance.net/davidepintore'} className="hover:text-accent transition-all duration-300">
-      <RiBehanceLine/>
-    </Link>
-    <Link href={'https://github.com/DartleDartle'} className="hover:text-accent transition-all duration-300">
-      <RiGithubLine />
-    </Link>
-    <Link href={'https://www.linkedin.com/in/davidepintore'} className="hover:text-accent transition-all duration-300">
-      <RiLinkedinLine />
-    </Link>
+    <div className="flex flex-col lg:flex-row items-center gap-y-6 lg:gap-y-0 lg:gap-x-8 xl:gap-x-12">
+      
+      <div className="flex items-center gap-x-5 text-[22px] xl:text-xl">
+        <Link href={'https://www.behance.net/davidepintore'} className="hover:text-accent transition-all duration-300">
+          <RiBehanceLine/>
+        </Link>
+        <Link href={'https://github.com/DartleDartle'} className="hover:text-accent transition-all duration-300">
+          <RiGithubLine />
+        </Link>
+        <Link href={'https://www.linkedin.com/in/davidepintore'} className="hover:text-accent transition-all duration-300">
+          <RiLinkedinLine />
+        </Link>
+      </div>
+
+      <div className="flex items-center gap-x-6">
+        <button 
+          onClick={() => switchLocale('en')} 
+          disabled={locale === 'en'} 
+          className={`flex items-center justify-center py-1 btn rounded-[15px] border border-accent/50 min-w-[70px] transition-all duration-300 bg-accent/20 hover:border-accent ${locale === 'it' ? 'opacity-50' : 'opacity-100 bg-accent/60'} cursor-pointer`}
+        >
+          <FlagIcon code="GB" size={20} />
+        </button>
+        <button 
+          onClick={() => switchLocale('it')} 
+          disabled={locale === 'it'} 
+          className={`flex items-center justify-center py-1 btn rounded-[15px] border border-accent/50 min-w-[70px] transition-all duration-300 bg-accent/20 hover:border-accent ${locale === 'en' ? 'opacity-50' : 'opacity-100 bg-accent/60'} cursor-pointer`}
+        >
+          <FlagIcon code="IT" size={20} />
+        </button>
+      </div>
+      
     </div>
-    <div className="flex gap-x-8 mt-6 xl:mt-0 lg:mt-0 lg:ml-12 xl:ml-32 content-center">
-      <button onClick={() => switchLocale('en')} disabled={locale === 'en'} className={`btn rounded-full border border-accent/50 max-w-[100px] px-4 transition-all duration-300 bg-accent/20 hover:border-accent ${locale === 'it' ? 'opacity-50' : 'opacity-100 bg-accent/60'} cursor-pointer`}>
-      <FlagIcon code="GB" size={20} />
-      </button>
-      <button onClick={() => switchLocale('it')} disabled={locale === 'it'} className={`btn rounded-full border border-accent/50 max-w-[100px] px-4 transition-all duration-300 bg-accent/20 hover:border-accent ${locale === 'en' ? 'opacity-50' : 'opacity-100 bg-accent/60'} cursor-pointer`}>
-      <FlagIcon code="IT" size={20} />
-      </button>
-    </div>
-  </div>
   )
 }
-
 
 export default Socials;
