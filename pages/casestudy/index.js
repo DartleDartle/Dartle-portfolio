@@ -6,17 +6,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function LumeCaseStudy() {
   const slices = [
-    { type: 'image', filename: 'slice-01.jpg', width: 1440, height: 3059 },
-    { type: 'video', filename: 'slice-02.mp4', width: 1440, height: 900 },
-    { type: 'image', filename: 'slice-03.jpg', width: 1440, height: 1972 },
-    { type: 'video', filename: 'slice-04.mp4', width: 1440, height: 918 },
-    { type: 'image', filename: 'slice-05.jpg', width: 1440, height: 4781 },
-    { type: 'video', filename: 'slice-06.mp4', width: 1440, height: 1427 },
-    { type: 'image', filename: 'slice-07.jpg', width: 1440, height: 780 },
-    { type: 'video', filename: 'slice-08.mp4', width: 1440, height: 1300 },
-    { type: 'image', filename: 'slice-09.jpg', width: 1440, height: 3090 },
-    { type: 'video', filename: 'slice-10.mp4', width: 1440, height: 895 },
-    { type: 'image', filename: 'slice-11.jpg', width: 1440, height: 7532 },
+    { type: 'image', filename: 'slice-01.webp', width: 1440, height: 3059 },
+    { type: 'video', filename: 'slice-02.webm', width: 1440, height: 900 },
+    { type: 'image', filename: 'slice-03.webp', width: 1440, height: 1972 },
+    { type: 'video', filename: 'slice-04.webm', width: 1440, height: 918 },
+    { type: 'image', filename: 'slice-05.webp', width: 1440, height: 4781 },
+    { type: 'video', filename: 'slice-06.webm', width: 1440, height: 1427 },
+    { type: 'image', filename: 'slice-07.webp', width: 1440, height: 780 },
+    { type: 'video', filename: 'slice-08.webm', width: 1440, height: 1300 },
+    { type: 'image', filename: 'slice-09.webp', width: 1440, height: 3090 },
+    { type: 'video', filename: 'slice-10.webm', width: 1440, height: 895 },
+    { type: 'image', filename: 'slice-11.webp', width: 1440, height: 7532 },
   ];
 
   return (
@@ -27,7 +27,7 @@ export default function LumeCaseStudy() {
       </Head>
       <div className="hidden md:block fixed inset-0 z-0 w-full h-full">
         <video
-          src="/lume-bg.mp4" 
+          src="/lume-project/lume-bg.mp4" 
           autoPlay
           loop
           muted
@@ -53,7 +53,7 @@ export default function LumeCaseStudy() {
               >
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
-            <span className="hidden md:block font-medium text-sm tracking-wide ml-2">Torna al Portfolio</span>
+            <span className="hidden md:block font-medium text-sm tracking-wide ml-2">Portfolio</span>
           </Link>
         </div>
 
@@ -64,6 +64,7 @@ export default function LumeCaseStudy() {
               {slice.type === 'video' ? (
                 <video
                   src={`/lume-project/${slice.filename}`}
+                  poster={`/lume-project/${slice.filename.replace('.mp4', '-poster.webp')}`}
                   width={slice.width}
                   height={slice.height}
                   autoPlay     
