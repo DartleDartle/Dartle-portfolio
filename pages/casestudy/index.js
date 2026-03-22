@@ -7,15 +7,15 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export default function LumeCaseStudy() {
   const slices = [
     { type: 'image', filename: 'slice-01.webp', width: 1440, height: 3059 },
-    { type: 'video', filename: 'slice-02.webm', width: 1440, height: 900 },
+    { type: 'video', filename: 'Slice-02.webm', width: 1440, height: 900 },
     { type: 'image', filename: 'slice-03.webp', width: 1440, height: 1972 },
-    { type: 'video', filename: 'slice-04.webm', width: 1440, height: 918 },
+    { type: 'video', filename: 'Slice-04.webm', width: 1440, height: 918 },
     { type: 'image', filename: 'slice-05.webp', width: 1440, height: 4781 },
-    { type: 'video', filename: 'slice-06.webm', width: 1440, height: 1427 },
+    { type: 'video', filename: 'Slice-06.webm', width: 1440, height: 1427 },
     { type: 'image', filename: 'slice-07.webp', width: 1440, height: 780 },
-    { type: 'video', filename: 'slice-08.webm', width: 1440, height: 1300 },
+    { type: 'video', filename: 'Slice-08.webm', width: 1440, height: 1300 },
     { type: 'image', filename: 'slice-09.webp', width: 1440, height: 3090 },
-    { type: 'video', filename: 'slice-10.webm', width: 1440, height: 895 },
+    { type: 'video', filename: 'Slice-10.webm', width: 1440, height: 895 },
     { type: 'image', filename: 'slice-11.webp', width: 1440, height: 7532 },
   ];
 
@@ -27,7 +27,7 @@ export default function LumeCaseStudy() {
       </Head>
       <div className="hidden md:block fixed inset-0 z-0 w-full h-full">
         <video
-          src="/lume-project/lume-bg.mp4" 
+          src="/lume-project/lume-bg.webm" 
           autoPlay
           loop
           muted
