@@ -59,9 +59,9 @@ export default function LumeCaseStudy() {
           </Link>
         </div>
 
-        <div className="w-full max-w-[1024px] flex flex-col mx-auto rounded-none md:rounded-[40px] overflow-hidden md:shadow-2xl md:shadow-black/80 md:ring-1 md:ring-white/10">
+        <div className="w-full max-w-[1024px] flex flex-col mx-auto bg-[#0a0a0a] rounded-none md:rounded-[40px] overflow-hidden md:shadow-2xl md:shadow-black/80 md:ring-1 md:ring-white/10">
           {slices.map((slice, index) => (
-            <div key={index} className="w-full relative flex">
+            <div key={index} className={`w-full relative flex ${index > 0 ? '-mt-[1px]' : ''}`}>
               
               {slice.type === 'video' ? (
                 <VideoBlock slice={slice} />
