@@ -102,7 +102,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="relative btn rounded-full border border-accent/50 max-w-[190px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group mx-auto md:mx-0"
+              className="relative btn rounded-full border border-accent max-w-[190px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group mx-auto md:mx-0"
             >
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                 {t('Talk')}

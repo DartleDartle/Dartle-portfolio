@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import VideoBlock from '../../components/Videoblock';
+
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function LumeCaseStudy() {
@@ -27,7 +29,7 @@ export default function LumeCaseStudy() {
       </Head>
       <div className="hidden md:block fixed inset-0 z-0 w-full h-full">
         <video
-          src="/lume-project/lume-bg.mp4" 
+          src="/lume-project/lume-bg.webm" 
           autoPlay
           loop
           muted
@@ -62,21 +64,7 @@ export default function LumeCaseStudy() {
             <div key={index} className="w-full relative flex">
               
               {slice.type === 'video' ? (
-                <video
-                  src={`/lume-project/${slice.filename}`}
-                  poster={`/lume-project/${slice.filename.replace('.mp4', '-poster.webp')}`}
-                  width={slice.width}
-                  height={slice.height}
-                  autoPlay     
-                  loop         
-                  muted        
-                  playsInline  
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block'
-                  }}
-                />
+                <VideoBlock slice={slice} />
               ) : (
                 <Image
                   src={`/lume-project/${slice.filename}`}
@@ -101,6 +89,7 @@ export default function LumeCaseStudy() {
     </>
   );
 }
+
 export async function getStaticProps({ locale }) {
   return {
     props: {

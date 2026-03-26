@@ -32,8 +32,8 @@ const Home = () => {
               className="font-bold leading-[1.05] text-[clamp(34px,6vw,42px)]"
             >
               {t("home.title1")} <br />
-              {t("home.title2")}{" "}
-              <span className="text-accent">{t("about.title4")}</span>{" "}
+              {t("home.title2")}
+              <span className="text-accent">{t("about.title4")}</span>
               {t("home.title3")}
             </motion.h1>
 

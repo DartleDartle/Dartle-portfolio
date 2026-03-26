@@ -158,7 +158,7 @@ const About = () => {
     <div className="relative min-h-[100svh] bg-grey overflow-hidden xl:overflow-y-auto">
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
-      <div className="relative z-10 container mx-auto px-4 flex flex-col items-center xl:items-start xl:flex-row pt-56 xl:pt-[20vh] pb-32 xl:pb-0 h-full">
+      <div className="relative z-10 container mx-auto px-4 flex flex-col items-center xl:items-start xl:flex-row pt-56 xl:pt-[20vh] pb-32 xl:pb-16 h-full">
         <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
           
           <div className="text-center xl:text-left flex flex-col justify-center">
@@ -237,7 +237,7 @@ const About = () => {
               ))}
             </div>
 
-            <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
+            <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-12 pb-12 custom-scrollbar overflow-x-hidden">
               <div className="flex flex-col gap-y-4 items-center xl:items-start">
                 {aboutData[index].info.map((item, itemIndex) => (
                   <div

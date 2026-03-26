@@ -25,7 +25,7 @@ const Work = () => {
               exit="hidden"
               className="font-bold leading-[1.05] text-[clamp(34px,4vw,56px)]"
             >
-              {t('work-title')} <span className="text-accent">.</span>
+              {t('work-title')}<span className="text-accent">.</span>
             </motion.h2>
 
             <motion.p

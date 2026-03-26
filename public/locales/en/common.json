@@ -1,6 +1,6 @@
 {
   "home.title1": "UX/UI and Digital product designer who",
-  "home.title2": "also speaks the",
+  "home.title2": "also speaks the ",
   "home.title3": ".",
   "home.text": "I design intuitive interfaces and understand the technical side that makes them possible. This portfolio was designed and developed by me to demonstrate how design and development can work together effectively.",
   "button": "My projects",
@@ -50,8 +50,9 @@
 
   "skills-title": "My skills",
   "skills-desc": "Over the years I have developed several skills that can be useful in web and mobile development, as well as in many other professional contexts.",
-
-  "work-title": "My work",
+  "hover-message": "Go to",
+  "hover-message2": "Linkedin profile",
+  "work-title": "My projects",
   "work-desc1": "During my journey I learned many things about back-end, web and mobile development. The related projects can be found on GitHub, including this portfolio. However, I decided not to showcase my older graphic design projects and instead present",
   "work-desc2": "the latest UX/UI project I’m particularly proud of. It’s about Lume, a utility management platform developed together with my team during the Boolean course.",
 
