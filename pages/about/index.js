@@ -66,51 +66,51 @@ export const getAboutData = (t) => [
       {
         title: t('Ai'),
         icons: [
-    {
-      icon: (
-        <img
-          src="/icons/claude.png"
-          alt="Claude"
-          className="w-6 h-6 pointer-events-none select-none"
-          draggable={false}
-        />
-      ),
-      label: 'Claude',
-    },
-    {
-      icon: (
-        <img
-          src="/icons/notion.png"
-          alt="Notion"
-          className="w-6 h-6 pointer-events-none select-none"
-          draggable={false}
-        />
-      ),
-      label: 'Notion',
-    },
-    {
-      icon: (
-        <img
-          src="/icons/gpt.png"
-          alt="ChatGPT"
-          className="w-6 h-6 pointer-events-none select-none"
-          draggable={false}
-        />
-      ),
-      label: 'ChatGPT',
-    },
-    {
-      icon: (
-        <img
-          src="/icons/gemini.png"
-          alt="Gemini"
-          className="w-6 h-6 pointer-events-none select-none"
-          draggable={false}
-        />
-      ),
-      label: 'Gemini',
-    },
-  ],
+          {
+            icon: (
+              <img
+                src="/icons/claude.png"
+                alt="Claude"
+                className="w-6 h-6 pointer-events-none select-none"
+                draggable={false}
+              />
+            ),
+            label: 'Claude',
+          },
+          {
+            icon: (
+              <img
+                src="/icons/notion.png"
+                alt="Notion"
+                className="w-6 h-6 pointer-events-none select-none"
+                draggable={false}
+              />
+            ),
+            label: 'Notion',
+          },
+          {
+            icon: (
+              <img
+                src="/icons/gpt.png"
+                alt="ChatGPT"
+                className="w-6 h-6 pointer-events-none select-none"
+                draggable={false}
+              />
+            ),
+            label: 'ChatGPT',
+          },
+          {
+            icon: (
+              <img
+                src="/icons/gemini.png"
+                alt="Gemini"
+                className="w-6 h-6 pointer-events-none select-none"
+                draggable={false}
+              />
+            ),
+            label: 'Gemini',
+          },
+        ],
       },
       {
         title: t('web'),
@@ -122,7 +122,7 @@ export const getAboutData = (t) => [
           { icon: <SiNextdotjs />, label: 'Next.js' },
           { icon: <SiFramer />, label: 'Framer' },
           { icon: <FaWordpress />, label: 'WordPress' },
-          { icon: <SiTypescript className='w-5 h-5' />, label: 'TypeScript' },
+          { icon: <SiTypescript className="w-5 h-5" />, label: 'TypeScript' },
         ],
       },
       {
@@ -160,7 +160,6 @@ const About = () => {
 
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center xl:items-start xl:flex-row pt-56 xl:pt-[20vh] pb-32 xl:pb-16 h-full">
         <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
-          
           <div className="text-center xl:text-left flex flex-col justify-center">
             <motion.h2
               variants={fadeIn('right', 0.2)}
@@ -195,7 +194,7 @@ const About = () => {
               <div className="flex gap-x-8">
                 <div className="relative pr-8 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={19} duration={2.5} />
+                    <CountUp start={0} end={25} duration={2.5} />
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[110px]">
                     {t('counter1')}
@@ -237,42 +236,45 @@ const About = () => {
               ))}
             </div>
 
-            <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-12 pb-12 custom-scrollbar overflow-x-hidden">
-              <div className="flex flex-col gap-y-4 items-center xl:items-start">
+            <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-4 xl:pr-12 pb-12 custom-scrollbar overflow-x-hidden">
+              <div className="flex flex-col gap-y-10 xl:gap-y-6 items-center xl:items-start">
                 {aboutData[index].info.map((item, itemIndex) => (
                   <div
                     key={`${item.title}-${itemIndex}`}
-                    className="w-full flex flex-col md:flex-row md:items-center justify-start gap-x-3 text-primary/60"
+                    className="w-full flex flex-col items-center xl:flex-row xl:justify-between gap-y-2 xl:gap-y-0 text-primary/60"
                   >
-                    <div className="font-light mb-2 md:mb-0 min-w-[140px] text-center xl:text-left">
-                      {item.title}
-                    </div>
-
-                    <div className="hidden md:flex opacity-40">◦</div>
-
-                    {item.stage && (
-                      <div className="min-w-[70px] text-center md:text-left">
-                        {item.stage}
+                    <div className="flex flex-col items-center xl:flex-row xl:items-center gap-y-4 xl:gap-y-0 xl:gap-x-4 w-full">
+                      <div className="font-light text-center xl:text-left leading-snug max-w-[300px] xl:max-w-none">
+                        {item.title}
                       </div>
-                    )}
 
-                    {item.icons && item.icons.length > 0 && (
-                      <div className="flex flex-wrap justify-center xl:justify-start gap-x-4 gap-y-3">
-                        {item.icons.map((iconItem, iconIndex) => (
-                          <div
-                            key={`${item.title}-icon-${iconIndex}`}
-                            className="relative group flex items-center justify-center text-2xl text-primary cursor-pointer"
-                          >
-                            <div>{iconItem.icon}</div>
+                      {item.icons && (
+                        <div className="hidden xl:flex opacity-40 shrink-0">◦</div>
+                      )}
 
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 hidden group-hover:flex whitespace-nowrap z-10 pointer-events-none">
-                              <div className="bg-primary relative flex text-grey items-center px-2 py-1 rounded-[4px] text-[12px] leading-none font-semibold">
-                                {iconItem.label}
-                                <div className="border-solid border-b-primary border-b-8 border-x-transparent border-x-[6px] border-t-0 absolute bottom-full left-1/2 -translate-x-1/2"></div>
+                      {item.icons && item.icons.length > 0 && (
+                        <div className="flex flex-wrap justify-center xl:justify-start gap-4">
+                          {item.icons.map((iconItem, iconIndex) => (
+                            <div
+                              key={`${item.title}-icon-${iconIndex}`}
+                              className="relative group flex items-center justify-center text-2xl text-primary"
+                            >
+                              {iconItem.icon}
+                              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 hidden group-hover:flex whitespace-nowrap z-10 pointer-events-none">
+                                <div className="bg-primary relative flex text-grey items-center px-2 py-1 rounded-[4px] text-[12px] leading-none font-semibold">
+                                  {iconItem.label}
+                                  <div className="border-solid border-b-primary border-b-8 border-x-transparent border-x-[6px] border-t-0 absolute bottom-full left-1/2 -translate-x-1/2"></div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {item.stage && (
+                      <div className="shrink-0 opacity-50 italic text-sm xl:text-base xl:ml-auto">
+                        {item.stage}
                       </div>
                     )}
                   </div>
