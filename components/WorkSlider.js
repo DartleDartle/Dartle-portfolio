@@ -15,7 +15,7 @@ export const workSlider = {
           title: 'ClinicSoul - UX Case Study',
           path: '/thumb1-2.png?v=2',
           url: '/clinicsoul',
-          isExternal: true,
+          isExternal: false,
         },
         {
           title: 'Profilo github',
