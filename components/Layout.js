@@ -13,7 +13,9 @@ import { useRouter } from 'next/router';
 
 const Layout = ({children}) => {
   const router = useRouter();
-  const isCaseStudyPage = router.pathname.startsWith('/casestudy');
+  const isCaseStudyPage =
+   router.pathname.startsWith('/lume') ||
+   router.pathname.startsWith('/clinicsoul')
 
   return (
     <div 

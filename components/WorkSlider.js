@@ -7,13 +7,19 @@ export const workSlider = {
       images: [
         {
           title: 'Lume - Case Study',
-          path: '/thumb1-1.jpg?v=2',
-          url: '/casestudy',
+          path: '/thumb1-1.png?v=2',
+          url: '/lume',
           isExternal: false,
         },
         {
+          title: 'ClinicSoul - UX Case Study',
+          path: '/thumb1-2.png?v=2',
+          url: '/clinicsoul',
+          isExternal: true,
+        },
+        {
           title: 'Profilo github',
-          path: '/thumb1-2.jpg?v=2',
+          path: '/thumb1-3.png?v=2',
           url: 'https://github.com/DartleDartle',
           isExternal: true,
         },

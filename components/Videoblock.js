@@ -1,46 +1,48 @@
 import { useRef, useEffect } from 'react';
 
-const VideoBlock = ({ slice }) => {
+const VideoBlock = ({ slice, projectFolder }) => {
   const videoRef = useRef(null);
 
+  const videoSrc = `/${projectFolder}/${slice.filename}`;
+  const posterSrc = `/${projectFolder}/${slice.filename.replace('.webm', '-poster.webp')}`;
+
   useEffect(() => {
-    // Observer
+    const el = videoRef.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            videoRef.current?.play();
+            el.play().catch(() => {});
           } else {
-            videoRef.current?.pause();
+            el.pause();
           }
         });
       },
       { threshold: 0.2 }
     );
 
+    observer.observe(el);
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    // Cleanup
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
+      observer.unobserve(el);
+      observer.disconnect();
     };
-  }, []);
+  }, [videoSrc]);
 
   return (
     <video
+      key={videoSrc}
       ref={videoRef}
-      src={`/lume-project/${slice.filename}`}
-      poster={`/lume-project/${slice.filename.replace('.webm', '-poster.webp')}`}
+      src={videoSrc}
+      poster={posterSrc}
       width={slice.width}
       height={slice.height}
       loop
       muted
       playsInline
+      preload="metadata"
       style={{
         width: '100%',
         height: 'auto',
