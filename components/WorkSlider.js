@@ -50,12 +50,12 @@ const WorkSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className='h-[280px] sm:h-[480px] xl:h-[520px] xxl:h-[640px]'
+      className='h-auto sm:h-[480px] xl:h-[520px] xxl:h-[640px]'
     >
       {workSlider.slides.map((slide, slideIndex) => {
         return (
           <SwiperSlide key={slideIndex}>
-            <div className='grid grid-cols-2 gap-x-4 gap-y-8 cursor-pointer content-start h-full'>
+            <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 2xl:gap-20 items-start">
               {slide.images.map((image, imageIndex) => {
                 
                 const linkProps = image.isExternal 

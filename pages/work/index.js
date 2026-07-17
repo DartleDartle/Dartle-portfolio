@@ -13,9 +13,9 @@ const Work = () => {
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
-      <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-64 xl:pt-64 xl:pb-0">
+      <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-64 xl:pt-64 pb-32 xl:pb-0">
         
-        <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-8 items-start">
+        <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-24 items-start">
           
           <div className="text-center xl:text-left">
             <motion.h2
