@@ -2,12 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const VideoBlock = ({ slice, projectFolder }) => {
-  const containerRef = useRef(null);
   const videoRef = useRef(null);
-
   const [isMobile, setIsMobile] = useState(false);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-  const [isInView, setIsInView] = useState(false);
 
   const videoSrc = `/${projectFolder}/${slice.filename}`;
   const posterFilename = slice.filename.replace(/\.webm$/i, '-poster.webp');
@@ -21,78 +17,64 @@ const VideoBlock = ({ slice, projectFolder }) => {
     updateDevice();
     mediaQuery.addEventListener('change', updateDevice);
 
-    return () => mediaQuery.removeEventListener('change', updateDevice);
-  }, []);
-
-  useEffect(() => {
-    const container = containerRef.current;
-
-    if (!container) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoadVideo(true);
-          setIsInView(true);
-        } else {
-          setIsInView(false);
-        }
-      },
-      {
-        threshold: 0.55,
-        rootMargin: '0px',
-      }
-    );
-
-    observer.observe(container);
-
-    return () => observer.disconnect();
+    return () => {
+      mediaQuery.removeEventListener('change', updateDevice);
+    };
   }, []);
 
   useEffect(() => {
     const video = videoRef.current;
 
-    if (!video || !shouldLoadVideo || !isInView) return;
+    if (isMobile || !video) return;
 
-    video.play().catch(() => {});
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      },
+      { threshold: 0.45 }
+    );
 
-    return () => video.pause();
-  }, [shouldLoadVideo, isInView]);
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+      video.pause();
+    };
+  }, [isMobile, videoSrc]);
+
+  if (isMobile) {
+    return (
+      <Image
+        src={posterSrc}
+        alt=""
+        width={slice.width}
+        height={slice.height}
+        sizes="100vw"
+        className="block h-auto w-full"
+        unoptimized
+      />
+    );
+  }
 
   return (
-    <div
-      ref={containerRef}
-      className="relative block w-full"
-      style={{ aspectRatio: `${slice.width} / ${slice.height}` }}
-    >
-      {!shouldLoadVideo && (
-        <Image
-          src={posterSrc}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-          unoptimized
-        />
-      )}
-
-      {shouldLoadVideo && (
-        <video
-          ref={videoRef}
-          key={videoSrc}
-          src={videoSrc}
-          poster={posterSrc}
-          width={slice.width}
-          height={slice.height}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          className="block h-auto w-full"
-        />
-      )}
-    </div>
+    <video
+      key={videoSrc}
+      ref={videoRef}
+      src={videoSrc}
+      poster={posterSrc}
+      width={slice.width}
+      height={slice.height}
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      className="block h-auto w-full bg-black"
+    />
   );
 };
 
