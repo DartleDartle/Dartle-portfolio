@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import ParticlesContainer from '../components/ParticlesContainer';
 import ProjectsBtn from '../components/ProjectsBtn';
 import DownloadPdfBtn from '../components/DownloadPdfBtn';
@@ -14,6 +16,10 @@ const Home = () => {
 
   return (
     <section className="relative min-h-[100svh] overflow-y-auto xl:overflow-hidden bg-grey">
+      <Head>
+        <title>{t('tab-home')}</title>
+      </Head>
+
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
       <div className="absolute inset-0 pointer-events-none">

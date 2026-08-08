@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
 
 // icons
 import {
@@ -166,6 +167,10 @@ const About = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-hidden xl:overflow-y-auto">
+      <Head>
+        <title>{t('tab-about')}</title>
+      </Head>
+
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center xl:items-start xl:flex-row pt-56 xl:pt-[20vh] pb-32 xl:pb-16 h-full">

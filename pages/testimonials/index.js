@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import TestimonialSlider from '../../components/TestimonialSlider';
 
 import { motion } from 'framer-motion';
@@ -11,6 +13,10 @@ const Testimonials = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
+      <Head>
+        <title>{t('tab-testimonials')}</title>
+      </Head>
+
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
       <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-52 xl:pt-24 pb-28 xl:pb-0">

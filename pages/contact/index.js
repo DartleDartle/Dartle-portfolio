@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import { BsArrowRight } from 'react-icons/bs';
 
 import Swal from 'sweetalert2';
@@ -51,6 +53,10 @@ const Contact = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
+      <Head>
+        <title>{t('tab-contact')}</title>
+      </Head>
+
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
       <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-56 xl:pt-16 pb-28 xl:pb-0">
