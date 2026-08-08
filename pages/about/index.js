@@ -150,10 +150,11 @@ export const getAboutData = (t) => [
   {
     title: t('c'),
     info: [
-      { title: t('c1'), stage: '2019' },
-      { title: t('c2'), stage: '2022' },
-      { title: t('c3'), stage: '2024' },
+      { title: t('c5'), stage: '2026' },
       { title: t('c4'), stage: '2026' },
+      { title: t('c3'), stage: '2024' },
+      { title: t('c2'), stage: '2022' },
+      { title: t('c1'), stage: '2019' },
     ],
   },
 ];
@@ -174,7 +175,6 @@ const About = () => {
               variants={fadeIn('right', 0.2)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="font-bold leading-[1.05] text-3xl md:text-4xl"
             >
               {t('about.title1')}{' '}
@@ -187,7 +187,6 @@ const About = () => {
               variants={fadeIn('right', 0.4)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="mt-6 max-w-[52ch] mx-auto xl:mx-0 text-base xl:text-lg opacity-80"
             >
               {t('about.text')}
@@ -197,7 +196,6 @@ const About = () => {
               variants={fadeIn('right', 0.6)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="hidden md:flex mt-8 mx-auto xl:mx-0"
             >
               <div className="flex gap-x-8">
@@ -226,7 +224,6 @@ const About = () => {
             variants={fadeIn('left', 0.4)}
             initial="hidden"
             animate="show"
-            exit="hidden"
             className="w-full xl:max-w-[560px] xl:pl-16 flex flex-col"
           >
             <div className="flex gap-x-6 xl:gap-x-10 justify-center xl:justify-start mb-6">
@@ -246,10 +243,13 @@ const About = () => {
             </div>
 
             <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-4 xl:pr-12 pb-48 xl:pb-12 custom-scrollbar overflow-x-hidden">
-              <div className="flex flex-col gap-y-10 xl:gap-y-6 items-center xl:items-start">
+              <div className="flex flex-col items-center xl:items-start">
                 {aboutData[index].info.map((item, itemIndex) => (
-                  <div
-                    key={`${item.title}-${itemIndex}`}
+                  <React.Fragment key={`${item.title}-${itemIndex}`}>
+                    {itemIndex > 0 && (
+                      <div className="w-full h-px my-3 shrink-0 bg-gradient-to-r from-transparent via-accent/60 to-transparent drop-shadow-[0_0_4px_rgba(241,126,65,0.6)]"></div>
+                    )}
+                    <div
                     className="w-full flex flex-col items-center xl:flex-row xl:justify-between gap-y-2 xl:gap-y-0 text-primary/60"
                   >
                     <div className="flex flex-col items-center xl:flex-row xl:items-center gap-y-4 xl:gap-y-0 xl:gap-x-4 w-full">
@@ -282,11 +282,15 @@ const About = () => {
                     </div>
 
                     {item.stage && (
-                      <div className="shrink-0 opacity-50 italic text-sm xl:text-base xl:ml-auto">
-                        {item.stage}
+                      <div className="flex items-center gap-x-4 shrink-0 xl:ml-auto">
+                        <div className="hidden xl:block w-px h-4 bg-gradient-to-b from-transparent via-accent/60 to-transparent drop-shadow-[0_0_4px_rgba(241,126,65,0.6)]"></div>
+                        <div className="opacity-50 italic text-sm xl:text-base">
+                          {item.stage}
+                        </div>
                       </div>
                     )}
-                  </div>
+                    </div>
+                  </React.Fragment>
                 ))}
               </div>
             </div>

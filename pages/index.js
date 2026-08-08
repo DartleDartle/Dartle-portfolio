@@ -29,7 +29,6 @@ const Home = () => {
               variants={fadeIn("down", 0.2)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="font-bold leading-[1.05] text-[clamp(34px,6vw,42px)]"
             >
               {t("home.title1")} <br />
@@ -42,7 +41,6 @@ const Home = () => {
               variants={fadeIn("down", 0.3)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="mt-6 max-w-[52ch] mx-auto xl:mx-0 text-base xl:text-lg opacity-80"
             >
               {t("home.text")}
@@ -54,7 +52,6 @@ const Home = () => {
               variants={fadeIn("up", 0.5)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="w-[260px] sm:w-[320px] xl:w-[clamp(300px,32vw,520px)] aspect-[4/3] relative shrink-0"
             >
               <Avatar className="w-full h-full object-contain" />
@@ -66,7 +63,6 @@ const Home = () => {
               variants={fadeIn("down", 0.4)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="flex flex-wrap items-center justify-center xl:justify-start gap-x-8 gap-y-4"
             >
               <ProjectsBtn />

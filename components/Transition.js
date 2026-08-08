@@ -19,29 +19,29 @@ const transitionVariants = {
 const Transition = () => {
   return (
     <>
-      <motion.div 
-        className='fixed top-0 bottom-0 right-full w-full h-full z-50 bg-[#1d1d1d]' 
-        variants={transitionVariants} 
-        initial="initial" 
-        animate="animate" 
-        exit="exit" 
-        transition={{delay: 0.2, duration: 0.6, ease: 'linear'}}
+      <motion.div
+        className='fixed top-0 bottom-0 right-full w-full h-full z-50 bg-[#1d1d1d]'
+        variants={transitionVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{delay: 0.1, duration: 0.5, ease: 'easeInOut'}}
         ></motion.div>
-      <motion.div 
-        className='fixed top-0 bottom-0 right-full w-full h-full z-40 bg-[#efe7dc]' 
-        variants={transitionVariants} 
-        initial="initial" 
-        animate="animate" 
-        exit="exit" 
-        transition={{delay: 0.4, duration: 0.6, ease: 'easeInOut'}}
+      <motion.div
+        className='fixed top-0 bottom-0 right-full w-full h-full z-40 bg-[#efe7dc]'
+        variants={transitionVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{delay: 0.2, duration: 0.5, ease: 'easeInOut'}}
         ></motion.div>
-      <motion.div 
-        className='fixed top-0 bottom-0 right-full w-full h-full z-30 bg-[#f17e41]' 
-        variants={transitionVariants} 
-        initial="initial" 
-        animate="animate" 
-        exit="exit" 
-        transition={{delay: 0.6, duration: 0.6, ease: 'easeInOut'}}
+      <motion.div
+        className='fixed top-0 bottom-0 right-full w-full h-full z-30 bg-[#f17e41]'
+        variants={transitionVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{delay: 0.3, duration: 0.5, ease: 'easeInOut'}}
         ></motion.div>
     </>
   );

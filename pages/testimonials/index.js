@@ -21,7 +21,6 @@ const Testimonials = () => {
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             animate="show"
-            exit="hidden"
             className="font-bold leading-[1.05] text-[clamp(34px,4vw,56px)] text-center xl:pb-12 pb-0"
           >
             {t('testimonial-title1')}{' '}
@@ -33,7 +32,6 @@ const Testimonials = () => {
             variants={fadeIn('up', 0.4)}
             initial="hidden"
             animate="show"
-            exit="hidden"
             className="mt-10 w-full xl:max-w-4xl mx-auto"
           >
             <TestimonialSlider />

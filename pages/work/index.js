@@ -22,7 +22,6 @@ const Work = () => {
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="font-bold leading-[1.05] text-[clamp(34px,4vw,56px)]"
             >
               {t('work-title')}<span className="text-accent">.</span>
@@ -32,7 +31,6 @@ const Work = () => {
               variants={fadeIn('up', 0.4)}
               initial="hidden"
               animate="show"
-              exit="hidden"
               className="mt-6 max-w-[52ch] mx-auto xl:mx-0 text-base xl:text-lg opacity-80"
             >
               {t('work-desc1')}{' '}
@@ -46,7 +44,6 @@ const Work = () => {
             variants={fadeIn('down', 0.6)}
             initial="hidden"
             animate="show"
-            exit="hidden"
         
             className="w-full xl:max-w-[720px] xl:justify-self-start"
           >

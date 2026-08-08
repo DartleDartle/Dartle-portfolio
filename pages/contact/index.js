@@ -59,7 +59,6 @@ const Contact = () => {
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             animate="show"
-            exit="hidden"
             className="font-bold leading-[1.05] text-[clamp(34px,4vw,56px)] text-center"
           >
             {t('Connect1')} <span className="text-accent">{t('Connect2')}</span>
@@ -69,7 +68,6 @@ const Contact = () => {
             variants={fadeIn('up', 0.4)}
             initial="hidden"
             animate="show"
-            exit="hidden"
             className="mt-10 flex flex-col gap-6 w-full"
             onSubmit={handleSubmit}
           >
