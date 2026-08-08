@@ -1,5 +1,6 @@
 import ParticlesContainer from '../components/ParticlesContainer';
 import ProjectsBtn from '../components/ProjectsBtn';
+import DownloadPdfBtn from '../components/DownloadPdfBtn';
 import Avatar from '../components/Avatar';
 
 import { motion } from 'framer-motion';
@@ -66,8 +67,10 @@ const Home = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
+              className="flex flex-wrap items-center justify-center xl:justify-start gap-x-8 gap-y-4"
             >
               <ProjectsBtn />
+              <DownloadPdfBtn />
             </motion.div>
           </div>
 

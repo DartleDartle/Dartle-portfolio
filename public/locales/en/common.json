@@ -4,6 +4,7 @@
   "home.title3": ".",
   "home.text": "I design intuitive interfaces and understand the technical side that makes them possible. This portfolio was designed and developed by me to demonstrate how design and development can work together effectively.",
   "button": "My projects",
+  "download-cv": "Download PDF version of the portfolio",
   "prtmi1": "Take me",
   "prtmi2": "here",
   "about.title1": "How I manage to communicate with",
@@ -12,7 +13,6 @@
   "about.title4": "developers language",
   "about.title5": "developers",
   "about.text": "Since the beginning of my journey I have combined creativity and technology. My background in computer science allows me to understand the technical constraints of a project and design interfaces that are not only effective for users, but also realistically implementable for developers. This approach reduces misunderstandings between design and development and makes the production process smoother: ideas don’t remain just concepts, but become concrete and achievable solutions.",
-
   "counter1": "Technologies used",
   "counter2": "Projects completed",
   "Ai": "AI Tools",
@@ -22,32 +22,23 @@
   "web": "Web Development",
   "ph": "Photography",
   "gd": "Graphic Design",
-
   "c1": "Diploma in Computer Science from Technical Institute ITIS Leonardo Da Vinci, Pisa.",
   "c2": "Bachelor’s degree in Graphic Design from the Academy of Fine Arts of Brescia Santa Giulia.",
   "c3": "Certified Meta Front-End Developer from Coursera.",
   "c4": "Certified UX/UI Designer from Boolean Tech Academy.",
-
   "web-desc": "I attended a 3-year web design course while completing my degree in Graphic Design.",
-
   "sm-title": "Scientific Mind",
   "sm-desc": "My computer science diploma and passion for computers have shaped me into a scientific thinker.",
-
   "artist-title": "Artist",
   "artist-desc": "Graduated in graphic design, photographer in my free time, and passionate about music and art.",
-
   "fast-title": "Fast Learner",
   "fast-desc": "I learned to use modern web development tools in just a few months completely on my own.",
-
   "sociable-title": "Sociable",
   "sociable-desc": "I enjoy working in teams, I’m a good listener and always ready to help.",
-
   "motivated-title": "Motivated",
   "motivated-desc": "I’m always motivated to learn new things and improve my skills.",
-
   "constant-title": "Consistent",
   "constant-desc": "Consistency is one of the secrets to improvement, and discipline helps me achieve it.",
-
   "skills-title": "My skills",
   "skills-desc": "Over the years I have developed several skills that can be useful in web and mobile development, as well as in many other professional contexts.",
   "hover-message": "Go to",
@@ -55,29 +46,25 @@
   "work-title": "My projects",
   "work-desc1": "During my journey I learned many things about back-end, web and mobile development. The related projects can be found on GitHub, including this portfolio. However, I decided not to showcase my older graphic design projects and instead present",
   "work-desc2": "a UX/UI project I’m particularly proud of, is Lume, a utility management platform developed together with my team during the Boolean course.",
-
   "testimonial-title1": "What my connections",
   "testimonial-title2": "say about me",
-
   "Mirko": "Davide is a sincere, genuine and extremely creative person. I worked with him several times and in every project he was able to think outside the box with his incredible lateral thinking.",
   "Bianca": "Davide is a wonderful and attentive person and a reliable, responsible partner. He always wants his projects to be impeccable and puts great effort into everything he truly cares about.",
   "Claudia": "Davide is such a passionate and brilliant person! From what I’ve seen, he truly embodies the definition of a hardworking individual: always full of creativity and determination.",
   "Daniele": "Energy and reliability. The perfect combination for a harmonious collaboration. Davide listens, understands and always strives to give his best to achieve his goals.",
   "Shab": "Davide is a true artist. I’m always impressed by his creative problem-solving skills. His creativity really sets him apart.",
-
   "Mirko-role": "Friend",
   "Bianca-role": "Girlfriend",
   "Claudia-role": "Sister",
   "Daniele-role": "Twin brother",
   "Shab-role": "Friend",
-
   "Connect1": "Let's connect",
   "Connect2": "!",
-
   "Talk": "Let's talk",
   "name": "Name",
   "message": "Message",
-
   "success": "Message sent! I’ll reply as soon as possible.",
-  "fail": "There was an error sending the message."
+  "fail": "There was an error sending the message.",
+  "clinicsoul-meta-desc": "UX case study for the ClinicSoul project.",
+  "lume-meta-desc": "UX/UI case study for the Lume Energy project."
 }

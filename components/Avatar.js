@@ -8,6 +8,7 @@ const Avatar = () => {
         alt="Davide"
         fill
         priority
+        sizes="(max-width: 1279px) 320px, 520px"
         className="object-contain"
       />
     </div>

@@ -34,7 +34,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
-import { Pagination } from 'swiper';
+import { Pagination } from 'swiper/modules';
 
 import { BsArrowRight } from 'react-icons/bs';
 
@@ -75,11 +75,12 @@ const WorkSlider = () => {
 
                     <div className='w-full aspect-video flex items-center justify-center relative overflow-hidden group rounded-lg bg-black/10'>
                       
-                      <Image 
-                        src={image.path} 
+                      <Image
+                        src={image.path}
                         alt={image.title}
                         fill
-                        className="object-cover" 
+                        sizes="(max-width: 1279px) 90vw, 340px"
+                        className="object-cover"
                       />
                       
                       <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#efe7dc] to-[#f17e41] opacity-0 group-hover:opacity-80 transition-all duration-700'></div>

@@ -3,10 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import VideoBlock from '../../components/Videoblock';
+import { useIsDesktop } from '../../hooks/useIsDesktop';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 export default function ClinicSoulCaseStudy() {
+  const { t } = useTranslation('common');
+  const isDesktop = useIsDesktop();
+
   const slices = [
     { type: 'image', filename: 'slice-01.webp', width: 2048, height: 1152 },
     { type: 'video', filename: 'slice-02.webm', width: 2048, height: 1025.5 },
@@ -32,17 +37,22 @@ export default function ClinicSoulCaseStudy() {
     <>
       <Head>
         <title>ClinicSoul - UX Case Study</title>
-        <meta name="description" content="Case study del progetto UX Clinic Soul." />
+        <meta name="description" content={t('clinicsoul-meta-desc')} />
       </Head>
       <div className="hidden md:block fixed inset-0 z-0 w-full h-full">
-        <video
-          src="/clinicsoul-project/clinicsoul-bg.webm" 
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        />
+        {isDesktop && (
+          <video
+            src="/clinicsoul-project/clinicsoul-bg.webm"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            disablePictureInPicture
+            disableRemotePlayback
+            className="w-full h-full object-cover"
+          />
+        )}
         <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
       </div>
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
@@ -76,16 +86,16 @@ export default function ClinicSoulCaseStudy() {
                 <Image
                   src={`/clinicsoul-project/${slice.filename}`}
                   alt={`ClinicSoul Case Study - Sezione ${index + 1}`}
-                  width={slice.width}     
-                  height={slice.height}   
-                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  width={slice.width}
+                  height={slice.height}
+                  sizes="(max-width: 1360px) 100vw, 1360px"
+                  quality={100}
                   style={{
                     width: '100%',
-                    height: 'auto',       
+                    height: 'auto',
                     display: 'block'
                   }}
-                  priority={index === 0} 
-                  unoptimized={true} 
+                  priority={index === 0}
                 />
               )}
               

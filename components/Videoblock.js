@@ -1,31 +1,45 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { useIsDesktop } from '../hooks/useIsDesktop';
 
 const VideoBlock = ({ slice, projectFolder }) => {
+  const isDesktop = useIsDesktop();
+  const containerRef = useRef(null);
   const videoRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isNearViewport, setIsNearViewport] = useState(false);
 
   const videoSrc = `/${projectFolder}/${slice.filename}`;
   const posterFilename = slice.filename.replace(/\.webm$/i, '-poster.webp');
   const posterSrc = `/${projectFolder}/${posterFilename}`;
 
+  // Only mount the <video> once it's about to enter the viewport, so at most
+  // a couple of decoders are ever alive at once. Latches on: once near, stays
+  // near, so scrolling back and forth near the edge can't repeatedly
+  // mount/unmount the element. Mobile gets a tighter lookahead than desktop
+  // since phones have far less concurrent-decoder headroom.
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const el = containerRef.current;
+    if (!el) return;
 
-    const updateDevice = () => setIsMobile(mediaQuery.matches);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: isDesktop ? '600px 0px' : '200px 0px' }
+    );
 
-    updateDevice();
-    mediaQuery.addEventListener('change', updateDevice);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [isDesktop]);
 
-    return () => {
-      mediaQuery.removeEventListener('change', updateDevice);
-    };
-  }, []);
+  const shouldMountVideo = isNearViewport;
 
   useEffect(() => {
     const video = videoRef.current;
-
-    if (isMobile || !video) return;
+    if (!shouldMountVideo || !video) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -45,36 +59,37 @@ const VideoBlock = ({ slice, projectFolder }) => {
       observer.disconnect();
       video.pause();
     };
-  }, [isMobile, videoSrc]);
-
-  if (isMobile) {
-    return (
-      <Image
-        src={posterSrc}
-        alt=""
-        width={slice.width}
-        height={slice.height}
-        sizes="100vw"
-        className="block h-auto w-full"
-        unoptimized
-      />
-    );
-  }
+  }, [shouldMountVideo, videoSrc]);
 
   return (
-    <video
-      key={videoSrc}
-      ref={videoRef}
-      src={videoSrc}
-      poster={posterSrc}
-      width={slice.width}
-      height={slice.height}
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      className="block h-auto w-full bg-black"
-    />
+    <div ref={containerRef} className="w-full">
+      {shouldMountVideo ? (
+        <video
+          key={videoSrc}
+          ref={videoRef}
+          src={videoSrc}
+          poster={posterSrc}
+          width={slice.width}
+          height={slice.height}
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+          disableRemotePlayback
+          className="block h-auto w-full bg-black"
+        />
+      ) : (
+        <Image
+          src={posterSrc}
+          alt=""
+          width={slice.width}
+          height={slice.height}
+          sizes="100vw"
+          className="block h-auto w-full"
+        />
+      )}
+    </div>
   );
 };
 

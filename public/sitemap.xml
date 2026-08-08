@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dartle-portfolio.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it" />
+  </url>
+  <url>
+    <loc>https://dartle-portfolio.vercel.app/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/about" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/about" />
+  </url>
+  <url>
+    <loc>https://dartle-portfolio.vercel.app/work</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/work" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/work" />
+  </url>
+  <url>
+    <loc>https://dartle-portfolio.vercel.app/testimonials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/testimonials" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/testimonials" />
+  </url>
+  <url>
+    <loc>https://dartle-portfolio.vercel.app/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/contact" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/contact" />
+  </url>
+  <url>
+    <loc>https://dartle-portfolio.vercel.app/lume</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/lume" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/lume" />
+  </url>
+  <url>
+    <loc>https://dartle-portfolio.vercel.app/clinicsoul</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/clinicsoul" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/clinicsoul" />
+  </url>
+</urlset>

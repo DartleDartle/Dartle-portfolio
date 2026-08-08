@@ -11,11 +11,8 @@
   background-color: #f13024;
 }
 
-.swiper-button-next:after,
-.swiper-button-prev:after,
-.swiper-button-next:after,
-.swiper-rtl .swiper-button-prev:after {
-  color: #f13024;
+.my-custom-swiper {
+  --swiper-theme-color: #f13024;
 }
 
 /* spazio per i pallini */

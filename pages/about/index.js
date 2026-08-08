@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 // icons
 import {
@@ -68,9 +69,11 @@ export const getAboutData = (t) => [
         icons: [
           {
             icon: (
-              <img
+              <Image
                 src="/icons/claude.png"
                 alt="Claude"
+                width={24}
+                height={24}
                 className="w-6 h-6 pointer-events-none select-none"
                 draggable={false}
               />
@@ -79,9 +82,11 @@ export const getAboutData = (t) => [
           },
           {
             icon: (
-              <img
+              <Image
                 src="/icons/notion.png"
                 alt="Notion"
+                width={24}
+                height={24}
                 className="w-6 h-6 pointer-events-none select-none"
                 draggable={false}
               />
@@ -90,9 +95,11 @@ export const getAboutData = (t) => [
           },
           {
             icon: (
-              <img
+              <Image
                 src="/icons/gpt.png"
                 alt="ChatGPT"
+                width={24}
+                height={24}
                 className="w-6 h-6 pointer-events-none select-none"
                 draggable={false}
               />
@@ -101,9 +108,11 @@ export const getAboutData = (t) => [
           },
           {
             icon: (
-              <img
+              <Image
                 src="/icons/gemini.png"
                 alt="Gemini"
+                width={24}
+                height={24}
                 className="w-6 h-6 pointer-events-none select-none"
                 draggable={false}
               />
@@ -236,7 +245,7 @@ const About = () => {
               ))}
             </div>
 
-            <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-4 xl:pr-12 pb-12 custom-scrollbar overflow-x-hidden">
+            <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-4 xl:pr-12 pb-48 xl:pb-12 custom-scrollbar overflow-x-hidden">
               <div className="flex flex-col gap-y-10 xl:gap-y-6 items-center xl:items-start">
                 {aboutData[index].info.map((item, itemIndex) => (
                   <div
