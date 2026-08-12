@@ -72,5 +72,6 @@
   "success": "Message sent! I’ll reply as soon as possible.",
   "fail": "There was an error sending the message.",
   "clinicsoul-meta-desc": "UX case study for the ClinicSoul project.",
-  "lume-meta-desc": "UX/UI case study for the Lume Energy project."
+  "lume-meta-desc": "UX/UI case study for the Lume Energy project.",
+  "fisiogest-meta-desc": "UX/UI case study for Fisiogest, a clinic management platform for physiotherapists."
 }

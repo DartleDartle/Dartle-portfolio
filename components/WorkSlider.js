@@ -18,6 +18,12 @@ export const workSlider = {
           isExternal: false,
         },
         {
+          title: 'Fisiogest - Clinic Management Platform',
+          path: '/thumb1-4.png',
+          url: '/fisiogest',
+          isExternal: false,
+        },
+        {
           title: 'Profilo github',
           path: '/thumb1-3.png?v=2',
           url: 'https://github.com/DartleDartle',

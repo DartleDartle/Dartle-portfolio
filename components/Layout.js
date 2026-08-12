@@ -11,11 +11,13 @@ import Nav from '../components/Nav'
 import Header from '../components/Header'
 import { useRouter } from 'next/router';
 
+const caseStudyPages = ['/lume', '/clinicsoul', '/fisiogest'];
+
 const Layout = ({children}) => {
   const router = useRouter();
-  const isCaseStudyPage =
-   router.pathname.startsWith('/lume') ||
-   router.pathname.startsWith('/clinicsoul')
+  const isCaseStudyPage = caseStudyPages.some((path) =>
+    router.pathname.startsWith(path)
+  );
 
   return (
     <div 

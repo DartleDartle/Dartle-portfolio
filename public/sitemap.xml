@@ -36,4 +36,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/clinicsoul" />
     <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/clinicsoul" />
   </url>
+  <url>
+    <loc>https://dartle-portfolio.vercel.app/fisiogest</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/fisiogest" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/fisiogest" />
+  </url>
 </urlset>
