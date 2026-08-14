@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useIsDesktop } from '../hooks/useIsDesktop';
 
-const VideoBlock = ({ slice, projectFolder }) => {
+const VideoBlock = ({ slice, projectFolder, alt = '' }) => {
   const isDesktop = useIsDesktop();
   const containerRef = useRef(null);
   const videoRef = useRef(null);
@@ -77,12 +77,13 @@ const VideoBlock = ({ slice, projectFolder }) => {
           preload="metadata"
           disablePictureInPicture
           disableRemotePlayback
+          aria-label={alt}
           className="block h-auto w-full bg-black"
         />
       ) : (
         <Image
           src={posterSrc}
-          alt=""
+          alt={alt}
           width={slice.width}
           height={slice.height}
           sizes="100vw"

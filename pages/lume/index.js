@@ -13,17 +13,17 @@ export default function LumeCaseStudy() {
   const isDesktop = useIsDesktop();
 
   const slices = [
-    { type: 'image', filename: 'slice-01.webp', width: 1440, height: 3059 },
-    { type: 'video', filename: 'slice-02.webm', width: 1440, height: 900 },
-    { type: 'image', filename: 'slice-03.webp', width: 1440, height: 1972 },
-    { type: 'video', filename: 'slice-04.webm', width: 1440, height: 918 },
-    { type: 'image', filename: 'slice-05.webp', width: 1440, height: 4781 },
-    { type: 'video', filename: 'slice-06.webm', width: 1440, height: 1427 },
-    { type: 'image', filename: 'slice-07.webp', width: 1440, height: 780 },
-    { type: 'video', filename: 'slice-08.webm', width: 1440, height: 1300 },
-    { type: 'image', filename: 'slice-09.webp', width: 1440, height: 3090 },
-    { type: 'video', filename: 'slice-10.webm', width: 1440, height: 895 },
-    { type: 'image', filename: 'slice-11.webp', width: 1440, height: 7532 },
+    { type: 'image', filename: 'slice-01.webp', width: 1440, height: 3059, altKey: 'lume-alt-01' },
+    { type: 'video', filename: 'slice-02.webm', width: 1440, height: 900, altKey: 'lume-alt-02' },
+    { type: 'image', filename: 'slice-03.webp', width: 1440, height: 1972, altKey: 'lume-alt-03' },
+    { type: 'video', filename: 'slice-04.webm', width: 1440, height: 918, altKey: 'lume-alt-04' },
+    { type: 'image', filename: 'slice-05.webp', width: 1440, height: 4781, altKey: 'lume-alt-05' },
+    { type: 'video', filename: 'slice-06.webm', width: 1440, height: 1427, altKey: 'lume-alt-06' },
+    { type: 'image', filename: 'slice-07.webp', width: 1440, height: 780, altKey: 'lume-alt-07' },
+    { type: 'video', filename: 'slice-08.webm', width: 1440, height: 1300, altKey: 'lume-alt-08' },
+    { type: 'image', filename: 'slice-09.webp', width: 1440, height: 3090, altKey: 'lume-alt-09' },
+    { type: 'video', filename: 'slice-10.webm', width: 1440, height: 895, altKey: 'lume-alt-10' },
+    { type: 'image', filename: 'slice-11.webp', width: 1440, height: 7532, altKey: 'lume-alt-11' },
   ];
 
   return (
@@ -49,7 +49,19 @@ export default function LumeCaseStudy() {
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
       </div>
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
-        
+
+        <section className="sr-only">
+          <h1>{t('lume-sr-title')}</h1>
+          <p>{t('lume-sr-role')}</p>
+          <p>{t('lume-sr-summary')}</p>
+          <p>{t('lume-sr-method')}</p>
+          <p>{t('lume-sr-insight')}</p>
+          <p>{t('lume-sr-solution')}</p>
+          <p>{t('lume-sr-accessibility')}</p>
+          <h2>{t('lume-sr-deliverables-heading')}</h2>
+          <p>{t('lume-sr-deliverables')}</p>
+        </section>
+
         <div className="fixed top-4 left-4 md:top-6 md:left-6 z-50">
           <Link 
             href="/work" 
@@ -74,11 +86,11 @@ export default function LumeCaseStudy() {
             <div key={index} className={`w-full relative flex ${index > 0 ? '-mt-[1px]' : ''}`}>
               
               {slice.type === 'video' ? (
-                <VideoBlock slice={slice} projectFolder="lume-project" />
+                <VideoBlock slice={slice} projectFolder="lume-project" alt={t(slice.altKey)} />
               ) : (
                 <Image
                   src={`/lume-project/${slice.filename}`}
-                  alt={`Lume Energy Case Study - Sezione ${index + 1}`}
+                  alt={t(slice.altKey)}
                   width={slice.width}
                   height={slice.height}
                   sizes="(max-width: 1360px) 100vw, 1360px"

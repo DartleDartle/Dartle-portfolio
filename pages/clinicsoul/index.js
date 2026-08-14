@@ -13,24 +13,24 @@ export default function ClinicSoulCaseStudy() {
   const isDesktop = useIsDesktop();
 
   const slices = [
-    { type: 'image', filename: 'slice-01.webp', width: 2048, height: 1152 },
-    { type: 'video', filename: 'slice-02.webm', width: 2048, height: 1025.5 },
-    { type: 'video', filename: 'slice-03.webm', width: 2048, height: 891 },
-    { type: 'image', filename: 'slice-04.webp', width: 2048, height: 1372 },
-    { type: 'image', filename: 'slice-05.webp', width: 2048, height: 1238 },
-    { type: 'image', filename: 'slice-06.webp', width: 2048, height: 1307 },
-    { type: 'video', filename: 'slice-07.webm', width: 2048, height: 1476 },
-    { type: 'image', filename: 'slice-08.webp', width: 2048, height: 1457 },
-    { type: 'image', filename: 'slice-09.webp', width: 2048, height: 1224 },
-    { type: 'video', filename: 'slice-10.webm', width: 2048, height: 1116 },
-    { type: 'video', filename: 'slice-11.webm', width: 2048, height: 1054.5 },
-    { type: 'image', filename: 'slice-12.webp', width: 2048, height: 1534 },
-    { type: 'image', filename: 'slice-13.webp', width: 2048, height: 1228 },
-    { type: 'image', filename: 'slice-14.webp', width: 2048, height: 941 },
-    { type: 'image', filename: 'slice-15.webp', width: 2048, height: 944 },
-    { type: 'image', filename: 'slice-16.webp', width: 2048, height: 1753 },
-    { type: 'image', filename: 'slice-17.webp', width: 2048, height: 3015 },
-    { type: 'image', filename: 'slice-18.webp', width: 2048, height: 1845 },
+    { type: 'image', filename: 'slice-01.webp', width: 2048, height: 1152, altKey: 'clinicsoul-alt-01' },
+    { type: 'video', filename: 'slice-02.webm', width: 2048, height: 1025.5, altKey: 'clinicsoul-alt-02' },
+    { type: 'video', filename: 'slice-03.webm', width: 2048, height: 891, altKey: 'clinicsoul-alt-03' },
+    { type: 'image', filename: 'slice-04.webp', width: 2048, height: 1372, altKey: 'clinicsoul-alt-04' },
+    { type: 'image', filename: 'slice-05.webp', width: 2048, height: 1238, altKey: 'clinicsoul-alt-05' },
+    { type: 'image', filename: 'slice-06.webp', width: 2048, height: 1307, altKey: 'clinicsoul-alt-06' },
+    { type: 'video', filename: 'slice-07.webm', width: 2048, height: 1476, altKey: 'clinicsoul-alt-07' },
+    { type: 'image', filename: 'slice-08.webp', width: 2048, height: 1457, altKey: 'clinicsoul-alt-08' },
+    { type: 'image', filename: 'slice-09.webp', width: 2048, height: 1224, altKey: 'clinicsoul-alt-09' },
+    { type: 'video', filename: 'slice-10.webm', width: 2048, height: 1116, altKey: 'clinicsoul-alt-10' },
+    { type: 'video', filename: 'slice-11.webm', width: 2048, height: 1054.5, altKey: 'clinicsoul-alt-11' },
+    { type: 'image', filename: 'slice-12.webp', width: 2048, height: 1534, altKey: 'clinicsoul-alt-12' },
+    { type: 'image', filename: 'slice-13.webp', width: 2048, height: 1228, altKey: 'clinicsoul-alt-13' },
+    { type: 'image', filename: 'slice-14.webp', width: 2048, height: 941, altKey: 'clinicsoul-alt-14' },
+    { type: 'image', filename: 'slice-15.webp', width: 2048, height: 944, altKey: 'clinicsoul-alt-15' },
+    { type: 'image', filename: 'slice-16.webp', width: 2048, height: 1753, altKey: 'clinicsoul-alt-16' },
+    { type: 'image', filename: 'slice-17.webp', width: 2048, height: 3015, altKey: 'clinicsoul-alt-17' },
+    { type: 'image', filename: 'slice-18.webp', width: 2048, height: 1845, altKey: 'clinicsoul-alt-18' },
   ];
 
   return (
@@ -56,7 +56,17 @@ export default function ClinicSoulCaseStudy() {
         <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
       </div>
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
-        
+
+        <section className="sr-only">
+          <h1>{t('clinicsoul-sr-title')}</h1>
+          <p>{t('clinicsoul-sr-role')}</p>
+          <p>{t('clinicsoul-sr-summary')}</p>
+          <p>{t('clinicsoul-sr-discovery')}</p>
+          <p>{t('clinicsoul-sr-method')}</p>
+          <h2>{t('clinicsoul-sr-deliverables-heading')}</h2>
+          <p>{t('clinicsoul-sr-deliverables')}</p>
+        </section>
+
         <div className="fixed top-4 left-4 md:top-6 md:left-6 z-50">
           <Link 
             href="/work" 
@@ -81,11 +91,11 @@ export default function ClinicSoulCaseStudy() {
             <div key={index} className={`w-full relative flex ${index > 0 ? '-mt-[1px]' : ''}`}>
               
               {slice.type === 'video' ? (
-                <VideoBlock slice={slice} projectFolder="clinicsoul-project" />
+                <VideoBlock slice={slice} projectFolder="clinicsoul-project" alt={t(slice.altKey)} />
               ) : (
                 <Image
                   src={`/clinicsoul-project/${slice.filename}`}
-                  alt={`ClinicSoul Case Study - Sezione ${index + 1}`}
+                  alt={t(slice.altKey)}
                   width={slice.width}
                   height={slice.height}
                   sizes="(max-width: 1360px) 100vw, 1360px"
