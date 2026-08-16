@@ -90,10 +90,6 @@ const TestimonialSlider = () => {
                     <div className='text-lg font-medium'>{person.name}</div>
                   )}
                   {/* FINE NOME CLICCABILE */}
-
-                  <div className='text-[12px] uppercase font-extralight tracking-widest mt-1'>
-                    {person.position}
-                  </div>
                 </div>
               </div>
               <div className='flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-accent/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20 mt-6 xl:mt-0'>
