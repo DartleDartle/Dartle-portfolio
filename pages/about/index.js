@@ -182,10 +182,9 @@ const About = () => {
               animate="show"
               className="font-bold leading-[1.05] text-3xl md:text-4xl"
             >
-              {t('about.title1')}{' '}
-              <span className="text-accent">{t('about.title5')}</span>
-              <br /> {t('about.title2')}
-              {t('about.title3')}
+              {t('about.title')}
+              <br />
+              <span className="text-accent">{t('about.title-accent')}</span>
             </motion.h2>
 
             <motion.p
