@@ -2,43 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dartle-portfolio.vercel.app/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it" />
+    <loc>https://www.davide-pintore.site/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it" />
   </url>
   <url>
-    <loc>https://dartle-portfolio.vercel.app/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/about" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/about" />
+    <loc>https://www.davide-pintore.site/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/about" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/about" />
   </url>
   <url>
-    <loc>https://dartle-portfolio.vercel.app/work</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/work" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/work" />
+    <loc>https://www.davide-pintore.site/work</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/work" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/work" />
   </url>
   <url>
-    <loc>https://dartle-portfolio.vercel.app/testimonials</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/testimonials" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/testimonials" />
+    <loc>https://www.davide-pintore.site/testimonials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/testimonials" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/testimonials" />
   </url>
   <url>
-    <loc>https://dartle-portfolio.vercel.app/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/contact" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/contact" />
+    <loc>https://www.davide-pintore.site/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/contact" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/contact" />
   </url>
   <url>
-    <loc>https://dartle-portfolio.vercel.app/lume</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/lume" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/lume" />
+    <loc>https://www.davide-pintore.site/lume</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/lume" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/lume" />
   </url>
   <url>
-    <loc>https://dartle-portfolio.vercel.app/clinicsoul</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/clinicsoul" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/clinicsoul" />
+    <loc>https://www.davide-pintore.site/clinicsoul</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/clinicsoul" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/clinicsoul" />
   </url>
   <url>
-    <loc>https://dartle-portfolio.vercel.app/fisiogest</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dartle-portfolio.vercel.app/fisiogest" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://dartle-portfolio.vercel.app/it/fisiogest" />
+    <loc>https://www.davide-pintore.site/fisiogest</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/fisiogest" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/fisiogest" />
+  </url>
+  <url>
+    <loc>https://www.davide-pintore.site/brunocambiaso</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/brunocambiaso" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/brunocambiaso" />
   </url>
 </urlset>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dartle-portfolio.vercel.app/sitemap.xml
+Sitemap: https://www.davide-pintore.site/sitemap.xml

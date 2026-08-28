@@ -148,5 +148,13 @@
   "clinicsoul-alt-15": "Quattro insight su guida e supporto del sistema: filtri intelligenti, preservare il tocco umano, l'IA come assistente e non pilota, e visualizzazione della disponibilità.",
   "clinicsoul-alt-16": "Matrice di benchmark che confronta ClinicSoul con cinque competitor — XDENT, Alfadocs, Cliniko, MioDottore e Doctolib — su prima impressione, facilità di apprendimento, organizzazione delle funzionalità, automazione e innovazione, ed efficienza operativa.",
   "clinicsoul-alt-17": "Diagramma dell'architettura dell'informazione che mostra il nuovo flusso utente organizzato su cinque pilastri: Calendario, Gestione Pazienti, Gestione Clinica, Contabilità e Impostazioni.",
-  "clinicsoul-alt-18": "Slide di chiusura: conclusione del progetto sul passaggio da assunzioni a decisioni basate sull'evidenza, seguita da una slide 'Grazie per la lettura' con la mascotte di ClinicSoul."
+  "clinicsoul-alt-18": "Slide di chiusura: conclusione del progetto sul passaggio da assunzioni a decisioni basate sull'evidenza, seguita da una slide 'Grazie per la lettura' con la mascotte di ClinicSoul.",
+
+  "brunocambiaso-meta-desc": "Case study UI design di Bruno Cambiaso, un portfolio minimale per un pittore, realizzato con Next.js, Sanity CMS e Tailwind CSS.",
+  "brunocambiaso-category": "UI Design",
+  "brunocambiaso-category-2": "Front-end",
+  "brunocambiaso-description": "Un portfolio minimale ed essenziale per un pittore che espone opere a olio, acrilico e tecnica mista — pensato perché sia l'opera a restare protagonista, non l'interfaccia. Tipografia silenziosa, spazi bianchi generosi e una UI che resta quasi del tutto in secondo piano, lasciando che il colore arrivi dai quadri stessi.",
+  "brunocambiaso-tech-label": "Realizzato con",
+  "brunocambiaso-preview-label": "Anteprima live",
+  "brunocambiaso-visit-btn": "Visita il sito completo"
 }
