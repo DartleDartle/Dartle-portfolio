@@ -34,7 +34,6 @@
   }
 }
 
-
 @layer base {
   body {
     @apply bg-grey leading-relaxed;

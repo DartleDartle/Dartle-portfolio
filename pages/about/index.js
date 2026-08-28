@@ -205,7 +205,7 @@ const About = () => {
               <div className="flex gap-x-8">
                 <div className="relative pr-8 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={25} duration={2.5} />
+                    <CountUp start={0} end={25} duration={5} />
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[110px]">
                     {t('counter1')}
@@ -214,7 +214,7 @@ const About = () => {
 
                 <div className="pl-8">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={3} duration={2.5} />
+                    <CountUp start={0} end={4} duration={10} />
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[110px]">
                     {t('counter2')}
@@ -234,11 +234,10 @@ const About = () => {
               {aboutData.map((item, itemIndex) => (
                 <div
                   key={`${item.title}-${itemIndex}`}
-                  className={`${
-                    index === itemIndex
-                      ? 'text-accent after:w-[100%] after:bg-accent'
-                      : 'text-primary/70'
-                  } cursor-pointer capitalize xl:text-lg relative after:transition-all after:duration-300 after:w-8 after:h-[2px] after:bg-primary/30 after:absolute after:-bottom-1 after:left-0`}
+                  className={`${index === itemIndex
+                    ? 'text-accent after:w-[100%] after:bg-accent'
+                    : 'text-primary/70'
+                    } cursor-pointer capitalize xl:text-lg relative after:transition-all after:duration-300 after:w-8 after:h-[2px] after:bg-primary/30 after:absolute after:-bottom-1 after:left-0`}
                   onClick={() => setIndex(itemIndex)}
                 >
                   {item.title}
@@ -254,45 +253,45 @@ const About = () => {
                       <div className="w-full h-px my-3 shrink-0 bg-gradient-to-r from-transparent via-accent/60 to-transparent drop-shadow-[0_0_4px_rgba(241,126,65,0.6)]"></div>
                     )}
                     <div
-                    className="w-full flex flex-col items-center xl:flex-row xl:justify-between gap-y-2 xl:gap-y-0 text-primary/60"
-                  >
-                    <div className="flex flex-col items-center xl:flex-row xl:items-center gap-y-4 xl:gap-y-0 xl:gap-x-4 w-full">
-                      <div className="font-light text-center xl:text-left leading-snug max-w-[300px] xl:max-w-none">
-                        {item.title}
-                      </div>
+                      className="w-full flex flex-col items-center xl:flex-row xl:justify-between gap-y-2 xl:gap-y-0 text-primary/60"
+                    >
+                      <div className="flex flex-col items-center xl:flex-row xl:items-center gap-y-4 xl:gap-y-0 xl:gap-x-4 w-full">
+                        <div className="font-light text-center xl:text-left leading-snug max-w-[300px] xl:max-w-none">
+                          {item.title}
+                        </div>
 
-                      {item.icons && (
-                        <div className="hidden xl:flex opacity-40 shrink-0">◦</div>
-                      )}
+                        {item.icons && (
+                          <div className="hidden xl:flex opacity-40 shrink-0">◦</div>
+                        )}
 
-                      {item.icons && item.icons.length > 0 && (
-                        <div className="flex flex-wrap justify-center xl:justify-start gap-4">
-                          {item.icons.map((iconItem, iconIndex) => (
-                            <div
-                              key={`${item.title}-icon-${iconIndex}`}
-                              className="relative group flex items-center justify-center text-2xl text-primary"
-                            >
-                              {iconItem.icon}
-                              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 hidden group-hover:flex whitespace-nowrap z-10 pointer-events-none">
-                                <div className="bg-primary relative flex text-grey items-center px-2 py-1 rounded-[4px] text-[12px] leading-none font-semibold">
-                                  {iconItem.label}
-                                  <div className="border-solid border-b-primary border-b-8 border-x-transparent border-x-[6px] border-t-0 absolute bottom-full left-1/2 -translate-x-1/2"></div>
+                        {item.icons && item.icons.length > 0 && (
+                          <div className="flex flex-wrap justify-center xl:justify-start gap-4">
+                            {item.icons.map((iconItem, iconIndex) => (
+                              <div
+                                key={`${item.title}-icon-${iconIndex}`}
+                                className="relative group flex items-center justify-center text-2xl text-primary"
+                              >
+                                {iconItem.icon}
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 hidden group-hover:flex whitespace-nowrap z-10 pointer-events-none">
+                                  <div className="bg-primary relative flex text-grey items-center px-2 py-1 rounded-[4px] text-[12px] leading-none font-semibold">
+                                    {iconItem.label}
+                                    <div className="border-solid border-b-primary border-b-8 border-x-transparent border-x-[6px] border-t-0 absolute bottom-full left-1/2 -translate-x-1/2"></div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {item.stage && (
+                        <div className="flex items-center gap-x-4 shrink-0 xl:ml-auto">
+                          <div className="hidden xl:block w-px h-4 bg-gradient-to-b from-transparent via-accent/60 to-transparent drop-shadow-[0_0_4px_rgba(241,126,65,0.6)]"></div>
+                          <div className="opacity-50 italic text-sm xl:text-base">
+                            {item.stage}
+                          </div>
                         </div>
                       )}
-                    </div>
-
-                    {item.stage && (
-                      <div className="flex items-center gap-x-4 shrink-0 xl:ml-auto">
-                        <div className="hidden xl:block w-px h-4 bg-gradient-to-b from-transparent via-accent/60 to-transparent drop-shadow-[0_0_4px_rgba(241,126,65,0.6)]"></div>
-                        <div className="opacity-50 italic text-sm xl:text-base">
-                          {item.stage}
-                        </div>
-                      </div>
-                    )}
                     </div>
                   </React.Fragment>
                 ))}
