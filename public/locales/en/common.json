@@ -98,7 +98,10 @@
   "fisiogest-alt-15": "Patient management section: phone mockups of the searchable patient list and a five-tab patient profile with direct call and WhatsApp actions.",
   "fisiogest-alt-16": "Phone mockup of pain-score and improvement KPIs with a trend chart, next to a desktop mockup of the therapeutic pathway timeline organized by body area.",
   "fisiogest-alt-17": "Income control section: three phone mockups of the Revenue module showing payment status monitoring, bulk 'mark as paid' actions, and the payment method selection screen.",
+  "fisiogest-alt-18": "Revenue module on desktop: a dashboard summary of confirmed and no-show appointments, the daily collected amount and patients seen, and a payment tracking table with per-visit status and a bulk 'Mark as Paid' action.",
+  "fisiogest-alt-19": "Design System & Scalability section opening with 'A Redesign of Traditional Pain Maps': a Cervical Pain body diagram highlighting the treated area in red and linking the pain cause with a connecting line, a list of the points involved, and three guiding principles — one highlighted area per treatment pathway, linking pain to its cause, and a low-to-high color intensity system.",
   "fisiogest-alt-20": "Specialized assessment tools: anatomical pain maps for the foot (hallux, metatarsus) and spine (S5, sacral apex), followed by the Design System & Scalability overview listing the Tailwind CSS v4, Shadcn UI, Inter, WCAG 2.1 AA, Mobile-First and Design Tokens foundations.",
+  "fisiogest-alt-21": "Design system foundations: color tokens for brand, neutral and status colors with their hex values; button states (primary, secondary outlined, ghost) across default, hover, loading and disabled; status badges and priority pills built for WCAG 2.1 AA accessibility; and input field states including a search bar, default text fields and an error state.",
   "fisiogest-alt-22": "Design system documentation: typography specs, and navigation components (tab bar, mobile bottom bar, desktop sidebar) with their design tokens, closing with a 'Thanks for reading' slide.",
 
   "lume-sr-title": "Lume — Smart Energy Bill Management App",

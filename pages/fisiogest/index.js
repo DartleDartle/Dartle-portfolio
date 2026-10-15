@@ -11,9 +11,6 @@ export default function FisiogestCaseStudy() {
   const { t } = useTranslation('common');
   const isDesktop = useIsDesktop();
 
-  // NOTE: slice-18, slice-19 and slice-21 were corrupted during an
-  // asset-optimization pass and are temporarily omitted. Re-add them here
-  // once the originals are replaced.
   const slices = [
     { type: 'image', filename: 'slice-01.webp', width: 2880, height: 2116, altKey: 'fisiogest-alt-01' },
     { type: 'image', filename: 'slice-02.webp', width: 2880, height: 2020, altKey: 'fisiogest-alt-02' },
@@ -32,7 +29,10 @@ export default function FisiogestCaseStudy() {
     { type: 'image', filename: 'slice-15.webp', width: 2880, height: 3896, altKey: 'fisiogest-alt-15' },
     { type: 'image', filename: 'slice-16.webp', width: 2880, height: 3768, altKey: 'fisiogest-alt-16' },
     { type: 'image', filename: 'slice-17.webp', width: 2880, height: 2860, altKey: 'fisiogest-alt-17' },
+    { type: 'image', filename: 'slice-18.webp', width: 2880, height: 2514, altKey: 'fisiogest-alt-18' },
+    { type: 'image', filename: 'slice-19.webp', width: 2880, height: 3662, altKey: 'fisiogest-alt-19' },
     { type: 'image', filename: 'slice-20.webp', width: 2880, height: 3370, altKey: 'fisiogest-alt-20' },
+    { type: 'image', filename: 'slice-21.webp', width: 2880, height: 3050, altKey: 'fisiogest-alt-21' },
     { type: 'image', filename: 'slice-22.webp', width: 2880, height: 3306, altKey: 'fisiogest-alt-22' },
   ];
 
