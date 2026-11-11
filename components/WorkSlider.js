@@ -7,8 +7,8 @@ import { useIsDesktop } from '../hooks/useIsDesktop';
 // Via di Guinceri leads: it is the newest project
 export const workProjects = [
   {
-    title: 'Via di Guinceri - Restaurant Website & Staff Portal',
-    path: '/thumb1-6.png',
+    title: 'Via di Guinceri - Case Study',
+    path: '/thumb1-6.png?v=2',
     url: '/viadiguinceri',
     isExternal: false,
   },

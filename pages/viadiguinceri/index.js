@@ -37,11 +37,11 @@ export default function ViaDiGuinceriCaseStudy() {
   return (
     <>
       <Seo
-        title="Via di Guinceri - Restaurant Website & Staff Portal"
+        title="Via di Guinceri - Case Study"
         description={t('viadiguinceri-meta-desc')}
-        image="/thumb1-6.png"
+        image="/thumb1-6.png?v=2"
       />
-      <CaseStudyBackground src="/viadiguinceri-project/viadiguinceri-bg.webm" overlayClassName="bg-black/30" />
+      <CaseStudyBackground src="/viadiguinceri-project/viadiguinceri-bg.webm" overlayClassName="bg-black/10" />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
 
         <section className="sr-only">
