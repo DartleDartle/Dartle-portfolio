@@ -1,11 +1,12 @@
-import {Sora} from 'next/font/google'
+import localFont from 'next/font/local'
 
-
-// 100 and 200 are never used (no font-thin / font-extralight): not downloaded
-const sora = Sora({
-  subsets: ['latin'],
+// Sora (OFL), latin, variable 300–800, served from the repo so the build
+// never depends on Google Fonts being reachable.
+const sora = localFont({
+  src: '../fonts/sora-latin-300-800.woff2',
   variable: '--font-sora',
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: '300 800',
+  display: 'swap',
 })
 
 import Nav from '../components/Nav'
