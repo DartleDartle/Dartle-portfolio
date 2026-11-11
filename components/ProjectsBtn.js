@@ -9,14 +9,14 @@ const ProjectsBtn = () => {
 
   return (
     <div className="mx-auto xl:mx-0">
-      <Link 
-        href={'/work'} 
-        className="flex items-center justify-center xl:justify-start gap-x-4 group py-4"
+      <Link
+        href={'/work'}
+        className="flex items-center justify-center xl:justify-start gap-x-4 group py-4 rounded-md active:scale-[0.98] transition-transform duration-200 ease-out"
       >
-        <h1 className="relative inline cursor-pointer text-xl font-medium before:bg-orange-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out group-hover:before:origin-bottom-left group-hover:before:scale-x-100">
+        <span className="relative inline text-xl font-medium before:bg-orange-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition-transform before:duration-300 before:ease-out group-hover:before:origin-bottom-left group-hover:before:scale-x-100 group-focus-visible:before:origin-bottom-left group-focus-visible:before:scale-x-100">
           {t('button')}
-        </h1>
-        <HiArrowRight className="text-4xl transition-all duration-300 group-hover:translate-x-2" />
+        </span>
+        <HiArrowRight className="text-4xl transition-transform duration-300 ease-out group-hover:translate-x-2" aria-hidden="true" />
       </Link>
     </div>
   );

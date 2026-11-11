@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Head from 'next/head';
+
+import Seo from '../../components/Seo';
 
 // icons
 import {
@@ -167,16 +168,14 @@ const About = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-hidden xl:overflow-y-auto">
-      <Head>
-        <title>{t('tab-about')}</title>
-      </Head>
+      <Seo title={`${t('tab-about')} | Davide Pintore`} description={t('meta-about')} />
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center xl:items-start xl:flex-row pt-56 xl:pt-[20vh] pb-32 xl:pb-16 h-full">
         <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
           <div className="text-center xl:text-left flex flex-col justify-center">
-            <motion.h2
+            <motion.h1
               variants={fadeIn('right', 0.2)}
               initial="hidden"
               animate="show"
@@ -184,8 +183,8 @@ const About = () => {
             >
               {t('about.title')}
               <br />
-              <span className="text-accent">{t('about.title-accent')}</span>
-            </motion.h2>
+              <span className="text-accent-deep">{t('about.title-accent')}</span>
+            </motion.h1>
 
             <motion.p
               variants={fadeIn('right', 0.4)}
@@ -204,7 +203,7 @@ const About = () => {
             >
               <div className="flex gap-x-8">
                 <div className="relative pr-8 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                  <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                  <div className="text-2xl xl:text-4xl font-extrabold text-accent-deep mb-2">
                     <CountUp start={0} end={25} duration={5} />
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[110px]">
@@ -213,7 +212,7 @@ const About = () => {
                 </div>
 
                 <div className="pl-8">
-                  <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                  <div className="text-2xl xl:text-4xl font-extrabold text-accent-deep mb-2">
                     <CountUp start={0} end={4} duration={10} />
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[110px]">
@@ -230,22 +229,28 @@ const About = () => {
             animate="show"
             className="w-full xl:max-w-[560px] xl:pl-16 flex flex-col"
           >
-            <div className="flex gap-x-6 xl:gap-x-10 justify-center xl:justify-start mb-6">
+            <div className="flex gap-x-6 xl:gap-x-10 justify-center xl:justify-start mb-4">
               {aboutData.map((item, itemIndex) => (
-                <div
+                <button
+                  type="button"
                   key={`${item.title}-${itemIndex}`}
+                  aria-pressed={index === itemIndex}
                   className={`${index === itemIndex
-                    ? 'text-accent after:w-[100%] after:bg-accent'
-                    : 'text-primary/70'
-                    } cursor-pointer capitalize xl:text-lg relative after:transition-all after:duration-300 after:w-8 after:h-[2px] after:bg-primary/30 after:absolute after:-bottom-1 after:left-0`}
+                    ? 'text-primary font-medium after:scale-x-100 after:bg-accent'
+                    : 'text-primary/70 hover:text-primary after:scale-x-[0.3] after:bg-primary/30'
+                    } min-h-[44px] capitalize xl:text-lg relative rounded-sm transition-colors duration-200 after:transition-transform after:duration-300 after:ease-out after:origin-left after:w-full after:h-[2px] after:absolute after:bottom-1 after:left-0`}
                   onClick={() => setIndex(itemIndex)}
                 >
                   {item.title}
-                </div>
+                </button>
               ))}
             </div>
 
-            <div className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-4 xl:pr-12 pb-48 xl:pb-12 custom-scrollbar overflow-x-hidden">
+            <div
+              tabIndex={0}
+              aria-label={aboutData[index].title}
+              className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-4 xl:pr-12 pb-48 xl:pb-12 custom-scrollbar overflow-x-hidden rounded-md"
+            >
               <div className="flex flex-col items-center xl:items-start">
                 {aboutData[index].info.map((item, itemIndex) => (
                   <React.Fragment key={`${item.title}-${itemIndex}`}>
@@ -253,7 +258,7 @@ const About = () => {
                       <div className="w-full h-px my-3 shrink-0 bg-gradient-to-r from-transparent via-accent/60 to-transparent drop-shadow-[0_0_4px_rgba(241,126,65,0.6)]"></div>
                     )}
                     <div
-                      className="w-full flex flex-col items-center xl:flex-row xl:justify-between gap-y-2 xl:gap-y-0 text-primary/60"
+                      className="w-full flex flex-col items-center xl:flex-row xl:justify-between gap-y-2 xl:gap-y-0 text-primary/75"
                     >
                       <div className="flex flex-col items-center xl:flex-row xl:items-center gap-y-4 xl:gap-y-0 xl:gap-x-4 w-full">
                         <div className="font-light text-center xl:text-left leading-snug max-w-[300px] xl:max-w-none">
@@ -269,6 +274,8 @@ const About = () => {
                             {item.icons.map((iconItem, iconIndex) => (
                               <div
                                 key={`${item.title}-icon-${iconIndex}`}
+                                role="img"
+                                aria-label={iconItem.label}
                                 className="relative group flex items-center justify-center text-2xl text-primary"
                               >
                                 {iconItem.icon}
@@ -287,7 +294,7 @@ const About = () => {
                       {item.stage && (
                         <div className="flex items-center gap-x-4 shrink-0 xl:ml-auto">
                           <div className="hidden xl:block w-px h-4 bg-gradient-to-b from-transparent via-accent/60 to-transparent drop-shadow-[0_0_4px_rgba(241,126,65,0.6)]"></div>
-                          <div className="opacity-50 italic text-sm xl:text-base">
+                          <div className="italic text-sm xl:text-base tabular-nums">
                             {item.stage}
                           </div>
                         </div>

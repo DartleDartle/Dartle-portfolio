@@ -1,15 +1,13 @@
+// Entrance used across the pages. Same directions and delays as before, with a shorter travel
+// and a strong ease-out, so content is readable sooner and settles instead of drifting.
+const DISTANCE = 40;
+
 export const fadeIn = (direction, delay) => {
   return {
     hidden: {
-      y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
+      y: direction === 'up' ? DISTANCE : direction === 'down' ? -DISTANCE : 0,
       opacity: 0,
-      x: direction === 'left' ? 80 : direction === 'right' ? -80 : 0,
-      transition: {
-        type: 'tween',
-        duration: 1.5,
-        delay: delay,
-        ease: [0.25, 0.6, 0.3, 0.8],
-      },
+      x: direction === 'left' ? DISTANCE : direction === 'right' ? -DISTANCE : 0,
     },
     show: {
       y: 0,
@@ -17,9 +15,9 @@ export const fadeIn = (direction, delay) => {
       opacity: 1,
       transition: {
         type: 'tween',
-        duration: 1.4,
+        duration: 0.9,
         delay: delay,
-        ease: [0.25, 0.25, 0.25, 0.75],
+        ease: [0.23, 1, 0.32, 1],
       },
     },
   };

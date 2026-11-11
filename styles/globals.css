@@ -20,6 +20,16 @@
   padding-bottom: 48px;
 }
 
+/* pallini da 8px, area di tocco da 44px */
+.my-custom-swiper .swiper-pagination-bullet {
+  position: relative;
+}
+.my-custom-swiper .swiper-pagination-bullet::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+}
+
 /* mobile: nascondo frecce */
 .my-custom-swiper .swiper-button-next,
 .my-custom-swiper .swiper-button-prev {
@@ -50,18 +60,27 @@
   p {
     @apply leading-[1.8] text-primary/80 font-light;
   }
-  .btn,
-  .input {
+  .btn {
     @apply h-[52px];
   }
-  .input {
-    @apply w-full h-[52px] rounded-lg pl-6 capitalize;
+
+  /* one visible focus ring for every control, keyboard only */
+  :focus-visible {
+    outline: 2px solid theme('colors.primary');
+    outline-offset: 3px;
   }
-  .input,
-  .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-accent/50 placeholder:text-accent/30 placeholder:font-light;
+  ::selection {
+    background-color: theme('colors.accent');
+    color: theme('colors.primary');
   }
-  .textarea {
-    @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* keep colour and opacity feedback, drop travel */
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-property: color, background-color, border-color, opacity !important;
   }
 }

@@ -1,5 +1,4 @@
-import Head from 'next/head';
-
+import Seo from '../../components/Seo';
 import WorkSlider from '../../components/WorkSlider';
 
 import { motion } from 'framer-motion';
@@ -13,9 +12,7 @@ const Work = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
-      <Head>
-        <title>{t('tab-work')}</title>
-      </Head>
+      <Seo title={`${t('tab-work')} | Davide Pintore`} description={t('meta-work')} image="/viadiguinceri-og.jpg" />
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
@@ -24,14 +21,14 @@ const Work = () => {
         <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-24 items-start">
           
           <div className="text-center xl:text-left">
-            <motion.h2
+            <motion.h1
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               animate="show"
               className="font-bold leading-[1.05] text-[clamp(34px,4vw,56px)]"
             >
-              {t('work-title')}<span className="text-accent">.</span>
-            </motion.h2>
+              {t('work-title')}<span className="text-accent-deep">.</span>
+            </motion.h1>
 
             <motion.p
               variants={fadeIn('up', 0.4)}
