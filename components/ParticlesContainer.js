@@ -1,8 +1,12 @@
 import {Particles} from 'react-tsparticles';
 import {loadFull} from 'tsparticles';
 import React, { useCallback } from 'react';
+import { useReducedMotion } from 'framer-motion';
 
 const ParticlesContainer = () => {
+  // with prefers-reduced-motion the particles are drawn but stay still
+  const reduceMotion = useReducedMotion();
+
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
@@ -10,7 +14,8 @@ const ParticlesContainer = () => {
 const particlesLoaded = useCallback(async () => {}, []);
 
   return(
-    <Particles 
+    <Particles
+    key={reduceMotion ? 'still' : 'moving'}
     className='w-full h-full absolute translate-z-0'
       id='tsparticles' 
       init={particlesInit} 
@@ -30,7 +35,7 @@ const particlesLoaded = useCallback(async () => {}, []);
               mode: 'push',
             },
             onHover: {
-              enable: true,
+              enable: !reduceMotion,
               mode: 'repulse',
             },
             resize: true,
@@ -61,7 +66,7 @@ const particlesLoaded = useCallback(async () => {}, []);
           },
           move: {
             directions: 'none',
-            enable: true,
+            enable: !reduceMotion,
             outModes: {
               default: 'bounce'
             },

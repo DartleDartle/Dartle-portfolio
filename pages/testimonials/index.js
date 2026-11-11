@@ -1,5 +1,4 @@
-import Head from 'next/head';
-
+import Seo from '../../components/Seo';
 import TestimonialSlider from '../../components/TestimonialSlider';
 
 import { motion } from 'framer-motion';
@@ -13,9 +12,7 @@ const Testimonials = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
-      <Head>
-        <title>{t('tab-testimonials')}</title>
-      </Head>
+      <Seo title={`${t('tab-testimonials')} | Davide Pintore`} description={t('meta-testimonials')} />
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
@@ -23,15 +20,15 @@ const Testimonials = () => {
 
         <div className="w-full flex flex-col items-center">
           
-          <motion.h2
+          <motion.h1
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             animate="show"
             className="font-bold leading-[1.05] text-[clamp(34px,4vw,56px)] text-center xl:pb-12 pb-0"
           >
             {t('testimonial-title1')}{' '}
-            <span className="text-accent">{t('testimonial-title2')}.</span>
-          </motion.h2>
+            <span className="text-accent-deep">{t('testimonial-title2')}.</span>
+          </motion.h1>
 
           {/* slider */}
           <motion.div

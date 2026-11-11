@@ -6,6 +6,10 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   swcMinify: true,
+  // la pagina contatti non c'è più: l'email ora è in home (vale anche per /it/contact)
+  async redirects() {
+    return [{ source: '/contact', destination: '/', permanent: true }];
+  },
 };
 
 module.exports = nextConfig;

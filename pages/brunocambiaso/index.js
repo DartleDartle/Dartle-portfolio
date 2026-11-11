@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import Link from 'next/link';
 
+import Seo from '../../components/Seo';
 import EmbeddedSitePreview from '../../components/EmbeddedSitePreview';
 
 import { motion } from 'framer-motion';
@@ -26,10 +26,11 @@ export default function BrunoCambiasoCaseStudy() {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
-      <Head>
-        <title>Bruno Cambiaso - Artist Portfolio</title>
-        <meta name="description" content={t('brunocambiaso-meta-desc')} />
-      </Head>
+      <Seo
+        title="Bruno Cambiaso - Artist Portfolio"
+        description={t('brunocambiaso-meta-desc')}
+        image="/thumb1-5.png"
+      />
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
@@ -42,7 +43,8 @@ export default function BrunoCambiasoCaseStudy() {
         >
           <Link
             href="/work"
-            className="flex w-fit items-center gap-x-2 text-sm text-primary/60 hover:text-accent transition-all duration-300 mb-12"
+            aria-label={t('back-to-work')}
+            className="flex w-fit items-center gap-x-2 min-h-[44px] min-w-[44px] text-sm text-primary/75 hover:text-accent-ink rounded-md transition-colors duration-200 mb-8"
           >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +52,7 @@ export default function BrunoCambiasoCaseStudy() {
                 viewBox="0 0 24 24"
                 strokeWidth={2.5}
                 stroke="currentColor"
+                aria-hidden="true"
                 className="w-5 h-5 md:w-4 md:h-4"
               >
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -58,10 +61,10 @@ export default function BrunoCambiasoCaseStudy() {
           </Link>
 
           <div className="flex flex-wrap items-center gap-2 mb-6">
-            <div className="inline-block text-[12px] uppercase tracking-[0.2em] font-medium text-accent border border-accent/40 rounded-full px-4 py-1.5">
+            <div className="inline-block text-[12px] uppercase tracking-[0.2em] font-medium text-accent-ink border border-accent/40 rounded-full px-4 py-1.5">
               {t('brunocambiaso-category')}
             </div>
-            <div className="inline-block text-[12px] uppercase tracking-[0.2em] font-medium text-accent border border-accent/40 rounded-full px-4 py-1.5">
+            <div className="inline-block text-[12px] uppercase tracking-[0.2em] font-medium text-accent-ink border border-accent/40 rounded-full px-4 py-1.5">
               {t('brunocambiaso-category-2')}
             </div>
           </div>
@@ -75,7 +78,7 @@ export default function BrunoCambiasoCaseStudy() {
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
-            <span className="text-sm opacity-60">{t('brunocambiaso-tech-label')}</span>
+            <span className="text-sm opacity-75">{t('brunocambiaso-tech-label')}</span>
             {TECH_STACK.map((tech) => (
               <span
                 key={tech}
@@ -89,7 +92,7 @@ export default function BrunoCambiasoCaseStudy() {
           <div className="mt-10">
             <EmbeddedSitePreview
               src={SITE_URL}
-              title="Bruno Cambiaso — anteprima del sito"
+              title={`Bruno Cambiaso, ${t('brunocambiaso-preview-label')}`}
               label={t('brunocambiaso-preview-label')}
             />
           </div>
@@ -99,10 +102,11 @@ export default function BrunoCambiasoCaseStudy() {
               href={SITE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative btn rounded-full border border-accent px-8 transition-all duration-300 flex items-center justify-center gap-x-2 hover:bg-accent/10"
+              className="relative btn rounded-full border border-accent px-8 transition-[background-color,transform] duration-200 ease-out flex items-center justify-center gap-x-2 hover:bg-accent/10 active:scale-[0.97]"
             >
               {t('brunocambiaso-visit-btn')}
-              <HiArrowTopRightOnSquare className="text-lg" />
+              <span className="sr-only">{` (${t('opens-new-tab')})`}</span>
+              <HiArrowTopRightOnSquare className="text-lg" aria-hidden="true" />
             </Link>
           </div>
         </motion.div>

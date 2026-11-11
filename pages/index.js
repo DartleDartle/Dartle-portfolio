@@ -1,5 +1,6 @@
-import Head from 'next/head';
+import { HiEnvelope } from 'react-icons/hi2';
 
+import Seo from '../components/Seo';
 import ParticlesContainer from '../components/ParticlesContainer';
 import ProjectsBtn from '../components/ProjectsBtn';
 import DownloadPdfBtn from '../components/DownloadPdfBtn';
@@ -11,14 +12,16 @@ import { fadeIn } from '../variants';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
+// the address the portfolio PDF already links to
+const EMAIL = 'davide.pintore98@gmail.com';
+
 const Home = () => {
   const { t } = useTranslation('common');
+  const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(t('home.email-subject'))}`;
 
   return (
     <section className="relative min-h-[100svh] overflow-y-auto xl:overflow-hidden bg-grey">
-      <Head>
-        <title>{t('tab-home')}</title>
-      </Head>
+      <Seo title={`${t('tab-home')} | Davide Pintore`} description={t('meta-home')} />
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
@@ -39,7 +42,7 @@ const Home = () => {
             >
               {t("home.title1")} <br />
               {t("home.title2")}
-              <span className="text-accent">{t("about.title4")}</span>
+              <span className="text-accent-deep">{t("about.title4")}</span>
               {t("home.title3")}
             </motion.h1>
 
@@ -69,10 +72,27 @@ const Home = () => {
               variants={fadeIn("down", 0.4)}
               initial="hidden"
               animate="show"
-              className="flex flex-wrap items-center justify-center xl:justify-start gap-x-8 gap-y-4"
+              className="flex flex-col items-center xl:items-start gap-y-5"
             >
-              <ProjectsBtn />
-              <DownloadPdfBtn />
+              <div className="flex flex-wrap items-center justify-center xl:justify-start gap-x-8 gap-y-4">
+                <ProjectsBtn />
+                <DownloadPdfBtn />
+              </div>
+
+              <a
+                href={mailto}
+                className="group inline-flex items-center gap-x-3 min-h-[44px] max-w-full rounded-full py-2 pr-2 text-primary active:scale-[0.98] transition-transform duration-200 ease-out"
+              >
+                <span className="flex items-center justify-center w-11 h-11 shrink-0 rounded-full bg-primary text-grey group-hover:bg-accent-deep transition-colors duration-200" aria-hidden="true">
+                  <HiEnvelope className="text-xl" />
+                </span>
+                <span className="flex flex-col text-left leading-tight min-w-0">
+                  <span className="text-sm text-primary/80">{t('home.email-label')}</span>
+                  <span className="font-medium text-sm min-[360px]:text-base sm:text-lg underline decoration-accent decoration-2 underline-offset-4 [overflow-wrap:anywhere]">
+                    {EMAIL}
+                  </span>
+                </span>
+              </a>
             </motion.div>
           </div>
 
