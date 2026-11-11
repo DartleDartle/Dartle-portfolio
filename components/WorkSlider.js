@@ -70,7 +70,8 @@ const ProjectCard = ({ image, t, priority }) => {
       {...linkProps}
       className='relative overflow-hidden flex flex-col items-center justify-start group rounded-lg active:scale-[0.98] transition-transform duration-200 ease-out'
     >
-      <div className="mb-2 text-sm text-primary text-center">
+      {/* room for two lines, text sits on the image: a title that wraps never pushes its image out of line */}
+      <div className="mb-2 xl:min-h-[2.5rem] w-full flex items-end justify-center text-sm leading-5 text-primary text-center text-balance">
         {image.title}
       </div>
 
@@ -134,7 +135,7 @@ const WorkSlider = () => {
               <div
                 className={
                   isDesktop
-                    ? 'w-full h-[460px] grid grid-cols-2 gap-x-16 gap-y-10 items-start'
+                    ? 'w-full min-h-[460px] grid grid-cols-2 gap-x-16 gap-y-10 items-start'
                     : // capped width: at tablet sizes two 16:9 cards no longer overflow the slide
                       'w-full max-w-[440px] mx-auto grid grid-cols-1 gap-y-10 items-start'
                 }
