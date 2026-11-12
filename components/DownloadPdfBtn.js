@@ -7,7 +7,7 @@ const DownloadPdfBtn = () => {
 
   return (
     <a
-      href="/portfolio-davide-pintore.pdf"
+      href="/portfolio-davide-pintore.pdf?v=2"
       download="Davide-Pintore-Portfolio.pdf"
       className="flex items-center gap-x-2 min-h-[44px] text-sm font-medium border border-accent/50 rounded-full px-5 py-3 hover:border-accent hover:bg-accent/10 active:scale-[0.98] transition-[border-color,background-color,transform] duration-200 ease-out"
     >
