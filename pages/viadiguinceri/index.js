@@ -7,9 +7,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 const slices = [
-  { filename: 'slice-01.webp', width: 2880, height: 2120, altKey: 'viadiguinceri-alt-01' },
+  { filename: 'slice-01.webp?v=2', width: 2880, height: 2120, altKey: 'viadiguinceri-alt-01' },
   { filename: 'slice-02.webp', width: 2880, height: 1766, altKey: 'viadiguinceri-alt-02' },
-  { filename: 'slice-03.webp', width: 2880, height: 2962, altKey: 'viadiguinceri-alt-03' },
+  { filename: 'slice-03.webp?v=2', width: 2880, height: 2962, altKey: 'viadiguinceri-alt-03' },
   { filename: 'slice-04.webp', width: 2880, height: 2312, altKey: 'viadiguinceri-alt-04' },
   { filename: 'slice-05.webp', width: 2880, height: 3722, altKey: 'viadiguinceri-alt-05' },
   { filename: 'slice-06.webp', width: 2880, height: 2941, altKey: 'viadiguinceri-alt-06' },
@@ -19,7 +19,7 @@ const slices = [
   { filename: 'slice-10.webp', width: 2880, height: 1604, altKey: 'viadiguinceri-alt-10' },
   { filename: 'slice-11.webp', width: 2880, height: 2881, altKey: 'viadiguinceri-alt-11' },
   { filename: 'slice-12.webp', width: 2880, height: 2810, altKey: 'viadiguinceri-alt-12' },
-  { filename: 'slice-13.webp', width: 2880, height: 2484, altKey: 'viadiguinceri-alt-13' },
+  { filename: 'slice-13.webp?v=2', width: 2880, height: 2484, altKey: 'viadiguinceri-alt-13' },
   { filename: 'slice-14.webp', width: 2880, height: 4274, altKey: 'viadiguinceri-alt-14' },
   { filename: 'slice-15.webp', width: 2880, height: 3436, altKey: 'viadiguinceri-alt-15' },
   { filename: 'slice-16.webp', width: 2880, height: 4286, altKey: 'viadiguinceri-alt-16' },
@@ -39,7 +39,7 @@ export default function ViaDiGuinceriCaseStudy() {
       <Seo
         title="Via di Guinceri - Case Study"
         description={t('viadiguinceri-meta-desc')}
-        image="/viadiguinceri-og.jpg"
+        image="/viadiguinceri-og.jpg?v=2"
       />
       <CaseStudyBackground src="/viadiguinceri-project/viadiguinceri-bg.webm" overlayClassName="bg-black/60" />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
