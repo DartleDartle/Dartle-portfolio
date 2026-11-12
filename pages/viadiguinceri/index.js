@@ -39,7 +39,7 @@ export default function ViaDiGuinceriCaseStudy() {
       <Seo
         title="Via di Guinceri - Case Study"
         description={t('viadiguinceri-meta-desc')}
-        image="/viadiguinceri-og.jpg?v=2"
+        image="/viadiguinceri-og.jpg?v=3"
       />
       <CaseStudyBackground src="/viadiguinceri-project/viadiguinceri-bg.webm" overlayClassName="bg-black/60" />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">

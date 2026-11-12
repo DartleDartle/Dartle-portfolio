@@ -12,7 +12,7 @@ const Work = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
-      <Seo title={`${t('tab-work')} | Davide Pintore`} description={t('meta-work')} image="/viadiguinceri-og.jpg?v=2" />
+      <Seo title={`${t('tab-work')} | Davide Pintore`} description={t('meta-work')} image="/viadiguinceri-og.jpg?v=3" />
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 

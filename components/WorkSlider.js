@@ -8,7 +8,7 @@ import { useIsDesktop } from '../hooks/useIsDesktop';
 export const workProjects = [
   {
     title: 'Via di Guinceri - Case Study',
-    path: '/thumb1-6.png?v=3',
+    path: '/thumb1-6.png?v=4',
     url: '/viadiguinceri',
     isExternal: false,
   },
