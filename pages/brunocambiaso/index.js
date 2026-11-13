@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import Seo from '../../components/Seo';
 import EmbeddedSitePreview from '../../components/EmbeddedSitePreview';
+import { BackToWork } from '../../components/CaseStudy';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
@@ -34,32 +35,15 @@ export default function BrunoCambiasoCaseStudy() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
-      <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-52 xl:pt-28 pb-28 xl:pb-16">
+      <BackToWork />
+
+      <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-28 pb-16">
         <motion.div
           variants={fadeIn('up', 0.2)}
           initial="hidden"
           animate="show"
           className="w-full max-w-4xl mx-auto"
         >
-          <Link
-            href="/work"
-            aria-label={t('back-to-work')}
-            className="flex w-fit items-center gap-x-2 min-h-[44px] min-w-[44px] text-sm text-primary/75 hover:text-accent-ink rounded-md transition-colors duration-200 mb-8"
-          >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                aria-hidden="true"
-                className="w-5 h-5 md:w-4 md:h-4"
-              >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-            </svg>
-            <span className="hidden md:inline">Portfolio</span>
-          </Link>
-
           <div className="flex flex-wrap items-center gap-2 mb-6">
             <div className="inline-block text-[12px] uppercase tracking-[0.2em] font-medium text-accent-ink border border-accent/40 rounded-full px-4 py-1.5">
               {t('brunocambiaso-category')}

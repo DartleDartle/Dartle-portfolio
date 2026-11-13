@@ -13,7 +13,7 @@ import Nav from '../components/Nav'
 import Header from '../components/Header'
 import { useRouter } from 'next/router';
 
-const caseStudyPages = ['/lume', '/clinicsoul', '/fisiogest', '/viadiguinceri'];
+const caseStudyPages = ['/lume', '/clinicsoul', '/fisiogest', '/viadiguinceri', '/brunocambiaso'];
 
 const Layout = ({children}) => {
   const router = useRouter();

@@ -1,6 +1,6 @@
 import Seo from '../../components/Seo';
 import CaseStudyImage from '../../components/CaseStudyImage';
-import { BackToWork, CaseStudyBackground } from '../../components/CaseStudy';
+import { BackToWork, CaseStudyGradient } from '../../components/CaseStudy';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -40,7 +40,7 @@ export default function ViaDiGuinceriCaseStudy() {
         description={t('viadiguinceri-meta-desc')}
         image="/viadiguinceri-og.jpg?v=3"
       />
-      <CaseStudyBackground src="/viadiguinceri-project/viadiguinceri-bg.webm" overlayClassName="bg-black/60" />
+      <CaseStudyGradient base="#b38450" colors={['#55300f', '#f2d6a0', '#7a4920', '#e6c48c', '#9f6e3d']} overlayClassName="bg-black/60" />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
 
         <section className="sr-only">
