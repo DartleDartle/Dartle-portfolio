@@ -30,6 +30,36 @@ export const CaseStudyBackground = ({ src, overlayClassName = 'bg-black/10' }) =
   );
 };
 
+// Negative delays start each blob mid-cycle so nothing sits still on page load.
+const BLOB_SLOTS = [
+  { top: '-25%', left: '-20%', w: '75vmax', h: '55vmax', animation: 'blob-drift-a 19s -6s' },
+  { top: '35%', left: '50%', w: '65vmax', h: '45vmax', animation: 'blob-drift-b 16s -3s' },
+  { top: '50%', left: '-15%', w: '70vmax', h: '50vmax', animation: 'blob-drift-c 22s -11s' },
+  { top: '-30%', left: '40%', w: '80vmax', h: '55vmax', animation: 'blob-drift-b 25s -17s' },
+  { top: '20%', left: '15%', w: '55vmax', h: '40vmax', animation: 'blob-drift-c 17s -8s' },
+];
+
+// animated mesh gradient behind the slice container (desktop only); colors: up to 5 six-digit hex values
+export const CaseStudyGradient = ({ base, colors, overlayClassName = 'bg-black/10' }) => (
+  <div className="hidden md:block fixed inset-0 z-0 overflow-hidden" style={{ backgroundColor: base }} aria-hidden="true">
+    {colors.map((color, i) => (
+      <div
+        key={i}
+        className="gradient-blob"
+        style={{
+          top: BLOB_SLOTS[i].top,
+          left: BLOB_SLOTS[i].left,
+          width: BLOB_SLOTS[i].w,
+          height: BLOB_SLOTS[i].h,
+          background: `radial-gradient(ellipse, ${color} 0%, ${color}99 35%, transparent 70%)`,
+          animation: `${BLOB_SLOTS[i].animation} ease-in-out infinite alternate`,
+        }}
+      />
+    ))}
+    <div className={`absolute inset-0 ${overlayClassName}`}></div>
+  </div>
+);
+
 export const BackToWork = () => {
   const { t } = useTranslation('common');
 

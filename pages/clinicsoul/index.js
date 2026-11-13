@@ -1,8 +1,7 @@
-import Image from 'next/image';
-
 import VideoBlock from '../../components/Videoblock';
 import Seo from '../../components/Seo';
-import { BackToWork, CaseStudyBackground } from '../../components/CaseStudy';
+import CaseStudyImage from '../../components/CaseStudyImage';
+import { BackToWork, CaseStudyGradient } from '../../components/CaseStudy';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -38,7 +37,7 @@ export default function ClinicSoulCaseStudy() {
         description={t('clinicsoul-meta-desc')}
         image="/thumb1-2.png"
       />
-      <CaseStudyBackground src="/clinicsoul-project/clinicsoul-bg.webm" overlayClassName="bg-black/10" />
+      <CaseStudyGradient base="#f99bb8" colors={['#f55aa8', '#fff6f2', '#fa76b0', '#fbd3cd', '#f7b46c']} overlayClassName="bg-black/10" />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
 
         <section className="sr-only">
@@ -60,18 +59,12 @@ export default function ClinicSoulCaseStudy() {
               {slice.type === 'video' ? (
                 <VideoBlock slice={slice} projectFolder="clinicsoul-project" alt={t(slice.altKey)} />
               ) : (
-                <Image
+                <CaseStudyImage
                   src={`/clinicsoul-project/${slice.filename}`}
+                  variants={[828, 1200]}
                   alt={t(slice.altKey)}
                   width={slice.width}
                   height={slice.height}
-                  sizes="(max-width: 1360px) 100vw, 1360px"
-                  quality={100}
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block'
-                  }}
                   priority={index === 0}
                 />
               )}

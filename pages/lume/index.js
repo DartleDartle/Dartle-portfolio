@@ -1,8 +1,7 @@
-import Image from 'next/image';
-
 import VideoBlock from '../../components/Videoblock';
 import Seo from '../../components/Seo';
-import { BackToWork, CaseStudyBackground } from '../../components/CaseStudy';
+import CaseStudyImage from '../../components/CaseStudyImage';
+import { BackToWork, CaseStudyGradient } from '../../components/CaseStudy';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -31,7 +30,7 @@ export default function LumeCaseStudy() {
         description={t('lume-meta-desc')}
         image="/thumb1-1.png"
       />
-      <CaseStudyBackground src="/lume-project/lume-bg.webm" overlayClassName="bg-black/60" />
+      <CaseStudyGradient base="#4a0aa8" colors={['#c7046f', '#3d5ab8', '#d22b5e', '#8d048c', '#ec7a3a']} overlayClassName="bg-black/60" />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
 
         <section className="sr-only">
@@ -55,18 +54,12 @@ export default function LumeCaseStudy() {
               {slice.type === 'video' ? (
                 <VideoBlock slice={slice} projectFolder="lume-project" alt={t(slice.altKey)} />
               ) : (
-                <Image
+                <CaseStudyImage
                   src={`/lume-project/${slice.filename}`}
+                  variants={[828, 1200]}
                   alt={t(slice.altKey)}
                   width={slice.width}
                   height={slice.height}
-                  sizes="(max-width: 1360px) 100vw, 1360px"
-                  quality={100}
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block'
-                  }}
                   priority={index === 0}
                 />
               )}

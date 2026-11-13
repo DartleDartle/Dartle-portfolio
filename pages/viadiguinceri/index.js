@@ -1,6 +1,5 @@
-import Image from 'next/image';
-
 import Seo from '../../components/Seo';
+import CaseStudyImage from '../../components/CaseStudyImage';
 import { BackToWork, CaseStudyBackground } from '../../components/CaseStudy';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -62,18 +61,12 @@ export default function ViaDiGuinceriCaseStudy() {
         <div className="w-full max-w-[1360px] flex flex-col mx-auto bg-[#0a0a0a] rounded-none md:rounded-[40px] overflow-hidden md:shadow-2xl md:shadow-black/80 md:ring-1 md:ring-white/10">
           {slices.map((slice, index) => (
             <div key={slice.filename} className={`w-full relative flex ${index > 0 ? '-mt-[1px]' : ''}`}>
-              <Image
+              <CaseStudyImage
                 src={`/viadiguinceri-project/${slice.filename}`}
+                variants={[828, 1200, 1920]}
                 alt={t(slice.altKey)}
                 width={slice.width}
                 height={slice.height}
-                sizes="(max-width: 1360px) 100vw, 1360px"
-                quality={100}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  display: 'block'
-                }}
                 priority={index === 0}
               />
             </div>

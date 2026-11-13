@@ -86,7 +86,7 @@ const VideoBlock = ({ slice, projectFolder, alt = '' }) => {
           alt={alt}
           width={slice.width}
           height={slice.height}
-          sizes="100vw"
+          unoptimized
           className="block h-auto w-full"
         />
       )}
