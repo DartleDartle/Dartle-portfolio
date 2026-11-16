@@ -26,7 +26,7 @@ const slices = [
   { filename: 'slice-17.webp', width: 2880, height: 2206, altKey: 'viadiguinceri-alt-17' },
   { filename: 'slice-18.webp', width: 2880, height: 2852, altKey: 'viadiguinceri-alt-18' },
   { filename: 'slice-19.webp', width: 2880, height: 2720, altKey: 'viadiguinceri-alt-19' },
-  { filename: 'slice-security.webp', width: 2880, height: 3450, altKey: 'viadiguinceri-alt-security' },
+  { filename: 'slice-security.webp?v=2', width: 2880, height: 2906, altKey: 'viadiguinceri-alt-security' },
   { filename: 'slice-20.webp', width: 2880, height: 2620, altKey: 'viadiguinceri-alt-20' },
   { filename: 'slice-21.webp', width: 2880, height: 3252, altKey: 'viadiguinceri-alt-21' },
   { filename: 'slice-22.webp', width: 2880, height: 2052, altKey: 'viadiguinceri-alt-22' },
