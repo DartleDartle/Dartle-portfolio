@@ -23,7 +23,6 @@ Welcome to my online portfolio! This project showcases my skills, projects, and 
 3. **Implementing Animations**: Framer Motion allowed me to add animations to various components, including page transitions, hover effects, and scroll-triggered animations.
 4. **Responsive Adjustments**: I iterated through multiple design adjustments to ensure compatibility across devices, addressing specific resolutions, including laptops and extra-large screens (e.g., xxl sizes).
 5. **Translation Setup**: Using conditional rendering, I added multi-language support to each page, a valuable skill for making content accessible to diverse audiences.
-6. **Contact Form with Nodemailer**: Integrated a contact form to allow visitors to reach me directly, using Nodemailer for backend email functionality.
 
 ## 🚀 Lessons Learned
 
