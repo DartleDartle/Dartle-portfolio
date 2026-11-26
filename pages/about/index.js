@@ -213,7 +213,7 @@ const About = () => {
 
                 <div className="pl-8">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent-deep mb-2">
-                    <CountUp start={0} end={4} duration={10} />
+                    <CountUp start={0} end={6} duration={10} />
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[110px]">
                     {t('counter2')}
