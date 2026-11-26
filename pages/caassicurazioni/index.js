@@ -56,14 +56,16 @@ export default function CaAssicurazioniCaseStudy() {
 
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
             <span className="text-sm opacity-75">{t('caassicurazioni-process-label')}</span>
-            {t('caassicurazioni-process').split(' · ').map((step) => (
-              <span
-                key={step}
-                className="text-[13px] px-3 py-1 rounded-full border border-primary/15 bg-primary/5"
-              >
-                {step}
-              </span>
-            ))}
+            {t('caassicurazioni-process')
+              .split(' · ')
+              .map((step) => (
+                <span
+                  key={step}
+                  className="text-[13px] px-3 py-1 rounded-full border border-primary/15 bg-primary/5"
+                >
+                  {step}
+                </span>
+              ))}
           </div>
 
           <Link

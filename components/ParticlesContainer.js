@@ -17,6 +17,8 @@ const ParticlesContainer = () => {
       id="tsparticles"
       className="w-full h-full absolute translate-z-0"
       init={particlesInit}
+      // fullScreen stays at the library default (on): the canvas is fixed to the viewport,
+      // so the wrapper's size classes don't constrain it
       options={{
         interactivity: {
           events: {

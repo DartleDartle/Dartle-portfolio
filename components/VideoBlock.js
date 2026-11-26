@@ -28,7 +28,7 @@ const VideoBlock = ({ slice, projectFolder, alt = '' }) => {
           observer.disconnect();
         }
       },
-      { rootMargin: isDesktop ? '600px 0px' : '200px 0px' }
+      { rootMargin: isDesktop ? '600px 0px' : '200px 0px' },
     );
 
     observer.observe(el);
@@ -50,7 +50,7 @@ const VideoBlock = ({ slice, projectFolder, alt = '' }) => {
           video.currentTime = 0;
         }
       },
-      { threshold: 0.45 }
+      { threshold: 0.45 },
     );
 
     observer.observe(video);

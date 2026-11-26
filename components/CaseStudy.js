@@ -12,7 +12,11 @@ const BLOB_SLOTS = [
 
 // animated mesh gradient behind the slice container (desktop only); colors: up to 5 six-digit hex values
 export const CaseStudyGradient = ({ base, colors, overlayClassName = 'bg-black/10' }) => (
-  <div className="hidden md:block fixed inset-0 z-0 overflow-hidden" style={{ backgroundColor: base }} aria-hidden="true">
+  <div
+    className="hidden md:block fixed inset-0 z-0 overflow-hidden"
+    style={{ backgroundColor: base }}
+    aria-hidden="true"
+  >
     {colors.map((color, i) => (
       <div
         key={i}
@@ -50,9 +54,15 @@ export const BackToWork = () => {
           aria-hidden="true"
           className="w-6 h-6 md:w-5 md:h-5"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+          />
         </svg>
-        <span className="hidden md:block font-medium text-sm tracking-wide ml-2" aria-hidden="true">Portfolio</span>
+        <span className="hidden md:block font-medium text-sm tracking-wide ml-2" aria-hidden="true">
+          Portfolio
+        </span>
       </Link>
     </div>
   );

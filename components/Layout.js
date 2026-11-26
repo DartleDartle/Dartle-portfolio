@@ -1,4 +1,8 @@
-import localFont from 'next/font/local'
+import localFont from 'next/font/local';
+import { useRouter } from 'next/router';
+
+import Header from './Header';
+import Nav from './Nav';
 
 // Sora (OFL), latin, variable 300–800, served from the repo so the build
 // never depends on Google Fonts being reachable.
@@ -7,28 +11,28 @@ const sora = localFont({
   variable: '--font-sora',
   weight: '300 800',
   display: 'swap',
-})
+});
 
-import Nav from '../components/Nav'
-import Header from '../components/Header'
-import { useRouter } from 'next/router';
+const caseStudyPages = [
+  '/lume',
+  '/clinicsoul',
+  '/fisiogest',
+  '/viadiguinceri',
+  '/brunocambiaso',
+  '/caassicurazioni',
+];
 
-const caseStudyPages = ['/lume', '/clinicsoul', '/fisiogest', '/viadiguinceri', '/brunocambiaso', '/caassicurazioni'];
-
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   const router = useRouter();
-  const isCaseStudyPage = caseStudyPages.some((path) =>
-    router.pathname.startsWith(path)
-  );
+  const isCaseStudyPage = caseStudyPages.some((path) => router.pathname.startsWith(path));
 
   return (
-    <div 
+    <div
       className={`page bg-site text-primary bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
     >
-  
       {!isCaseStudyPage && <Nav />}
       {!isCaseStudyPage && <Header />}
-      
+
       {children}
     </div>
   );

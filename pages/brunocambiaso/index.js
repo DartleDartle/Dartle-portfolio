@@ -14,13 +14,7 @@ import { useTranslation } from 'next-i18next';
 
 const SITE_URL = 'https://www.bruno-cambiaso.site/';
 
-const TECH_STACK = [
-  'Next.js',
-  'TypeScript',
-  'Tailwind CSS',
-  'Sanity CMS',
-  'styled-components',
-];
+const TECH_STACK = ['Next.js', 'TypeScript', 'Tailwind CSS', 'Sanity CMS', 'styled-components'];
 
 export default function BrunoCambiasoCaseStudy() {
   const { t } = useTranslation('common');
@@ -53,9 +47,7 @@ export default function BrunoCambiasoCaseStudy() {
             </div>
           </div>
 
-          <h1 className="font-bold leading-[1.05] text-[clamp(34px,5vw,52px)]">
-            Bruno Cambiaso
-          </h1>
+          <h1 className="font-bold leading-[1.05] text-[clamp(34px,5vw,52px)]">Bruno Cambiaso</h1>
 
           <p className="mt-6 max-w-[62ch] text-base xl:text-lg opacity-80">
             {t('brunocambiaso-description')}

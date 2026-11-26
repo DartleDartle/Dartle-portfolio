@@ -1,13 +1,9 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 // icons
-import {
-  RiBehanceLine,
-  RiGithubLine,
-  RiLinkedinLine
-} from 'react-icons/ri'
+import { RiBehanceLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
 
-import { FlagIcon } from "react-flag-kit";
+import { FlagIcon } from 'react-flag-kit';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
@@ -34,7 +30,6 @@ const Socials = () => {
 
   return (
     <div className="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-y-0 lg:gap-x-6 xl:gap-x-10">
-
       <div className="flex items-center gap-x-1 text-[22px] xl:text-xl">
         {socialLinks.map((social) => (
           <Link
@@ -69,9 +64,8 @@ const Socials = () => {
           );
         })}
       </div>
-
     </div>
-  )
-}
+  );
+};
 
 export default Socials;

@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { HiArrowRight } from 'react-icons/hi2'
+import { HiArrowRight } from 'react-icons/hi2';
 
 import { useTranslation } from 'next-i18next';
 
@@ -16,7 +16,10 @@ const ProjectsBtn = () => {
         <span className="relative inline text-xl font-medium before:bg-orange-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition-transform before:duration-300 before:ease-out group-hover:before:origin-bottom-left group-hover:before:scale-x-100 group-focus-visible:before:origin-bottom-left group-focus-visible:before:scale-x-100">
           {t('button')}
         </span>
-        <HiArrowRight className="text-4xl transition-transform duration-300 ease-out group-hover:translate-x-2" aria-hidden="true" />
+        <HiArrowRight
+          className="text-4xl transition-transform duration-300 ease-out group-hover:translate-x-2"
+          aria-hidden="true"
+        />
       </Link>
     </div>
   );

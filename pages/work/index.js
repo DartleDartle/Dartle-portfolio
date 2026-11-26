@@ -12,14 +12,16 @@ const Work = () => {
 
   return (
     <div className="relative min-h-[100svh] bg-grey overflow-x-hidden">
-      <Seo title={`${t('tab-work')} | Davide Pintore`} description={t('meta-work')} image="/viadiguinceri-og.jpg?v=3" />
+      <Seo
+        title={`${t('tab-work')} | Davide Pintore`}
+        description={t('meta-work')}
+        image="/viadiguinceri-og.jpg?v=3"
+      />
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
 
       <div className="relative z-10 container mx-auto px-4 min-h-[100svh] flex items-start xl:items-center pt-64 xl:pt-64 pb-32 xl:pb-0">
-        
         <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-24 items-start">
-          
           <div className="text-center xl:text-left">
             <motion.h1
               variants={fadeIn('up', 0.2)}
@@ -27,7 +29,8 @@ const Work = () => {
               animate="show"
               className="font-bold leading-[1.05] text-[clamp(34px,4vw,56px)]"
             >
-              {t('work-title')}<span className="text-accent-deep">.</span>
+              {t('work-title')}
+              <span className="text-accent-deep">.</span>
             </motion.h1>
 
             <motion.p
@@ -37,9 +40,7 @@ const Work = () => {
               className="mt-6 max-w-[52ch] mx-auto xl:mx-0 text-base xl:text-lg opacity-80"
             >
               {t('work-desc1')}{' '}
-              <mark className="bg-accent/30 text-primary px-1 rounded">
-                {t('work-desc2')}
-              </mark>
+              <mark className="bg-accent/30 text-primary px-1 rounded">{t('work-desc2')}</mark>
             </motion.p>
           </div>
 
@@ -47,12 +48,10 @@ const Work = () => {
             variants={fadeIn('down', 0.6)}
             initial="hidden"
             animate="show"
-        
             className="w-full xl:max-w-[720px] xl:justify-self-start"
           >
             <WorkSlider />
           </motion.div>
-          
         </div>
       </div>
     </div>

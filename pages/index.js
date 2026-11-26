@@ -30,35 +30,33 @@ const Home = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 pt-[200px] pb-[140px] xl:pt-28 xl:pb-0 xl:min-h-[100svh] xl:flex xl:items-center xl:justify-center">
-        
         <div className="w-full max-w-7xl mx-auto flex flex-col gap-y-10 xl:grid xl:grid-cols-2 xl:gap-y-8 xl:gap-x-16 items-center">
-
           <div className="order-1 xl:col-start-1 xl:row-start-1 text-center xl:text-left flex flex-col items-center xl:items-start w-full">
             <motion.h1
-              variants={fadeIn("down", 0.2)}
+              variants={fadeIn('down', 0.2)}
               initial="hidden"
               animate="show"
               className="font-bold leading-[1.05] text-[clamp(34px,6vw,42px)]"
             >
-              {t("home.title1")} <br />
-              {t("home.title2")}
-              <span className="text-accent-deep">{t("about.title4")}</span>
-              {t("home.title3")}
+              {t('home.title1')} <br />
+              {t('home.title2')}
+              <span className="text-accent-deep">{t('about.title4')}</span>
+              {t('home.title3')}
             </motion.h1>
 
             <motion.p
-              variants={fadeIn("down", 0.3)}
+              variants={fadeIn('down', 0.3)}
               initial="hidden"
               animate="show"
               className="mt-6 max-w-[52ch] mx-auto xl:mx-0 text-base xl:text-lg opacity-80"
             >
-              {t("home.text")}
+              {t('home.text')}
             </motion.p>
           </div>
 
           <div className="order-2 xl:col-start-2 xl:row-span-2 relative flex justify-center w-full">
             <motion.div
-              variants={fadeIn("up", 0.5)}
+              variants={fadeIn('up', 0.5)}
               initial="hidden"
               animate="show"
               className="w-[260px] sm:w-[320px] xl:w-[clamp(300px,32vw,520px)] aspect-[4/3] relative shrink-0"
@@ -69,7 +67,7 @@ const Home = () => {
 
           <div className="order-3 xl:col-start-1 xl:row-start-2 flex justify-center xl:justify-start w-full">
             <motion.div
-              variants={fadeIn("down", 0.4)}
+              variants={fadeIn('down', 0.4)}
               initial="hidden"
               animate="show"
               className="flex flex-col items-center xl:items-start gap-y-5"
@@ -83,7 +81,10 @@ const Home = () => {
                 href={mailto}
                 className="group inline-flex items-center gap-x-3 min-h-[44px] max-w-full rounded-full py-2 pr-2 text-primary active:scale-[0.98] transition-transform duration-200 ease-out"
               >
-                <span className="flex items-center justify-center w-11 h-11 shrink-0 rounded-full bg-primary text-grey group-hover:bg-accent-deep transition-colors duration-200" aria-hidden="true">
+                <span
+                  className="flex items-center justify-center w-11 h-11 shrink-0 rounded-full bg-primary text-grey group-hover:bg-accent-deep transition-colors duration-200"
+                  aria-hidden="true"
+                >
                   <HiEnvelope className="text-xl" />
                 </span>
                 <span className="flex flex-col text-left leading-tight min-w-0">
@@ -95,7 +96,6 @@ const Home = () => {
               </a>
             </motion.div>
           </div>
-
         </div>
       </div>
     </section>

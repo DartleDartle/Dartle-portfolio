@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 import Socials from './Socials';
 
@@ -14,7 +14,7 @@ const Header = () => {
               src={'/logo.svg'}
               width={220}
               height={48}
-              alt='Davide Pintore'
+              alt="Davide Pintore"
               priority={true}
               className="w-[200px] sm:w-[220px]"
               style={{ height: 'auto' }}
@@ -24,9 +24,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-
-  )
-
+  );
 };
 
 export default Header;

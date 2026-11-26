@@ -30,9 +30,12 @@ export default function LumeCaseStudy() {
         description={t('lume-meta-desc')}
         image="/thumb1-1.png"
       />
-      <CaseStudyGradient base="#4a0aa8" colors={['#c7046f', '#3d5ab8', '#d22b5e', '#8d048c', '#ec7a3a']} overlayClassName="bg-black/60" />
+      <CaseStudyGradient
+        base="#4a0aa8"
+        colors={['#c7046f', '#3d5ab8', '#d22b5e', '#8d048c', '#ec7a3a']}
+        overlayClassName="bg-black/60"
+      />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
-
         <section className="sr-only">
           <h1>{t('lume-sr-title')}</h1>
           <p>{t('lume-sr-role')}</p>
@@ -50,7 +53,6 @@ export default function LumeCaseStudy() {
         <div className="w-full max-w-[1360px] flex flex-col mx-auto bg-[#0a0a0a] rounded-none md:rounded-[40px] overflow-hidden md:shadow-2xl md:shadow-black/80 md:ring-1 md:ring-white/10">
           {slices.map((slice, index) => (
             <div key={index} className={`w-full relative flex ${index > 0 ? '-mt-[1px]' : ''}`}>
-              
               {slice.type === 'video' ? (
                 <VideoBlock slice={slice} projectFolder="lume-project" alt={t(slice.altKey)} />
               ) : (
@@ -63,7 +65,6 @@ export default function LumeCaseStudy() {
                   priority={index === 0}
                 />
               )}
-              
             </div>
           ))}
         </div>

@@ -1,4 +1,4 @@
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
 
 // Same wipe as before (the panels cover the screen, then collapse towards the left edge),
 // drawn with scaleX instead of animating width + x: transform only, no layout work per frame.
@@ -13,7 +13,7 @@ const transitionVariants = {
   exit: {
     scaleX: [0, 1],
   },
-}
+};
 
 // strong ease-in-out for on-screen movement
 const ease = [0.77, 0, 0.175, 1];
@@ -30,13 +30,13 @@ const Transition = () => {
       {panels.map((panel) => (
         <motion.div
           key={panel.z}
-          aria-hidden='true'
+          aria-hidden="true"
           className={`fixed inset-0 origin-left pointer-events-none ${panel.z} ${panel.color}`}
           variants={transitionVariants}
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={{delay: panel.delay, duration: 0.5, ease}}
+          transition={{ delay: panel.delay, duration: 0.5, ease }}
         ></motion.div>
       ))}
     </>

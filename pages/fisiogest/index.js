@@ -9,28 +9,160 @@ export default function FisiogestCaseStudy() {
   const { t } = useTranslation('common');
 
   const slices = [
-    { type: 'image', filename: 'slice-01.webp', width: 2880, height: 2116, altKey: 'fisiogest-alt-01' },
-    { type: 'image', filename: 'slice-02.webp', width: 2880, height: 2020, altKey: 'fisiogest-alt-02' },
-    { type: 'image', filename: 'slice-03.webp', width: 2880, height: 2588, altKey: 'fisiogest-alt-03' },
-    { type: 'image', filename: 'slice-04.webp', width: 2880, height: 2526, altKey: 'fisiogest-alt-04' },
-    { type: 'image', filename: 'slice-05.webp', width: 2880, height: 1958, altKey: 'fisiogest-alt-05' },
-    { type: 'image', filename: 'slice-06.webp', width: 2880, height: 1420, altKey: 'fisiogest-alt-06' },
-    { type: 'image', filename: 'slice-07.webp', width: 2880, height: 1620, altKey: 'fisiogest-alt-07' },
-    { type: 'image', filename: 'slice-08.webp', width: 2880, height: 2590, altKey: 'fisiogest-alt-08' },
-    { type: 'image', filename: 'slice-09.webp', width: 2880, height: 2914, altKey: 'fisiogest-alt-09' },
-    { type: 'image', filename: 'slice-10.webp', width: 2880, height: 2364, altKey: 'fisiogest-alt-10' },
-    { type: 'image', filename: 'slice-11.webp', width: 2880, height: 2364, altKey: 'fisiogest-alt-11' },
-    { type: 'image', filename: 'slice-12.webp', width: 2880, height: 1914, altKey: 'fisiogest-alt-12' },
-    { type: 'image', filename: 'slice-13.webp', width: 2880, height: 2890, altKey: 'fisiogest-alt-13' },
-    { type: 'image', filename: 'slice-14.webp', width: 2880, height: 2426, altKey: 'fisiogest-alt-14' },
-    { type: 'image', filename: 'slice-15.webp', width: 2880, height: 3896, altKey: 'fisiogest-alt-15' },
-    { type: 'image', filename: 'slice-16.webp', width: 2880, height: 3768, altKey: 'fisiogest-alt-16' },
-    { type: 'image', filename: 'slice-17.webp', width: 2880, height: 2860, altKey: 'fisiogest-alt-17' },
-    { type: 'image', filename: 'slice-18.webp', width: 2880, height: 2514, altKey: 'fisiogest-alt-18' },
-    { type: 'image', filename: 'slice-19.webp', width: 2880, height: 3662, altKey: 'fisiogest-alt-19' },
-    { type: 'image', filename: 'slice-20.webp', width: 2880, height: 3370, altKey: 'fisiogest-alt-20' },
-    { type: 'image', filename: 'slice-21.webp', width: 2880, height: 3050, altKey: 'fisiogest-alt-21' },
-    { type: 'image', filename: 'slice-22.webp', width: 2880, height: 3306, altKey: 'fisiogest-alt-22' },
+    {
+      type: 'image',
+      filename: 'slice-01.webp',
+      width: 2880,
+      height: 2116,
+      altKey: 'fisiogest-alt-01',
+    },
+    {
+      type: 'image',
+      filename: 'slice-02.webp',
+      width: 2880,
+      height: 2020,
+      altKey: 'fisiogest-alt-02',
+    },
+    {
+      type: 'image',
+      filename: 'slice-03.webp',
+      width: 2880,
+      height: 2588,
+      altKey: 'fisiogest-alt-03',
+    },
+    {
+      type: 'image',
+      filename: 'slice-04.webp',
+      width: 2880,
+      height: 2526,
+      altKey: 'fisiogest-alt-04',
+    },
+    {
+      type: 'image',
+      filename: 'slice-05.webp',
+      width: 2880,
+      height: 1958,
+      altKey: 'fisiogest-alt-05',
+    },
+    {
+      type: 'image',
+      filename: 'slice-06.webp',
+      width: 2880,
+      height: 1420,
+      altKey: 'fisiogest-alt-06',
+    },
+    {
+      type: 'image',
+      filename: 'slice-07.webp',
+      width: 2880,
+      height: 1620,
+      altKey: 'fisiogest-alt-07',
+    },
+    {
+      type: 'image',
+      filename: 'slice-08.webp',
+      width: 2880,
+      height: 2590,
+      altKey: 'fisiogest-alt-08',
+    },
+    {
+      type: 'image',
+      filename: 'slice-09.webp',
+      width: 2880,
+      height: 2914,
+      altKey: 'fisiogest-alt-09',
+    },
+    {
+      type: 'image',
+      filename: 'slice-10.webp',
+      width: 2880,
+      height: 2364,
+      altKey: 'fisiogest-alt-10',
+    },
+    {
+      type: 'image',
+      filename: 'slice-11.webp',
+      width: 2880,
+      height: 2364,
+      altKey: 'fisiogest-alt-11',
+    },
+    {
+      type: 'image',
+      filename: 'slice-12.webp',
+      width: 2880,
+      height: 1914,
+      altKey: 'fisiogest-alt-12',
+    },
+    {
+      type: 'image',
+      filename: 'slice-13.webp',
+      width: 2880,
+      height: 2890,
+      altKey: 'fisiogest-alt-13',
+    },
+    {
+      type: 'image',
+      filename: 'slice-14.webp',
+      width: 2880,
+      height: 2426,
+      altKey: 'fisiogest-alt-14',
+    },
+    {
+      type: 'image',
+      filename: 'slice-15.webp',
+      width: 2880,
+      height: 3896,
+      altKey: 'fisiogest-alt-15',
+    },
+    {
+      type: 'image',
+      filename: 'slice-16.webp',
+      width: 2880,
+      height: 3768,
+      altKey: 'fisiogest-alt-16',
+    },
+    {
+      type: 'image',
+      filename: 'slice-17.webp',
+      width: 2880,
+      height: 2860,
+      altKey: 'fisiogest-alt-17',
+    },
+    {
+      type: 'image',
+      filename: 'slice-18.webp',
+      width: 2880,
+      height: 2514,
+      altKey: 'fisiogest-alt-18',
+    },
+    {
+      type: 'image',
+      filename: 'slice-19.webp',
+      width: 2880,
+      height: 3662,
+      altKey: 'fisiogest-alt-19',
+    },
+    {
+      type: 'image',
+      filename: 'slice-20.webp',
+      width: 2880,
+      height: 3370,
+      altKey: 'fisiogest-alt-20',
+    },
+    {
+      type: 'image',
+      filename: 'slice-21.webp',
+      width: 2880,
+      height: 3050,
+      altKey: 'fisiogest-alt-21',
+    },
+    {
+      type: 'image',
+      filename: 'slice-22.webp',
+      width: 2880,
+      height: 3306,
+      altKey: 'fisiogest-alt-22',
+    },
   ];
 
   return (
@@ -40,9 +172,12 @@ export default function FisiogestCaseStudy() {
         description={t('fisiogest-meta-desc')}
         image="/thumb1-4.png"
       />
-      <CaseStudyGradient base="#8fcd3e" colors={['#3f7d0c', '#b4f060', '#62a025', '#a3de59', '#d6f5a6']} overlayClassName="bg-black/10" />
+      <CaseStudyGradient
+        base="#8fcd3e"
+        colors={['#3f7d0c', '#b4f060', '#62a025', '#a3de59', '#d6f5a6']}
+        overlayClassName="bg-black/10"
+      />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
-
         <section className="sr-only">
           <h1>{t('fisiogest-sr-title')}</h1>
           <p>{t('fisiogest-sr-role')}</p>

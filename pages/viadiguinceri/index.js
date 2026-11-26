@@ -19,16 +19,31 @@ const slices = [
   { filename: 'slice-11.webp?v=3', width: 2880, height: 2881, altKey: 'viadiguinceri-alt-11' },
   { filename: 'slice-12.webp?v=2', width: 2880, height: 2810, altKey: 'viadiguinceri-alt-12' },
   { filename: 'slice-13.webp?v=3', width: 2880, height: 2612, altKey: 'viadiguinceri-alt-13' },
-  { filename: 'slice-gallery.webp?v=3', width: 2880, height: 3470, altKey: 'viadiguinceri-alt-gallery' },
+  {
+    filename: 'slice-gallery.webp?v=3',
+    width: 2880,
+    height: 3470,
+    altKey: 'viadiguinceri-alt-gallery',
+  },
   { filename: 'slice-14.webp?v=5', width: 2880, height: 4338, altKey: 'viadiguinceri-alt-14' },
-  { filename: 'slice-floor.webp?v=3', width: 2880, height: 5638, altKey: 'viadiguinceri-alt-floor' },
+  {
+    filename: 'slice-floor.webp?v=3',
+    width: 2880,
+    height: 5638,
+    altKey: 'viadiguinceri-alt-floor',
+  },
   { filename: 'slice-15.webp?v=3', width: 2880, height: 3500, altKey: 'viadiguinceri-alt-15' },
   { filename: 'slice-shop.webp', width: 2880, height: 3894, altKey: 'viadiguinceri-alt-shop' },
   { filename: 'slice-16.webp?v=3', width: 2880, height: 4270, altKey: 'viadiguinceri-alt-16' },
   { filename: 'slice-17.webp?v=2', width: 2880, height: 2206, altKey: 'viadiguinceri-alt-17' },
   { filename: 'slice-18.webp', width: 2880, height: 2852, altKey: 'viadiguinceri-alt-18' },
   { filename: 'slice-19.webp?v=2', width: 2880, height: 2720, altKey: 'viadiguinceri-alt-19' },
-  { filename: 'slice-security.webp?v=3', width: 2880, height: 2906, altKey: 'viadiguinceri-alt-security' },
+  {
+    filename: 'slice-security.webp?v=3',
+    width: 2880,
+    height: 2906,
+    altKey: 'viadiguinceri-alt-security',
+  },
   { filename: 'slice-20.webp?v=2', width: 2880, height: 2620, altKey: 'viadiguinceri-alt-20' },
   { filename: 'slice-21.webp?v=2', width: 2880, height: 3252, altKey: 'viadiguinceri-alt-21' },
   { filename: 'slice-22.webp?v=2', width: 2880, height: 2196, altKey: 'viadiguinceri-alt-22' },
@@ -44,9 +59,12 @@ export default function ViaDiGuinceriCaseStudy() {
         description={t('viadiguinceri-meta-desc')}
         image="/viadiguinceri-og.jpg?v=3"
       />
-      <CaseStudyGradient base="#b38450" colors={['#55300f', '#f2d6a0', '#7a4920', '#e6c48c', '#9f6e3d']} overlayClassName="bg-black/60" />
+      <CaseStudyGradient
+        base="#b38450"
+        colors={['#55300f', '#f2d6a0', '#7a4920', '#e6c48c', '#9f6e3d']}
+        overlayClassName="bg-black/60"
+      />
       <main className="relative z-10 flex flex-col items-center w-full py-0 md:py-10">
-
         <section className="sr-only">
           <h1>{t('viadiguinceri-sr-title')}</h1>
           <p>{t('viadiguinceri-sr-role')}</p>
@@ -64,7 +82,10 @@ export default function ViaDiGuinceriCaseStudy() {
 
         <div className="w-full max-w-[1360px] flex flex-col mx-auto bg-[#0a0a0a] rounded-none md:rounded-[40px] overflow-hidden md:shadow-2xl md:shadow-black/80 md:ring-1 md:ring-white/10">
           {slices.map((slice, index) => (
-            <div key={slice.filename} className={`w-full relative flex ${index > 0 ? '-mt-[1px]' : ''}`}>
+            <div
+              key={slice.filename}
+              className={`w-full relative flex ${index > 0 ? '-mt-[1px]' : ''}`}
+            >
               <CaseStudyImage
                 src={`/viadiguinceri-project/${slice.filename}`}
                 variants={[828, 1200, 1920]}

@@ -2,10 +2,12 @@ import Image from 'next/image';
 
 // `variants`: widths of pre-resized copies saved as `name-<width>w.webp`, ascending.
 // Any request wider than the largest copy gets the untouched original file, never a re-encode.
-const variantLoader = (variants) => ({ src, width }) => {
-  const match = variants.find((v) => v >= width);
-  return match ? src.replace(/\.webp(\?|$)/, `-${match}w.webp$1`) : src;
-};
+const variantLoader =
+  (variants) =>
+  ({ src, width }) => {
+    const match = variants.find((v) => v >= width);
+    return match ? src.replace(/\.webp(\?|$)/, `-${match}w.webp$1`) : src;
+  };
 
 const CaseStudyImage = ({ src, alt, variants = [], ...props }) => (
   <Image

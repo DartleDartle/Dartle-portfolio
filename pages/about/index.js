@@ -217,10 +217,11 @@ const About = () => {
                   type="button"
                   key={`${item.title}-${itemIndex}`}
                   aria-pressed={index === itemIndex}
-                  className={`${index === itemIndex
-                    ? 'text-primary font-medium after:scale-x-100 after:bg-accent'
-                    : 'text-primary/70 hover:text-primary after:scale-x-[0.3] after:bg-primary/30'
-                    } min-h-[44px] capitalize xl:text-lg relative rounded-sm transition-colors duration-200 after:transition-transform after:duration-300 after:ease-out after:origin-left after:w-full after:h-[2px] after:absolute after:bottom-1 after:left-0`}
+                  className={`${
+                    index === itemIndex
+                      ? 'text-primary font-medium after:scale-x-100 after:bg-accent'
+                      : 'text-primary/70 hover:text-primary after:scale-x-[0.3] after:bg-primary/30'
+                  } min-h-[44px] capitalize xl:text-lg relative rounded-sm transition-colors duration-200 after:transition-transform after:duration-300 after:ease-out after:origin-left after:w-full after:h-[2px] after:absolute after:bottom-1 after:left-0`}
                   onClick={() => setIndex(itemIndex)}
                 >
                   {item.title}
@@ -239,17 +240,13 @@ const About = () => {
                     {itemIndex > 0 && (
                       <div className="w-full h-px my-3 shrink-0 bg-gradient-to-r from-transparent via-accent/60 to-transparent drop-shadow-[0_0_4px_rgba(241,126,65,0.6)]"></div>
                     )}
-                    <div
-                      className="w-full flex flex-col items-center xl:flex-row xl:justify-between gap-y-2 xl:gap-y-0 text-primary/75"
-                    >
+                    <div className="w-full flex flex-col items-center xl:flex-row xl:justify-between gap-y-2 xl:gap-y-0 text-primary/75">
                       <div className="flex flex-col items-center xl:flex-row xl:items-center gap-y-4 xl:gap-y-0 xl:gap-x-4 w-full">
                         <div className="font-light text-center xl:text-left leading-snug max-w-[300px] xl:max-w-none">
                           {item.title}
                         </div>
 
-                        {item.icons && (
-                          <div className="hidden xl:flex opacity-40 shrink-0">◦</div>
-                        )}
+                        {item.icons && <div className="hidden xl:flex opacity-40 shrink-0">◦</div>}
 
                         {item.icons && item.icons.length > 0 && (
                           <div className="flex flex-wrap justify-center xl:justify-start gap-4">
