@@ -1,11 +1,15 @@
 import { useRef, useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { HiArrowLeft, HiArrowRight } from 'react-icons/hi2';
+import { BsArrowRight } from 'react-icons/bs';
 
 import { useIsDesktop } from '../hooks/useIsDesktop';
 
-// Via di Guinceri leads: it is the newest project
-export const workProjects = [
+// newest first
+const workProjects = [
   {
     title: 'Via di Guinceri - Case Study',
     path: '/thumb1-6.png?v=4',
@@ -14,7 +18,7 @@ export const workProjects = [
   },
   {
     title: 'Crédit Agricole Assicurazioni - Redesign',
-    path: '/thumb1-7.png',
+    path: '/thumb1-7.png?v=2',
     url: '/caassicurazioni',
     isExternal: false,
   },
@@ -43,21 +47,14 @@ export const workProjects = [
     isExternal: false,
   },
   {
-    title: 'Profilo github',
+    title: 'GitHub Profile',
     path: '/thumb1-3.png?v=2',
     url: 'https://github.com/DartleDartle',
     isExternal: true,
   },
 ];
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import { HiArrowLeft, HiArrowRight } from 'react-icons/hi2';
-import { BsArrowRight } from 'react-icons/bs';
-
-import Image from 'next/image';
-
-// raggruppa i progetti in "pagine": 4 (griglia 2x2) su desktop, 2 (colonna singola) su mobile
+// split the projects into slider pages: 4 per page (2x2 grid) on desktop, 2 (single column) on mobile
 const chunk = (items, size) => {
   const pages = [];
   for (let i = 0; i < items.length; i += size) {
@@ -154,13 +151,13 @@ const WorkSlider = () => {
           ))}
         </Swiper>
 
-        {/* sfumatura sul bordo destro: da xl in su, per far intravedere la pagina successiva tagliata */}
+        {/* right-edge fade (xl and up) so the cut-off next page peeks through */}
         {isDesktop && pages.length > 1 && (
           <div className="hidden xl:block pointer-events-none absolute top-0 right-0 h-[460px] w-16 bg-gradient-to-r from-transparent to-grey"></div>
         )}
       </div>
 
-      {/* controlli: elementi esterni, fuori dal box dello slider, mai sovrapposti al contenuto */}
+      {/* controls sit below the slider box, never on top of the cards */}
       {pages.length > 1 && (
         <div className="flex items-center justify-center gap-x-6 mt-6">
           {isDesktop && (

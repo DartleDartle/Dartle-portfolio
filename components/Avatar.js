@@ -5,7 +5,7 @@ const Avatar = () => {
     <div className="w-full h-full relative pointer-events-none">
       <Image
         src="/avatarz.png?v=2"
-        alt="Davide"
+        alt="Davide Pintore"
         fill
         priority
         sizes="(max-width: 1279px) 320px, 520px"

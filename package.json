@@ -1,12 +1,14 @@
 {
-  "name": "esportfolio",
-  "version": "0.1.0",
+  "name": "davide-pintore-portfolio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "framer-motion": "^10.12.16",
@@ -20,9 +22,7 @@
     "react-i18next": "^17.1.13",
     "react-icons": "^5.6.0",
     "react-tsparticles": "^2.9.3",
-    "sweetalert2": "^11.10.7",
     "swiper": "^14.1.0",
-    "tailwind-scrollbar": "^3.0.4",
     "tsparticles": "^2.9.3"
   },
   "devDependencies": {
@@ -30,6 +30,7 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.5.29",
     "postcss": "^8.4.23",
+    "prettier": "3.6.2",
     "tailwindcss": "^3.3.2"
   },
   "overrides": {

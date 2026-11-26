@@ -1,26 +1,14 @@
-// icons
-import {
-  HiHome,
-  HiUser,
-  HiViewColumns,
-  HiChatBubbleBottomCenterText,
-} from 'react-icons/hi2';
-
-// nav data
-export const navData = [
-  { name: 'home', path: '/', icon: <HiHome /> },
-  { name: 'about', path: '/about', icon: <HiUser /> },
-  { name: 'work', path: '/work', icon: <HiViewColumns /> },
-  {
-    name: 'testimonials',
-    path: '/testimonials',
-    icon: <HiChatBubbleBottomCenterText />,
-  },
-];
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
+import { HiHome, HiUser, HiViewColumns, HiChatBubbleBottomCenterText } from 'react-icons/hi2';
+
+const navData = [
+  { name: 'home', path: '/', icon: <HiHome /> },
+  { name: 'about', path: '/about', icon: <HiUser /> },
+  { name: 'work', path: '/work', icon: <HiViewColumns /> },
+  { name: 'testimonials', path: '/testimonials', icon: <HiChatBubbleBottomCenterText /> },
+];
 
 const Nav = () => {
   const router = useRouter();

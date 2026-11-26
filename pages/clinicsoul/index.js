@@ -1,4 +1,4 @@
-import VideoBlock from '../../components/Videoblock';
+import VideoBlock from '../../components/VideoBlock';
 import Seo from '../../components/Seo';
 import CaseStudyImage from '../../components/CaseStudyImage';
 import { BackToWork, CaseStudyGradient } from '../../components/CaseStudy';

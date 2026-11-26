@@ -1,39 +1,66 @@
+# Davide Pintore — Portfolio
 
-# 🌐 My Online Portfolio
+Personal portfolio of Davide Pintore, product and UX/UI designer: case studies, background and testimonials, in English and Italian.
 
-Welcome to my online portfolio! This project showcases my skills, projects, and experiences as a developer, providing an interactive and visually appealing platform for visitors to learn more about me.
+Live at [davide-pintore.site](https://www.davide-pintore.site).
 
-## 📚 Technologies Used
+## Stack
 
-- **Next.js**: A powerful React framework that allows for optimized performance with server-side rendering and static site generation. Using Next.js taught me how to create structured, efficient, and scalable web applications.
-- **Tailwind CSS**: A utility-first CSS framework that enabled me to rapidly design responsive and visually pleasing pages. Through Tailwind, I learned to work with a modular CSS approach, making styling adjustments quick and flexible.
-- **Framer Motion**: A React animation library that I used to create smooth animations and transitions throughout the website. This tool helped me better understand motion design, which enhances user experience.
+- [Next.js 15](https://nextjs.org) (Pages Router) and React 18
+- [Tailwind CSS](https://tailwindcss.com) for styling
+- [Framer Motion](https://www.framer.com/motion/) for page transitions and entrance animations
+- [next-i18next](https://github.com/i18next/next-i18next) for English and Italian
+- [Swiper](https://swiperjs.com) for the sliders, [tsParticles](https://particles.js.org) for the home background
 
-## 💡 Key Features
+## Getting started
 
-- **Responsive Design**: The layout adjusts seamlessly across devices, from mobile to desktop. I fine-tuned elements to ensure optimal appearance and usability, even on specific screen sizes like iPhone SE.
-- **Dynamic Animations**: Framer Motion was used to add interactive elements that respond to user actions. These animations make the site feel more engaging and fluid.
-- **Interactive Navigation**: I designed a navbar with a mobile aesthetic that adapts based on screen size. Working with Next.js helped me manage routes effectively.
-- **Multi-language Support**: Added translation options to make the site accessible to a broader audience. This involved restructuring text and layout to fit multiple languages.
+Requires Node.js 24.
 
-## 🛠️ Development Process
+```bash
+npm install
+npm run dev          # development server on http://localhost:3000
+npm run build        # production build
+npm run start        # serve the production build
+npm run lint         # ESLint
+npm run format       # Prettier (format:check to verify only)
+```
 
-1. **Starting Structure**: I began by setting up the basic structure and navigation. Working with Next.js, I focused on creating reusable components for scalability.
-2. **Styling with Tailwind CSS**: I applied Tailwind to build a clean, modern aesthetic with responsive design in mind, using utility classes to manage spacing, padding, and margins.
-3. **Implementing Animations**: Framer Motion allowed me to add animations to various components, including page transitions, hover effects, and scroll-triggered animations.
-4. **Responsive Adjustments**: I iterated through multiple design adjustments to ensure compatibility across devices, addressing specific resolutions, including laptops and extra-large screens (e.g., xxl sizes).
-5. **Translation Setup**: Using conditional rendering, I added multi-language support to each page, a valuable skill for making content accessible to diverse audiences.
+## Project structure
 
-## 🚀 Lessons Learned
+```
+components/   shared UI: layout, navigation, sliders, case study building blocks, SEO
+hooks/        small React hooks
+pages/        one folder per route, plus 404/500 and the Next.js app/document
+public/       static assets, translations, case study images, sitemap and robots.txt
+styles/       global CSS on top of Tailwind
+```
 
-Throughout this project, I gained a deeper understanding of:
-- **React & Next.js**: Managing routes, components, and server-side rendering for efficient loading and SEO.
-- **CSS Frameworks**: Creating responsive designs with Tailwind CSS, improving both workflow and design consistency.
-- **Animation Techniques**: Using Framer Motion to create dynamic and interactive experiences.
-- **Debugging**: Fixing issues for different resolutions and handling errors during deployment taught me the importance of testing across multiple environments.
+## Content
 
-## 🔧 Future Improvements
+### Translations
 
-- **Enhanced Animations**: I plan to experiment with more complex animations and interactions.
-- **Accessibility Improvements**: Focus on making the site more accessible, ensuring it meets WCAG standards.
-- **Additional Languages**: Expand multi-language support to include more languages and localize content.
+All copy lives in `public/locales/{en,it}/common.json`. Every key must exist in both files.
+
+### Case studies
+
+Long-form case studies (`lume`, `clinicsoul`, `fisiogest`, `viadiguinceri`) render a list of image and video slices from `public/<project>-project/`.
+
+Images go through `components/CaseStudyImage.js`. Wide screens get the original file untouched; smaller screens get a pre-resized copy named `slice-NN-<width>w.webp`. The widths that exist are listed in the page's `variants` prop. A copy is only worth keeping when it is at least 20% smaller than the original:
+
+```bash
+ffmpeg -i slice-01.webp -vf "scale=1200:-2:flags=lanczos" \
+  -c:v libwebp -quality 92 -compression_level 6 -preset picture slice-01-1200w.webp
+```
+
+Shorter project pages (`brunocambiaso`, `caassicurazioni`) describe the project and link to the live site or the Figma file.
+
+### Adding a project
+
+1. Create the page in `pages/<slug>/index.js`, using an existing case study as a template.
+2. Add its card to `components/WorkSlider.js`.
+3. Add the route to `caseStudyPages` in `components/Layout.js` (case studies hide the site header and nav).
+4. Add the URL to `public/sitemap.xml` and the copy to both locale files.
+
+## Deployment
+
+Deployed on Vercel from the `master` branch.

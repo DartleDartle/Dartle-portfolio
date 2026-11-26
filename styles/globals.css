@@ -13,14 +13,11 @@
 
 .my-custom-swiper {
   --swiper-theme-color: #f13024;
-}
-
-/* spazio per i pallini */
-.my-custom-swiper {
+  /* room for the pagination dots */
   padding-bottom: 48px;
 }
 
-/* pallini da 8px, area di tocco da 44px */
+/* 8px dots with a 44px touch target */
 .my-custom-swiper .swiper-pagination-bullet {
   position: relative;
 }
@@ -30,13 +27,12 @@
   inset: -18px;
 }
 
-/* mobile: nascondo frecce */
+/* arrows: hidden on mobile, shown from md up */
 .my-custom-swiper .swiper-button-next,
 .my-custom-swiper .swiper-button-prev {
   display: none;
 }
 
-/* da md in su: mostro frecce */
 @media (min-width: 768px) {
   .my-custom-swiper .swiper-button-next,
   .my-custom-swiper .swiper-button-prev {

@@ -1,25 +1,16 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-
-import Seo from '../../components/Seo';
-
-// icons
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaWordpress,
-  FaFigma,
-} from 'react-icons/fa';
-
+import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import { FaHtml5, FaCss3, FaJs, FaReact, FaWordpress, FaFigma } from 'react-icons/fa';
 import {
   TbBrandAdobeIndesign,
   TbBrandAdobePhotoshop,
   TbBrandAdobeIllustrator,
   TbBrandAdobePremier,
 } from 'react-icons/tb';
-
 import {
   SiNextdotjs,
   SiFramer,
@@ -33,19 +24,10 @@ import {
   SiMaze,
 } from 'react-icons/si';
 
-// framer motion
-import { motion } from 'framer-motion';
+import Seo from '../../components/Seo';
 import { fadeIn } from '../../variants';
 
-// counter
-import CountUp from 'react-countup';
-
-// translation
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-
-// about data
-export const getAboutData = (t) => [
+const getAboutData = (t) => [
   {
     title: t('s'),
     info: [
@@ -249,7 +231,7 @@ const About = () => {
             <div
               tabIndex={0}
               aria-label={aboutData[index].title}
-              className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-4 xl:pr-12 pb-48 xl:pb-12 custom-scrollbar overflow-x-hidden rounded-md"
+              className="w-full max-h-[50vh] xl:max-h-[60vh] overflow-y-auto pr-4 xl:pr-12 pb-48 xl:pb-12 overflow-x-hidden rounded-md"
             >
               <div className="flex flex-col items-center xl:items-start">
                 {aboutData[index].info.map((item, itemIndex) => (

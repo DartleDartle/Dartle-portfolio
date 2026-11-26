@@ -63,7 +63,7 @@ const Home = () => {
               animate="show"
               className="w-[260px] sm:w-[320px] xl:w-[clamp(300px,32vw,520px)] aspect-[4/3] relative shrink-0"
             >
-              <Avatar className="w-full h-full object-contain" />
+              <Avatar />
             </motion.div>
           </div>
 
