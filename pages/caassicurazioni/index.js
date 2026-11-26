@@ -23,7 +23,7 @@ export default function CaAssicurazioniCaseStudy() {
       <Seo
         title="Crédit Agricole Assicurazioni - UX/UI Redesign"
         description={t('caassicurazioni-meta-desc')}
-        image="/thumb1-7.png"
+        image="/thumb1-7.png?v=2"
       />
 
       <div className="absolute inset-0 bg-gradient-to-r from-grey/10 via-white/30 to-white/10" />
