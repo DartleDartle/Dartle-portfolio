@@ -13,6 +13,12 @@ export const workProjects = [
     isExternal: false,
   },
   {
+    title: 'Crédit Agricole Assicurazioni - Redesign',
+    path: '/thumb1-7.png',
+    url: '/caassicurazioni',
+    isExternal: false,
+  },
+  {
     title: 'Lume - Case Study',
     path: '/thumb1-1.png?v=2',
     url: '/lume',

@@ -46,4 +46,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/brunocambiaso" />
     <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/brunocambiaso" />
   </url>
+  <url>
+    <loc>https://www.davide-pintore.site/caassicurazioni</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.davide-pintore.site/caassicurazioni" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.davide-pintore.site/it/caassicurazioni" />
+  </url>
 </urlset>
